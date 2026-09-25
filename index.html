@@ -282,7 +282,7 @@ main.out{opacity:0}
       <a href="#/work">Работы</a><a href="#/about">Обо мне</a><a href="#/services">Услуги</a><a href="#/process">Процесс</a><a href="#/contact">Контакты</a>
       <a class="btn btn-sm" href="#/contact">Связаться</a>
     </nav>
-    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Меню</button>
   </div>
 </header>
 <main id="main" tabindex="-1" style="outline:none"></main>
@@ -391,7 +391,22 @@ const PROJECTS = [
       {file:'03.jpg',label:'Экран 3',ar:'4/5'},
       {file:'04.jpg',label:'Экран 4',ar:'4/5'},
       {file:'05.jpg',label:'Экран 5',ar:'4/5'},
-      {file:'06.jpg',label:'Экран 6',ar:'4/5'}]}
+      {file:'06.jpg',label:'Экран 6',ar:'4/5'}]},
+  { slug:'ai-consultant', folder:'ai-consultant', title:'ИИ-консультант по медицине и БАДам', category:'AI / UI/UX', year:'2026',
+    desc:'Внедрение и визуальное оформление ИИ-консультанта, который подбирает медицинские услуги и БАДы и ведёт диалог с клиентом.',
+    tone:['#3B4A6B','#7C8FB3','#fff'], cardAr:'4/3',
+    overview:'Визуальное и диалоговое оформление ИИ-консультанта: бот подбирает медицинские услуги и БАДы, отвечает на вопросы клиента и предлагает подходящие варианты.',
+    challenge:'Сделать общение с ИИ понятным и вызывающим доверие в теме здоровья, где клиенту важна ясность и отсутствие лишней сложности.',
+    solution:'Разработаны сценарии диалога и визуальное оформление интерфейса консультанта: приветствие, вопросы для подбора, карточки рекомендаций и переход к покупке.',
+    direction:'Спокойная палитра, понятная структура диалога и карточки рекомендаций, оформленные в общем стиле бренда.',
+    made:['Сценарий диалога','Экран приветствия','Подбор услуг и БАДов','Карточки рекомендаций','Переход к покупке'],
+    images:[
+      {file:'01.jpg',label:'Экран приветствия',ar:'4/5'},
+      {file:'02.jpg',label:'Диалог с ИИ',ar:'4/5'},
+      {file:'03.jpg',label:'Подбор услуг',ar:'4/5'},
+      {file:'04.jpg',label:'Карточка рекомендации',ar:'1/1'},
+      {file:'05.jpg',label:'Каталог БАДов',ar:'16/10'},
+      {file:'06.jpg',label:'Дополнительные экраны',ar:'4/5'}]}
 ];
 
 /* ---------- helpers ---------- */
@@ -458,7 +473,8 @@ function media(p){
 
 /* ---------- pages ---------- */
 function card(p,i){
-  const pos = ['c-full','c-a','c-b','c-wide','c-c','c-d'][i];
+  const POS=['c-full','c-a','c-b','c-wide','c-c','c-d'];
+  const pos = POS[i%POS.length];
   return `<article class="card ${pos} rv" id="proj-${p.slug}">
     <a class="card-link" href="#/project/${p.slug}" aria-label="${p.title} — открыть проект">
       <div class="media" style="--ar:${p.cardAr}">${media(p)}
@@ -574,8 +590,8 @@ function fillContacts(){
 }
 const hdr=$('#hdr'), nav=$('#nav'), menu=$('#menu'), main=$('#main');
 addEventListener('scroll',()=>hdr.classList.toggle('sc',scrollY>24),{passive:true});
-function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='Menu';document.body.style.overflow=''}
-menu.addEventListener('click',()=>{const o=!nav.classList.contains('open');nav.classList.toggle('open',o);menu.setAttribute('aria-expanded',o);menu.textContent=o?'Close':'Menu';document.body.style.overflow=o?'hidden':''});
+function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='Меню';document.body.style.overflow=''}
+menu.addEventListener('click',()=>{const o=!nav.classList.contains('open');nav.classList.toggle('open',o);menu.setAttribute('aria-expanded',o);menu.textContent=o?'Закрыть':'Меню';document.body.style.overflow=o?'hidden':''});
 nav.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu()});
 addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
 $('#skip').addEventListener('click',e=>{e.preventDefault();main.focus()});
