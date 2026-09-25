@@ -338,30 +338,20 @@ const PROJECTS = [
       {file:'04.jpg',label:'QR-карта',ar:'1/1'},
       {file:'05.jpg',label:'Дополнительные материалы',ar:'16/10'},
       {file:'06.jpg',label:'Дополнительные материалы',ar:'4/5'}]},
-  { slug:'telegram-shop', folder:'telegram-shop', title:'Telegram-магазин', category:'Digital / E-commerce', year:'2026',
-    desc:'Визуальное оформление Telegram-магазина и карточек продуктов.',
-    tone:['#38596A','#82A2B1','#fff'], cardAr:'4/5',
-    overview:'Визуальное оформление Telegram-магазина и карточек продуктов.',
-    challenge:'Сделать магазин внутри мессенджера аккуратным и узнаваемым, а карточки товаров — понятными с первого взгляда.',
-    solution:'Разработано оформление Telegram-магазина: карточки, баннеры, оформление товара, QR и дополнительные digital-материалы.',
-    direction:'Единый стиль карточек и баннеров, чтобы весь магазин выглядел как одно целое.',
-    made:['Карточки','Баннеры','Оформление товара','QR','Дополнительные digital-материалы'],
+  { slug:'telegram-shop', folder:'telegram-shop', title:'Telegram-магазин (Mini App)', category:'Digital / Mini App / E-commerce', year:'2026', kind:'phones',
+    desc:'Telegram-магазин, реализованный как Mini App: оформление магазина, карточек товаров и весь путь покупателя внутри интерфейса.',
+    tone:['#38596A','#82A2B1','#fff'], cardAr:'3/2',
+    overview:'Telegram-магазин, реализованный как Mini App: единое оформление магазина, карточек товаров и интерфейса — от каталога до оформления заказа.',
+    challenge:'Сделать магазин внутри мессенджера аккуратным и узнаваемым, а путь от каталога до заказа — понятным с первого взгляда.',
+    solution:'Разработано оформление магазина и интерфейс Mini App: карточки, баннеры, оформление товара, QR и ключевые экраны — главный, каталог, карточка товара, оформление заказа, профиль.',
+    direction:'Единый стиль карточек и баннеров, светлый интерфейс Mini App и один акцентный цвет, чтобы магазин выглядел как одно целое.',
+    made:['Карточки','Баннеры','Оформление товара','QR','Главный экран','Каталог','Карточка товара','Оформление заказа','Профиль'],
     images:[
       {file:'01.jpg',label:'Оформление магазина',ar:'16/10'},
       {file:'02.jpg',label:'Карточки',ar:'4/5'},
       {file:'03.jpg',label:'Баннеры',ar:'16/10'},
       {file:'04.jpg',label:'Оформление товара',ar:'4/5'},
-      {file:'05.jpg',label:'QR',ar:'1/1'},
-      {file:'06.jpg',label:'Digital-материалы',ar:'4/5'}]},
-  { slug:'mini-app-concept', folder:'mini-app', title:'Mini App — концепт', category:'UI/UX / Mini App', year:'2026', kind:'phones', concept:true,
-    desc:'Демонстрационный концепт Mini App для записи в beauty / wellness-студию.',
-    tone:['#D8DFD8','#BAC7BE','#1F2123'], cardAr:'3/2',
-    overview:'Демонстрационный концепт Mini App для записи в beauty / wellness-студию. Это учебно-показательный проект, а не работа для реального клиента.',
-    challenge:'Показать, как выглядит понятный путь пользователя: от главного экрана до записи на услугу.',
-    solution:'Собраны пять ключевых экранов: главный, каталог услуг, карточка услуги, запись и профиль.',
-    direction:'Светлый спокойный интерфейс, крупные элементы для пальца и один акцентный цвет.',
-    made:['Главный экран','Каталог услуг','Карточка услуги','Запись','Профиль'],
-    images:[]},
+      {file:'05.jpg',label:'QR',ar:'1/1'}]},
   { slug:'wedding-identity', folder:'wedding', title:'Свадебная айдентика', category:'Графический дизайн / Event-дизайн', year:'2026', kind:'collage',
     desc:'Создание единой визуальной системы для свадебного мероприятия.',
     tone:['#B7A79E','#DDD0C6','#2A2220'], cardAr:'1/1',
@@ -426,39 +416,39 @@ function slot(p, im, i, ar){
 }
 
 /* ---------- mini-app phone screens ---------- */
-const tabs = on => ['Главная','Услуги','Запись','Профиль'].map((t,i)=>`<span class="${i===on?'on':''}">${t}</span>`).join('');
+const tabs = on => ['Главная','Каталог','Заказ','Профиль'].map((t,i)=>`<span class="${i===on?'on':''}">${t}</span>`).join('');
 const phone = (body, on) => `<div class="phone"><div class="phone-in"><div class="a-top"><span>9:41</span><span>●●●</span></div><div class="a-body">${body}</div><div class="a-tabs">${tabs(on)}</div></div></div>`;
 const SCREENS = [
   {name:'Главный экран', html: phone(`
-    <div><div class="a-s">Добрый день</div><div class="a-h">Позаботьтесь о себе</div></div>
-    <div class="a-hero"><small>Ближайшая запись</small><b>Чт, 14:30<br>Уход за лицом</b></div>
-    <div class="a-chips"><span class="a-chip on">Все</span><span class="a-chip">Лицо</span><span class="a-chip">Тело</span><span class="a-chip">Уход</span></div>
-    <div><div class="a-row"><span class="a-th"></span><span>Уход за лицом<small>60 мин</small></span><i>›</i></div>
-    <div class="a-row"><span class="a-th b"></span><span>Массаж<small>45 мин</small></span><i>›</i></div></div>`,0)},
-  {name:'Каталог услуг', html: phone(`
-    <div class="a-h">Услуги</div>
-    <div class="a-chips"><span class="a-chip on">Все</span><span class="a-chip">Лицо</span><span class="a-chip">Тело</span></div>
-    <div><div class="a-row"><span class="a-th"></span><span>Уход за лицом<small>60 мин</small></span><i>›</i></div>
-    <div class="a-row"><span class="a-th b"></span><span>Массаж спины<small>45 мин</small></span><i>›</i></div>
-    <div class="a-row"><span class="a-th c"></span><span>Обёртывание<small>75 мин</small></span><i>›</i></div>
-    <div class="a-row"><span class="a-th"></span><span>Пилинг<small>30 мин</small></span><i>›</i></div>
-    <div class="a-row"><span class="a-th b"></span><span>Консультация<small>20 мин</small></span><i>›</i></div></div>`,1)},
-  {name:'Карточка услуги', html: phone(`
+    <div><div class="a-s">Здравствуйте</div><div class="a-h">Ваш магазин в Telegram</div></div>
+    <div class="a-hero"><small>Предложение дня</small><b>-20%<br>на новые товары</b></div>
+    <div class="a-chips"><span class="a-chip on">Все</span><span class="a-chip">Новинки</span><span class="a-chip">Хиты</span><span class="a-chip">Акции</span></div>
+    <div><div class="a-row"><span class="a-th"></span><span>Товар 1<small>Категория</small></span><i>›</i></div>
+    <div class="a-row"><span class="a-th b"></span><span>Товар 2<small>Категория</small></span><i>›</i></div></div>`,0)},
+  {name:'Каталог товаров', html: phone(`
+    <div class="a-h">Каталог</div>
+    <div class="a-chips"><span class="a-chip on">Все</span><span class="a-chip">Новинки</span><span class="a-chip">Хиты</span></div>
+    <div><div class="a-row"><span class="a-th"></span><span>Товар 1<small>Категория</small></span><i>›</i></div>
+    <div class="a-row"><span class="a-th b"></span><span>Товар 2<small>Категория</small></span><i>›</i></div>
+    <div class="a-row"><span class="a-th c"></span><span>Товар 3<small>Категория</small></span><i>›</i></div>
+    <div class="a-row"><span class="a-th"></span><span>Товар 4<small>Категория</small></span><i>›</i></div>
+    <div class="a-row"><span class="a-th b"></span><span>Товар 5<small>Категория</small></span><i>›</i></div></div>`,1)},
+  {name:'Карточка товара', html: phone(`
     <div class="a-img"></div>
-    <div><div class="a-h">Уход за лицом</div><div class="a-s" style="margin-top:1.6cqw">Очищение, тонизирование и увлажнение. Подходит для регулярного ухода.</div></div>
-    <div class="a-row"><span>Длительность</span><i>60 мин</i></div>
-    <div class="a-row"><span>Мастер</span><i>на выбор</i></div>
-    <div class="a-btn">Записаться</div>`,1)},
-  {name:'Запись', html: phone(`
-    <div class="a-h">Выберите время</div>
+    <div><div class="a-h">Название товара</div><div class="a-s" style="margin-top:1.6cqw">Краткое описание товара и его особенностей.</div></div>
+    <div class="a-row"><span>Категория</span><i>—</i></div>
+    <div class="a-row"><span>Наличие</span><i>в наличии</i></div>
+    <div class="a-btn">Добавить в корзину</div>`,1)},
+  {name:'Оформление заказа', html: phone(`
+    <div class="a-h">Дата и время доставки</div>
     <div class="a-days"><button class="a-day" type="button">Пн<small>21</small></button><button class="a-day on" type="button">Вт<small>22</small></button><button class="a-day" type="button">Ср<small>23</small></button><button class="a-day" type="button">Чт<small>24</small></button><button class="a-day" type="button">Пт<small>25</small></button></div>
     <div class="a-times"><button class="a-t" type="button">10:00</button><button class="a-t off" type="button" disabled>11:00</button><button class="a-t" type="button">12:00</button><button class="a-t on" type="button">14:30</button><button class="a-t" type="button">16:00</button><button class="a-t off" type="button" disabled>17:00</button></div>
-    <div class="a-btn">Подтвердить запись</div>`,2)},
+    <div class="a-btn">Подтвердить заказ</div>`,2)},
   {name:'Профиль', html: phone(`
     <div class="a-ava">А</div>
     <div class="a-h">Мой профиль</div>
-    <div class="a-row"><span>Мои записи</span><i>›</i></div>
-    <div class="a-row"><span>История</span><i>›</i></div>
+    <div class="a-row"><span>Мои заказы</span><i>›</i></div>
+    <div class="a-row"><span>История покупок</span><i>›</i></div>
     <div class="a-row"><span>Уведомления</span><i>›</i></div>
     <div class="a-row"><span>Поддержка</span><i>›</i></div>`,3)}
 ];
@@ -554,7 +544,7 @@ function caseHtml(p,i){
   const next = PROJECTS[(i+1)%PROJECTS.length];
   const phones = p.kind==='phones';
   const fin = phones ? '' : p.images.slice(1,3);
-  const gal = phones ? '' : p.images.slice(3);
+  const gal = phones ? p.images : p.images.slice(3);
   const hero = phones
     ? `<div class="media" style="--ar:16/8">${media(p)}</div>`
     : `<div class="media" style="--ar:${p.images[0].ar}">${slot(p,p.images[0],0)}</div>`;
@@ -575,7 +565,7 @@ function caseHtml(p,i){
           ? `<div class="screens">${SCREENS.map(s=>`<div>${s.html}<p class="cap">${s.name}</p></div>`).join('')}</div>`
           : `<div class="pair">${fin.map((im,k)=>`<div>${slot(p,im,k+1)}<p class="cap">${im.label}</p></div>`).join('')}</div>`}
       </div>
-      ${phones?'':`<div class="blk"><h2>Галерея</h2><div class="gal">${gal.map((im,k)=>`<div>${slot(p,im,k+3)}<p class="cap">${im.label}</p></div>`).join('')}</div></div>`}
+      ${gal.length?`<div class="blk"><h2>Галерея</h2><div class="gal">${gal.map((im,k)=>`<div>${slot(p,im,k)}<p class="cap">${im.label}</p></div>`).join('')}</div></div>`:''}
       <a class="next" href="#/project/${next.slug}"><small>Следующий проект</small><span>${next.title} →</span></a>
     </div></article>`;
 }
