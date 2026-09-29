@@ -261,26 +261,38 @@ const inCat = key => PROJECTS.filter(p=>p.category===key);
 
 const PROJECTS = [
   { slug:'ClimatZone', folder:'ClimatZone', title:'ClimatZone', subtitle:'Website / UI UX / Calculator', category:'web', year:'2026',
-    summary:'Сайт с интерактивным калькулятором для подбора решения. Разработала структуру, интерфейс и адаптивную версию.',
-    done:['Структура сайта','UI / UX','Калькулятор','Desktop','Mobile'],
+    summary:'Сервис с интерактивным калькулятором для подбора кондиционера за три шага. Разработала структуру, интерфейс и адаптивную версию.',
+    done:['Структура сайта','UI / UX','Калькулятор подбора','Desktop','Mobile'],
     images:[
       {file:'01.jpg',label:'Главный экран'},
       {file:'02.jpg',label:'Калькулятор — mobile'}]},
-  { slug:'beauty-website', folder:'beauty-website', title:'Beauty website', subtitle:'Website / UI UX', category:'web', year:'2026',
-    summary:'Сайт для beauty-студии с каталогом услуг и записью. Разработала структуру, визуальный стиль и адаптивные экраны.',
-    done:['Структура сайта','Визуальный стиль','Каталог услуг','Адаптивная вёрстка (desktop/mobile)'],
+  { slug:'k-sebe', folder:'k-sebe', title:'Биохилинг. К себе бережно', subtitle:'Website / Landing page', category:'web', year:'2026',
+    summary:'Сайт мини-группы программы снижения веса с описанием сопровождения и формой заявки.',
+    done:['Структура сайта','Визуальный стиль','Описание программы','Форма заявки','Адаптивная версия'],
     images:[
       {file:'01.jpg',label:'Главный экран'},
       {file:'02.jpg',label:'Мобильная версия'}]},
-  { slug:'clinic-website', folder:'clinic-website', title:'Clinic website', subtitle:'Website / UI UX', category:'web', year:'2026',
-    summary:'Сайт медицинской клиники с каталогом услуг и врачей. Разработала структуру, визуальный стиль и ключевые экраны сайта.',
-    done:['Структура сайта','Визуальный стиль','Каталог услуг','Карточки врачей','Адаптивная вёрстка'],
+  { slug:'makeyourself', folder:'makeyourself', title:'Make Yourself', subtitle:'Website / Beauty', category:'web', year:'2026',
+    summary:'Сайт салона красоты с каталогом услуг, командой мастеров и галереей работ.',
+    done:['Структура сайта','Визуальный стиль','Каталог услуг','Карточки мастеров','Галерея работ','Адаптивная версия'],
     images:[
       {file:'01.jpg',label:'Главный экран'},
       {file:'02.jpg',label:'Мобильная версия'}]},
-  { slug:'dental-website', folder:'dental-website', title:'Dental website', subtitle:'Website / UI UX', category:'web', year:'2026',
-    summary:'Сайт стоматологической клиники с описанием услуг и записью на приём. Разработала визуальный стиль и ключевые экраны сайта.',
-    done:['Структура сайта','Визуальный стиль','Каталог услуг','Форма записи','Адаптивная вёрстка'],
+  { slug:'sferapreobrajenia', folder:'sferapreobrajenia', title:'Сфера Преображения', subtitle:'Website / Clinic', category:'web', year:'2026',
+    summary:'Сайт клиники косметологии с процедурами, специалистами, отзывами и формой записи.',
+    done:['Структура сайта','Визуальный стиль','Каталог процедур','Карточки специалистов','Отзывы','Форма записи'],
+    images:[
+      {file:'01.jpg',label:'Главный экран'},
+      {file:'02.jpg',label:'Мобильная версия'}]},
+  { slug:'skin-clinic', folder:'skin-clinic', title:'Ю Skin Clinic', subtitle:'Website / Aesthetic cosmetology', category:'web', year:'2026',
+    summary:'Сайт клиники эстетической и аппаратной косметологии с услугами, ценами и записью на консультацию.',
+    done:['Структура сайта','Визуальный стиль','Каталог процедур','Прайс-лист','Отзывы','Форма записи'],
+    images:[
+      {file:'01.jpg',label:'Главный экран'},
+      {file:'02.jpg',label:'Мобильная версия'}]},
+  { slug:'dentaservice', folder:'dentaservice', title:'Дента-Сервис', subtitle:'Website / Dental clinic', category:'web', year:'2026',
+    summary:'Сайт стоматологии с направлениями лечения, командой врачей, отзывами и формой записи на приём.',
+    done:['Структура сайта','Визуальный стиль','Направления лечения','Карточки врачей','Отзывы','Форма записи'],
     images:[
       {file:'01.jpg',label:'Главный экран'},
       {file:'02.jpg',label:'Мобильная версия'}]},
@@ -572,3 +584,4 @@ route();
 </script>
 </body>
 </html>
+
