@@ -188,22 +188,27 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @media (min-width:700px){.gal{grid-template-columns:repeat(2,1fr)}}
 .cap{font-size:.78rem;color:var(--mute);margin-top:10px}
 /* Project case boards: pair laptop and phone screens on one shared canvas. */
-.case-ClimatZone{--case-board:#e9f5fb}
-.case-k-sebe{--case-board:#f4f1e8}
-.case-makeyourself{--case-board:#eee5d9}
-.case-sferapreobrajenia{--case-board:#eee4d8}
-.case-skin-clinic{--case-board:#eee9e3}
-.case-dentaservice{--case-board:#e9dfd2}
-.case-showcase,.case .gal{background:var(--case-board,#eee9e3);border:1px solid rgba(45,38,30,.08);border-radius:14px;overflow:hidden}
-.case-showcase{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(240px,.8fr);align-items:center;gap:0}
-.case-showcase .frame{height:clamp(360px,44vw,620px);background:transparent;border:0}
+.case-ClimatZone{--case-board:#e9f5fb;--case-ink:#172b3c;--case-accent:#169dce}
+.case-k-sebe{--case-board:#f4f1e8;--case-ink:#302c24;--case-accent:#647653}
+.case-makeyourself{--case-board:#eee5d9;--case-ink:#30271f;--case-accent:#a8763e}
+.case-sferapreobrajenia{--case-board:#eee4d8;--case-ink:#2c2823;--case-accent:#b1874b}
+.case-skin-clinic{--case-board:#eee9e3;--case-ink:#282725;--case-accent:#987550}
+.case-dentaservice{--case-board:#e9dfd2;--case-ink:#1b2635;--case-accent:#bd9568}
+.case-showcase,.case .gal{background:var(--case-board,#eee9e3);border:0;border-radius:0;overflow:visible}
+.case-showcase{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(190px,.7fr) minmax(230px,.85fr);align-items:center;gap:clamp(12px,1.6vw,26px);padding:0}
+.case-showcase .frame{height:clamp(360px,44vw,620px);background:transparent;border:0;overflow:visible}
 .case-showcase .showcase-primary img,.case-showcase .showcase-secondary img{object-fit:contain}
+.showcase-copy{padding:24px 0 24px 22px;border-left:1px solid color-mix(in srgb,var(--case-accent) 45%,transparent);color:var(--case-ink)}
+.showcase-kicker{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--case-accent);font-weight:700}
+.showcase-copy h2{font-size:clamp(1.35rem,2.5vw,2.35rem);line-height:1.05;letter-spacing:-.035em;margin-top:16px}
+.showcase-copy p:last-child{font-size:.98rem;line-height:1.55;color:var(--mute);margin-top:14px;max-width:25em}
 .case .gal{gap:0;margin-top:clamp(32px,5vw,64px)}
-.case .gal>div{background:var(--case-board,#eee9e3)}
-.case .gal .frame{height:clamp(300px,40vw,540px);background:transparent;border:0}
+.case .gal>div{background:transparent}
+.case .gal .frame{height:clamp(300px,40vw,540px);background:transparent;border:0;overflow:visible}
 .case .gal .cap{margin:0;padding:0 18px 18px;color:var(--mute)}
 @media (max-width:699px){
   .case-showcase{grid-template-columns:1fr}
+  .showcase-copy{padding:24px 0;border-left:0;border-top:1px solid color-mix(in srgb,var(--case-accent) 45%,transparent)}
   .case-showcase .frame:first-child{height:clamp(250px,74vw,430px)}
   .case-showcase .frame:nth-child(2){height:clamp(390px,124vw,640px)}
   .case .gal{grid-template-columns:1fr}
@@ -288,6 +293,7 @@ const PROJECTS = [
   { slug:'ClimatZone', folder:'ClimatZone', title:'ClimatZone', subtitle:'Website / UI UX / Calculator', category:'web', year:'2026', demoUrl:'https://nesti9.github.io/ClimatZona/',
     summary:'Сервис с интерактивным калькулятором для подбора кондиционера за три шага. Разработала структуру, интерфейс и адаптивную версию.',
     done:['Структура сайта','UI / UX','Калькулятор подбора','Desktop','Mobile'],
+    phoneTitle:'Подбор за три шага', phoneNote:'Выберите тип объекта, укажите площадь — сервис покажет рекомендацию по кондиционеру.',
     images:[
       {file:'01.png',label:'Главный экран — ноутбук'},
       {file:'02.png',label:'Главный экран — mobile'},
@@ -296,6 +302,7 @@ const PROJECTS = [
   { slug:'k-sebe', folder:'k-sebe', title:'Биохилинг. К себе бережно', subtitle:'Website / Landing page', category:'web', year:'2026', demoUrl:'https://nesti9.github.io/k-sebe/',
     summary:'Сайт мини-группы программы снижения веса с описанием сопровождения и формой заявки.',
     done:['Структура сайта','Визуальный стиль','Описание программы','Форма заявки','Адаптивная версия'],
+    phoneTitle:'Программа и сопровождение', phoneNote:'Сайт рассказывает о мини-группе, сопровождении специалистов и условиях участия.',
     images:[
       {file:'01.png',label:'Главный экран — ноутбук'},
       {file:'02.png',label:'Главный экран — mobile'},
@@ -304,6 +311,7 @@ const PROJECTS = [
   { slug:'makeyourself', folder:'makeyourself', title:'Make Yourself', subtitle:'Website / Beauty', category:'web', year:'2026', demoUrl:'https://nesti9.github.io/makeyourself/',
     summary:'Сайт салона красоты с каталогом услуг, командой мастеров и галереей работ.',
     done:['Структура сайта','Визуальный стиль','Каталог услуг','Карточки мастеров','Галерея работ','Адаптивная версия'],
+    phoneTitle:'Услуги салона', phoneNote:'Ногти, волосы, брови и ресницы, уход за лицом — направления собраны на одном сайте.',
     images:[
       {file:'01.png',label:'Главный экран — ноутбук'},
       {file:'02.png',label:'Главный экран — mobile'},
@@ -312,6 +320,7 @@ const PROJECTS = [
   { slug:'sferapreobrajenia', folder:'sferapreobrajenia', title:'Сфера Преображения', subtitle:'Website / Clinic', category:'web', year:'2026', demoUrl:'https://nesti9.github.io/sferapreobrajenia/',
     summary:'Сайт клиники косметологии с процедурами, специалистами, отзывами и формой записи.',
     done:['Структура сайта','Визуальный стиль','Каталог процедур','Карточки специалистов','Отзывы','Форма записи'],
+    phoneTitle:'Процедуры и консультация', phoneNote:'Сайт знакомит с процедурами и специалистами клиники и ведёт к записи на консультацию.',
     images:[
       {file:'01.png',label:'Главный экран — ноутбук'},
       {file:'02.png',label:'Главный экран — mobile'},
@@ -320,6 +329,7 @@ const PROJECTS = [
   { slug:'skin-clinic', folder:'skin-clinic', title:'Ю Skin Clinic', subtitle:'Website / Aesthetic cosmetology', category:'web', year:'2026', demoUrl:'https://nesti9.github.io/-skin-clinic/',
     summary:'Сайт клиники эстетической и аппаратной косметологии с услугами, ценами и записью на консультацию.',
     done:['Структура сайта','Визуальный стиль','Каталог процедур','Прайс-лист','Отзывы','Форма записи'],
+    phoneTitle:'Индивидуальный уход', phoneNote:'На сайте представлены аппаратные и инъекционные процедуры, цены и способы записи.',
     images:[
       {file:'01.png',label:'Главный экран — ноутбук'},
       {file:'02.png',label:'Главный экран — mobile'},
@@ -328,6 +338,7 @@ const PROJECTS = [
   { slug:'dentaservice', folder:'dentaservice', title:'Дента-Сервис', subtitle:'Website / Dental clinic', category:'web', year:'2026', demoUrl:'https://nesti9.github.io/dentaservice/',
     summary:'Сайт стоматологии с направлениями лечения, командой врачей, отзывами и формой записи на приём.',
     done:['Структура сайта','Визуальный стиль','Направления лечения','Карточки врачей','Отзывы','Форма записи'],
+    phoneTitle:'Запись на приём', phoneNote:'Посетитель может изучить услуги, врачей и цены и оставить заявку на консультацию.',
     images:[
       {file:'01.png',label:'Главный экран — ноутбук'},
       {file:'02.png',label:'Главный экран — mobile'},
@@ -530,7 +541,7 @@ function caseHtml(p){
   const boardProjects = ['ClimatZone','k-sebe','makeyourself','sferapreobrajenia','skin-clinic','dentaservice'];
   const hasBoard = boardProjects.includes(p.folder);
   const hero = p.collage ? mediaBlock(p,'lg') : hasBoard
-    ? `<div class="case-showcase">${frame(p,p.images[0],'showcase-primary')}${p.images[1]?frame(p,p.images[1],'showcase-secondary'):''}</div>`
+    ? `<div class="case-showcase">${frame(p,p.images[0],'showcase-primary')}${p.images[1]?frame(p,p.images[1],'showcase-secondary'):''}<div class="showcase-copy"><p class="showcase-kicker">На мобильной версии</p><h2>${p.phoneTitle||p.title}</h2><p>${p.phoneNote||p.summary}</p></div></div>`
     : frame(p,p.images[0],'lg');
   const second = !p.collage && !hasBoard && rest.length ? frame(p,rest[0],'lg') : '';
   const gal = p.collage ? rest : hasBoard ? rest.slice(2) : rest.slice(1);
