@@ -290,7 +290,7 @@ const catInfo = key => CATEGORIES.find(c=>c.key===key);
 const inCat = key => PROJECTS.filter(p=>p.category===key);
 
 const PROJECTS = [
-  { slug:'ClimatZone', folder:'ClimatZone', title:'ClimatZone', subtitle:'Website / UI UX / Calculator', category:'web', year:'2026', demoUrl:'https://nesti9.github.io/ClimatZona/',
+  { slug:'ClimatZone', folder:'ClimatZone', title:'ClimatZone', subtitle:'Website / UI UX / Calculator', category:'web', year:'2026', coverImage:'case-study.png', demoUrl:'https://nesti9.github.io/ClimatZona/',
     summary:'Сервис с интерактивным калькулятором для подбора кондиционера за три шага. Разработала структуру, интерфейс и адаптивную версию.',
     done:['Структура сайта','UI / UX','Калькулятор подбора','Desktop','Mobile'],
     phoneTitle:'Подбор за три шага', phoneNote:'Выберите тип объекта, укажите площадь — сервис покажет рекомендацию по кондиционеру.',
@@ -299,7 +299,7 @@ const PROJECTS = [
       {file:'02.png',label:'Главный экран — mobile'},
       {file:'03.png',label:'Шаг площади — ноутбук'},
       {file:'04.png',label:'Результат калькулятора — mobile'}]},
-  { slug:'k-sebe', folder:'k-sebe', title:'Биохилинг. К себе бережно', subtitle:'Website / Landing page', category:'web', year:'2026', demoUrl:'https://nesti9.github.io/k-sebe/',
+  { slug:'k-sebe', folder:'k-sebe', title:'Биохилинг. К себе бережно', subtitle:'Website / Landing page', category:'web', year:'2026', coverImage:'case-study.png', demoUrl:'https://nesti9.github.io/k-sebe/',
     summary:'Сайт мини-группы программы снижения веса с описанием сопровождения и формой заявки.',
     done:['Структура сайта','Визуальный стиль','Описание программы','Форма заявки','Адаптивная версия'],
     phoneTitle:'Программа и сопровождение', phoneNote:'Сайт рассказывает о мини-группе, сопровождении специалистов и условиях участия.',
@@ -308,7 +308,7 @@ const PROJECTS = [
       {file:'02.png',label:'Главный экран — mobile'},
       {file:'03.png',label:'Программа — ноутбук'},
       {file:'04.png',label:'Участие — mobile'}]},
-  { slug:'makeyourself', folder:'makeyourself', title:'Make Yourself', subtitle:'Website / Beauty', category:'web', year:'2026', demoUrl:'https://nesti9.github.io/makeyourself/',
+  { slug:'makeyourself', folder:'makeyourself', title:'Make Yourself', subtitle:'Website / Beauty', category:'web', year:'2026', coverImage:'case-study.png', demoUrl:'https://nesti9.github.io/makeyourself/',
     summary:'Сайт салона красоты с каталогом услуг, командой мастеров и галереей работ.',
     done:['Структура сайта','Визуальный стиль','Каталог услуг','Карточки мастеров','Галерея работ','Адаптивная версия'],
     phoneTitle:'Услуги салона', phoneNote:'Ногти, волосы, брови и ресницы, уход за лицом — направления собраны на одном сайте.',
@@ -317,7 +317,7 @@ const PROJECTS = [
       {file:'02.png',label:'Главный экран — mobile'},
       {file:'03.png',label:'Услуги — ноутбук'},
       {file:'04.png',label:'Мастера — mobile'}]},
-  { slug:'sferapreobrajenia', folder:'sferapreobrajenia', title:'Сфера Преображения', subtitle:'Website / Clinic', category:'web', year:'2026', demoUrl:'https://nesti9.github.io/sferapreobrajenia/',
+  { slug:'sferapreobrajenia', folder:'sferapreobrajenia', title:'Сфера Преображения', subtitle:'Website / Clinic', category:'web', year:'2026', coverImage:'case-study.png', demoUrl:'https://nesti9.github.io/sferapreobrajenia/',
     summary:'Сайт клиники косметологии с процедурами, специалистами, отзывами и формой записи.',
     done:['Структура сайта','Визуальный стиль','Каталог процедур','Карточки специалистов','Отзывы','Форма записи'],
     phoneTitle:'Процедуры и консультация', phoneNote:'Сайт знакомит с процедурами и специалистами клиники и ведёт к записи на консультацию.',
@@ -326,7 +326,7 @@ const PROJECTS = [
       {file:'02.png',label:'Главный экран — mobile'},
       {file:'03.png',label:'Процедуры — ноутбук'},
       {file:'04.png',label:'Подход клиники — mobile'}]},
-  { slug:'skin-clinic', folder:'skin-clinic', title:'Ю Skin Clinic', subtitle:'Website / Aesthetic cosmetology', category:'web', year:'2026', demoUrl:'https://nesti9.github.io/-skin-clinic/',
+  { slug:'skin-clinic', folder:'skin-clinic', title:'Ю Skin Clinic', subtitle:'Website / Aesthetic cosmetology', category:'web', year:'2026', coverImage:'case-study.png', demoUrl:'https://nesti9.github.io/-skin-clinic/',
     summary:'Сайт клиники эстетической и аппаратной косметологии с услугами, ценами и записью на консультацию.',
     done:['Структура сайта','Визуальный стиль','Каталог процедур','Прайс-лист','Отзывы','Форма записи'],
     phoneTitle:'Индивидуальный уход', phoneNote:'На сайте представлены аппаратные и инъекционные процедуры, цены и способы записи.',
@@ -335,7 +335,7 @@ const PROJECTS = [
       {file:'02.png',label:'Главный экран — mobile'},
       {file:'03.png',label:'Услуги — ноутбук'},
       {file:'04.png',label:'Прайс-лист — mobile'}]},
-  { slug:'dentaservice', folder:'dentaservice', title:'Дента-Сервис', subtitle:'Website / Dental clinic', category:'web', year:'2026', demoUrl:'https://nesti9.github.io/dentaservice/',
+  { slug:'dentaservice', folder:'dentaservice', title:'Дента-Сервис', subtitle:'Website / Dental clinic', category:'web', year:'2026', coverImage:'case-study.png', demoUrl:'https://nesti9.github.io/dentaservice/',
     summary:'Сайт стоматологии с направлениями лечения, командой врачей, отзывами и формой записи на приём.',
     done:['Структура сайта','Визуальный стиль','Направления лечения','Карточки врачей','Отзывы','Форма записи'],
     phoneTitle:'Запись на приём', phoneNote:'Посетитель может изучить услуги, врачей и цены и оставить заявку на консультацию.',
@@ -429,7 +429,7 @@ function caseRow(p,i){
     <a class="proj-link" href="#/project/${p.slug}" aria-label="${p.title} — открыть кейс">
       <div class="proj-head"><span class="proj-n">${pad(i+1)}</span><div><h3>${p.title}</h3><p class="proj-sub">${p.subtitle}</p></div>${p.demoUrl?'<span class="demo-tag">Демонстрационный проект</span>':''}</div>
       <p class="proj-sum">${p.summary}</p>
-      <div class="proj-media">${mediaBlock(p)}</div>
+      <div class="proj-media">${p.coverImage?frame(p,{file:p.coverImage,label:'Главный экран проекта'}):mediaBlock(p)}</div>
       <span class="proj-view">Смотреть кейс <i aria-hidden="true">→</i></span>
     </a>
     ${p.demoUrl?`<div class="demo-actions"><a class="btn" href="${p.demoUrl}" target="_blank" rel="noopener noreferrer">Открыть демо-сайт <span class="ar" aria-hidden="true">↗</span></a></div>`:''}
