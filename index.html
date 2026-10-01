@@ -106,10 +106,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .rv{opacity:0;transform:translateY(18px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .rv.in{opacity:1;transform:none}
 
-/* image frame — never crops; shows a quiet neutral slot until a real photo is added */
-.frame{position:relative;background:var(--paper-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden;height:clamp(240px,38vw,560px)}
+/* image frame — no border, no background; never crops. A quiet neutral slot shows only until a real photo is added */
+.frame{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;height:clamp(240px,38vw,560px)}
 .frame.lg{height:clamp(280px,46vw,680px)}
 .frame img{display:block;width:100%;height:100%;object-fit:contain}
+.frame.error{background:var(--paper-2)}
 .frame.error img{display:none}
 .frame.error .empty-cap{display:block}
 .empty-cap{display:none;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);text-align:center;padding:0 20px}
@@ -201,11 +202,16 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .showcase-copy{padding:24px 0 24px 22px;border-left:1px solid color-mix(in srgb,var(--case-accent) 45%,transparent);color:var(--case-ink)}
 .showcase-kicker{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--case-accent);font-weight:700}
 .showcase-copy h2{font-size:clamp(1.35rem,2.5vw,2.35rem);line-height:1.05;letter-spacing:-.035em;margin-top:16px}
-.showcase-copy p:last-child{font-size:.98rem;line-height:1.55;color:var(--mute);margin-top:14px;max-width:25em}
+.showcase-copy p:last-child{font-size:.98rem;line-height:1.55;color:color-mix(in srgb,var(--case-ink) 70%,transparent);margin-top:14px;max-width:25em}
 .case .gal{gap:0;margin-top:clamp(32px,5vw,64px)}
 .case .gal>div{background:transparent}
+.case .gal .cap{margin:0;padding:0 18px 18px;color:color-mix(in srgb,var(--case-ink) 70%,transparent)}
 .case .gal .frame{height:clamp(300px,40vw,540px);background:transparent;border:0;overflow:visible}
-.case .gal .cap{margin:0;padding:0 18px 18px;color:var(--mute)}
+/* светлый фон скриншота растворяется в цвете доски */
+.case-showcase .frame img,.case .gal .frame img{mix-blend-mode:multiply}
+.gal-feature{grid-column:1/-1;display:grid;grid-template-columns:minmax(200px,.75fr) minmax(0,1fr);align-items:center;gap:clamp(12px,3vw,56px)}
+.case .gal .gal-feature .frame{height:clamp(380px,46vw,640px)}
+.gal-feature .showcase-copy{max-width:34em}
 @media (max-width:699px){
   .case-showcase{grid-template-columns:1fr}
   .showcase-copy{padding:24px 0;border-left:0;border-top:1px solid color-mix(in srgb,var(--case-accent) 45%,transparent)}
@@ -213,6 +219,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .case-showcase .frame:nth-child(2){height:clamp(390px,124vw,640px)}
   .case .gal{grid-template-columns:1fr}
   .case .gal .frame{height:clamp(260px,78vw,460px)}
+  .gal-feature{grid-template-columns:1fr}
+  .case .gal .gal-feature .frame{height:clamp(390px,124vw,640px)}
 }
 .next{display:block;margin-top:clamp(72px,12vw,180px);padding-block:clamp(36px,6vw,80px);border-top:1px solid var(--line)}
 .next small{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:700}
@@ -398,6 +406,16 @@ const PROJECTS = [
       {file:'06.jpg',label:'Подарочные материалы'}]}
 ];
 
+/* Текст рядом с последним мобильным экраном в кейсе (ключ — folder проекта) */
+const END_NOTES = {
+  'ClimatZone':{title:'Результат подбора',note:'На последнем шаге сервис показывает рекомендуемую мощность, модель кондиционера и ориентировочную стоимость.'},
+  'k-sebe':{title:'Начните с разговора',note:'Короткая форма заявки: достаточно оставить имя и телефон, чтобы получить подробности участия в мини-группе.'},
+  'makeyourself':{title:'Команда мастеров',note:'Карточки мастеров знакомят с командой и помогают выбрать специалиста под нужную услугу.'},
+  'sferapreobrajenia':{title:'Подход клиники',note:'Мобильная версия рассказывает о принципах работы клиники и ведёт к записи на консультацию.'},
+  'skin-clinic':{title:'Прайс-лист',note:'Цены на процедуры собраны в понятный список, чтобы сориентироваться до записи на консультацию.'},
+  'dentaservice':{title:'Заявка на консультацию',note:'Форма записи адаптирована под телефон: заявку можно оставить в несколько касаний.'}
+};
+
 /* ---------- helpers ---------- */
 const $ = (s, r=document) => r.querySelector(s);
 const pad = n => String(n).padStart(2,'0');
@@ -555,7 +573,12 @@ function caseHtml(p){
       <div class="case-media">${hero}</div>
       <div class="blk"><h2>Что сделано</h2><ul class="done">${p.done.map(d=>`<li>${d}</li>`).join('')}</ul></div>
       ${second?`<div class="case-media">${second}</div>`:''}
-      ${gal.length?`<div class="gal">${gal.map(im=>`<div>${frame(p,im)}<p class="cap">${im.label}</p></div>`).join('')}</div>`:''}
+      ${gal.length?`<div class="gal">${gal.map(im=>{
+        const n = END_NOTES[p.folder];
+        return n
+          ? `<div class="gal-feature">${frame(p,im)}<div class="showcase-copy"><p class="showcase-kicker">${im.label}</p><h2>${n.title}</h2><p>${n.note}</p></div></div>`
+          : `<div>${frame(p,im)}<p class="cap">${im.label}</p></div>`;
+      }).join('')}</div>`:''}
       ${next?`<a class="next" href="#/project/${next.slug}"><small>Следующий проект</small><span>${next.title} →</span></a>`
             :`<a class="next" href="#/works/${cat.key}"><small>Назад к направлению</small><span>${cat.title} →</span></a>`}
     </div></article>`;
@@ -639,4 +662,3 @@ route();
 </script>
 </body>
 </html>
-
