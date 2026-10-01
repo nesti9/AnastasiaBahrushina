@@ -187,6 +187,28 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .gal{display:grid;gap:var(--gap);margin-top:clamp(32px,5vw,64px)}
 @media (min-width:700px){.gal{grid-template-columns:repeat(2,1fr)}}
 .cap{font-size:.78rem;color:var(--mute);margin-top:10px}
+/* Project case boards: pair laptop and phone screens on one shared canvas. */
+.case-ClimatZone{--case-board:#e9f5fb}
+.case-k-sebe{--case-board:#f4f1e8}
+.case-makeyourself{--case-board:#eee5d9}
+.case-sferapreobrajenia{--case-board:#eee4d8}
+.case-skin-clinic{--case-board:#eee9e3}
+.case-dentaservice{--case-board:#e9dfd2}
+.case-showcase,.case .gal{background:var(--case-board,#eee9e3);border:1px solid rgba(45,38,30,.08);border-radius:14px;overflow:hidden}
+.case-showcase{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(240px,.8fr);align-items:center;gap:0}
+.case-showcase .frame{height:clamp(360px,44vw,620px);background:transparent;border:0}
+.case-showcase .showcase-primary img,.case-showcase .showcase-secondary img{object-fit:contain}
+.case .gal{gap:0;margin-top:clamp(32px,5vw,64px)}
+.case .gal>div{background:var(--case-board,#eee9e3)}
+.case .gal .frame{height:clamp(300px,40vw,540px);background:transparent;border:0}
+.case .gal .cap{margin:0;padding:0 18px 18px;color:var(--mute)}
+@media (max-width:699px){
+  .case-showcase{grid-template-columns:1fr}
+  .case-showcase .frame:first-child{height:clamp(250px,74vw,430px)}
+  .case-showcase .frame:nth-child(2){height:clamp(390px,124vw,640px)}
+  .case .gal{grid-template-columns:1fr}
+  .case .gal .frame{height:clamp(260px,78vw,460px)}
+}
 .next{display:block;margin-top:clamp(72px,12vw,180px);padding-block:clamp(36px,6vw,80px);border-top:1px solid var(--line)}
 .next small{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:700}
 .next span{display:block;font-weight:600;font-size:clamp(1.8rem,7vw,6rem);letter-spacing:-.045em;text-transform:uppercase;line-height:1;margin-top:10px;transition:transform .6s var(--ease)}
@@ -505,10 +527,14 @@ function caseHtml(p){
   const next = list.length>1 ? list[(i+1)%list.length] : null;
   const first = p.collage ? p.images.slice(0,3) : p.images.slice(0,1);
   const rest = p.images.slice(first.length);
-  const hero = p.collage ? mediaBlock(p,'lg') : frame(p,p.images[0],'lg');
-  const second = !p.collage && rest.length ? frame(p,rest[0],'lg') : '';
-  const gal = p.collage ? rest : rest.slice(1);
-  return `<article class="case">
+  const boardProjects = ['ClimatZone','k-sebe','makeyourself','sferapreobrajenia','skin-clinic','dentaservice'];
+  const hasBoard = boardProjects.includes(p.folder);
+  const hero = p.collage ? mediaBlock(p,'lg') : hasBoard
+    ? `<div class="case-showcase">${frame(p,p.images[0],'showcase-primary')}${p.images[1]?frame(p,p.images[1],'showcase-secondary'):''}</div>`
+    : frame(p,p.images[0],'lg');
+  const second = !p.collage && !hasBoard && rest.length ? frame(p,rest[0],'lg') : '';
+  const gal = p.collage ? rest : hasBoard ? rest.slice(2) : rest.slice(1);
+  return `<article class="case case-${p.folder}">
     <div class="wrap">
       <a class="back" href="#/works/${cat.key}">← Назад: ${cat.title}</a>
       <h1 class="case-h">${p.title}</h1>
