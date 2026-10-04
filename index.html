@@ -250,10 +250,41 @@ main.out{opacity:0}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .rv{opacity:1;transform:none}
 }
+/* ---------- mobile polish ---------- */
+html{-webkit-tap-highlight-color:transparent}
+.bar{position:fixed;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;z-index:60;pointer-events:none}
+.btn{transition:background .35s,color .35s,transform .2s var(--ease)}
+.btn:active{transform:scale(.97)}
+.proj-link,.dir-link{transition:transform .25s var(--ease)}
+.proj-link:active,.dir-link:active{transform:scale(.985)}
+.next:active span{transform:translateX(10px)}
+.contacts a:active,.back:active{color:var(--accent)}
+@media (max-width:999px){
+  .menu{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid var(--line);border-radius:999px;transition:background .3s,color .3s,transform .2s var(--ease)}
+  .menu:active{transform:scale(.95)}
+  .menu[aria-expanded="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  #nav a{opacity:0;transform:translateY(18px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+  #nav.open a{opacity:1;transform:none}
+  #nav.open a:nth-child(1){transition-delay:.06s}#nav.open a:nth-child(2){transition-delay:.11s}#nav.open a:nth-child(3){transition-delay:.16s}
+  #nav.open a:nth-child(4){transition-delay:.21s}#nav.open a:nth-child(5){transition-delay:.26s}#nav.open a:nth-child(6){transition-delay:.34s}
+  #nav a:not(.btn){justify-content:space-between}
+  #nav a:not(.btn)::after{display:block;content:"→";position:static;height:auto;background:none;transform:none;font-size:.55em;color:var(--accent);transition:transform .3s var(--ease)}
+  #nav a:not(.btn):active::after{transform:translateX(8px)}
+  #nav .btn{display:flex;justify-content:center;width:100%;min-height:56px;margin-top:28px;background:var(--ink);color:var(--paper)}
+}
+@media (max-width:640px){
+  .btns,.demo-actions{flex-direction:column;align-items:stretch}
+  .btns .btn,.demo-actions .btn,.cta-row .btn{width:100%;justify-content:center;min-height:56px}
+  .demo-note{text-align:center}
+  .proj-view{min-height:44px}
+  .hero-foot{gap:24px}
+  .done li{padding:14px 0}
+}
 </style>
 </head>
 <body>
 <a class="skip" href="#main" id="skip">К содержимому</a>
+<div class="bar" id="bar" aria-hidden="true"></div>
 <header class="hdr" id="hdr">
   <div class="wrap hdr-in">
     <a class="brand" href="#/">Анастасия Бахрушина</a>
@@ -570,10 +601,10 @@ function caseHtml(p){
       <p class="case-sub">${p.subtitle} · ${p.year}</p>
       <p class="case-sum">${p.summary}</p>
       ${p.demoUrl?`<div class="demo-actions"><a class="btn btn-solid" href="${p.demoUrl}" target="_blank" rel="noopener noreferrer">Открыть демо-сайт <span class="ar" aria-hidden="true">↗</span></a><span class="demo-note">Демонстрационный проект</span></div>`:''}
-      <div class="case-media">${hero}</div>
-      <div class="blk"><h2>Что сделано</h2><ul class="done">${p.done.map(d=>`<li>${d}</li>`).join('')}</ul></div>
-      ${second?`<div class="case-media">${second}</div>`:''}
-      ${gal.length?`<div class="gal">${gal.map(im=>{
+      <div class="case-media rv">${hero}</div>
+      <div class="blk rv"><h2>Что сделано</h2><ul class="done">${p.done.map(d=>`<li>${d}</li>`).join('')}</ul></div>
+      ${second?`<div class="case-media rv">${second}</div>`:''}
+      ${gal.length?`<div class="gal rv">${gal.map(im=>{
         const n = END_NOTES[p.folder];
         return n
           ? `<div class="gal-feature">${frame(p,im)}<div class="showcase-copy"><p class="showcase-kicker">${im.label}</p><h2>${n.title}</h2><p>${n.note}</p></div></div>`
@@ -593,7 +624,12 @@ function fillContacts(){
   document.querySelectorAll('[data-year]').forEach(e=>e.textContent=CONFIG.year);
 }
 const hdr=$('#hdr'), nav=$('#nav'), menu=$('#menu'), main=$('#main');
-addEventListener('scroll',()=>hdr.classList.toggle('sc',scrollY>24),{passive:true});
+const bar=$('#bar');
+addEventListener('scroll',()=>{
+  hdr.classList.toggle('sc',scrollY>24);
+  const max=document.documentElement.scrollHeight-innerHeight;
+  bar.style.transform='scaleX('+(max>0?Math.min(scrollY/max,1):0)+')';
+},{passive:true});
 function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='Меню';document.body.style.overflow=''}
 menu.addEventListener('click',()=>{const o=!nav.classList.contains('open');nav.classList.toggle('open',o);menu.setAttribute('aria-expanded',o);menu.textContent=o?'Закрыть':'Меню';document.body.style.overflow=o?'hidden':''});
 nav.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu()});
