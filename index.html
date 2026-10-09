@@ -280,6 +280,75 @@ html{-webkit-tap-highlight-color:transparent}
   .hero-foot{gap:24px}
   .done li{padding:14px 0}
 }
+
+/* ---------- case system v2: natural-ratio figures, editorial blocks, image viewer ---------- */
+.fig{margin:0;position:relative}
+.fig img{display:block;width:100%;height:auto}
+.fig .zoom{display:block;width:100%;padding:0;cursor:zoom-in;line-height:0}
+.fig .zoom:focus-visible{outline-offset:4px}
+.fig .cap{margin-top:12px;font-size:.78rem;line-height:1.45;letter-spacing:.02em;color:var(--mute);max-width:46em}
+.fig.error .zoom,.fig.error>img{min-height:240px;background:var(--paper-2)}
+.fig.error img{visibility:hidden}
+.proj-media .fig{margin:0}
+.proj-link .fig img{transition:opacity .45s var(--ease)}
+.proj-link:hover .fig img{opacity:.93}
+.blocks{display:grid;gap:clamp(56px,9vw,150px);margin-top:clamp(36px,5.6vw,80px)}
+.blocks .blk{padding-top:0}
+.b-aside{display:grid;gap:clamp(20px,3vw,40px);align-items:center}
+.b-txt{max-width:26em}
+.b-k{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.b-txt h2{font-weight:600;font-size:clamp(1.5rem,2.8vw,2.5rem);letter-spacing:-.035em;line-height:1.05;margin-top:12px;text-transform:uppercase}
+.b-txt p:last-child{color:var(--mute);margin-top:14px;font-size:1.02rem;line-height:1.55}
+.b-pair,.b-trio{display:grid;gap:var(--gap)}
+@media (min-width:700px){
+  .b-pair{grid-template-columns:1fr 1fr}
+  .b-pair.stag .fig:nth-child(2){margin-top:clamp(48px,9vw,140px)}
+}
+@media (min-width:600px) and (max-width:899px){
+  .b-trio{grid-template-columns:1fr 1fr}
+  .b-trio .fig:nth-child(3){grid-column:1/-1;width:60%;margin-inline:auto}
+}
+@media (min-width:900px){
+  .b-aside{grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:clamp(32px,5vw,88px)}
+  .b-aside.l{grid-template-columns:minmax(0,4fr) minmax(0,8fr)}
+  .b-aside.l .b-txt{order:-1}
+  .b-trio{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .b-trio .fig:nth-child(2){margin-top:clamp(56px,9vw,150px)}
+  .b-trio .fig:nth-child(3){margin-top:clamp(20px,3.5vw,56px)}
+}
+/* direction page rows */
+.proj-link.row-split{display:grid;gap:clamp(20px,3vw,36px)}
+.row-split .proj-view{margin-top:clamp(16px,2.4vw,26px)}
+.row-duo{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+.row-duo .fig:nth-child(2){margin-top:clamp(32px,7vw,100px)}
+@media (min-width:900px){
+  .proj-link.row-split{grid-template-columns:minmax(0,4fr) minmax(0,8fr);grid-template-rows:auto auto;align-content:center;column-gap:clamp(32px,5vw,88px);row-gap:0}
+  .proj-link.row-split.r{grid-template-columns:minmax(0,8fr) minmax(0,4fr)}
+  .row-split .row-txt{grid-column:1;grid-row:1;align-self:end}
+  .row-split .proj-view{grid-column:1;grid-row:2;align-self:start;justify-self:start}
+  .row-split .proj-media{grid-column:2;grid-row:1/3;margin-top:0}
+  .row-split.r .row-txt,.row-split.r .proj-view{grid-column:2}
+  .row-split.r .proj-media{grid-column:1}
+}
+@media (max-width:599px){.row-duo{grid-template-columns:1fr}.row-duo .fig:nth-child(2){display:none}}
+/* image viewer */
+.lb{position:fixed;inset:0;z-index:200;background:rgba(14,16,15,.95);display:flex;align-items:center;justify-content:center;padding:60px 16px 56px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.lb.open{opacity:1;visibility:visible}
+.lb figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:12px;max-width:100%}
+.lb img{max-width:min(96vw,1900px);max-height:calc(100vh - 170px);max-height:calc(100dvh - 170px);width:auto;height:auto;object-fit:contain}
+.lb figcaption{color:#cfd3cf;font-size:.8rem;text-align:center;max-width:44em;line-height:1.45}
+.lb button{position:absolute;color:#fff;font-size:1.4rem;line-height:1;width:48px;height:48px;border:1px solid rgba(255,255,255,.28);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .25s}
+.lb button:hover{background:rgba(255,255,255,.14)}
+.lb button[hidden]{display:none}
+.lb-x{top:max(12px,env(safe-area-inset-top));right:12px}
+.lb-p,.lb-n{top:50%;margin-top:-24px}
+.lb-p{left:12px}.lb-n{right:12px}
+.lb-c{position:absolute;top:max(26px,calc(env(safe-area-inset-top) + 14px));left:20px;color:#9aa09b;font-size:.74rem;letter-spacing:.14em}
+@media (max-width:699px){
+  .lb-p,.lb-n{top:auto;bottom:max(12px,env(safe-area-inset-bottom));margin:0}
+  .lb-p{left:calc(50% - 60px)}.lb-n{right:calc(50% - 60px)}
+  .lb img{max-height:calc(100dvh - 200px)}
+}
 </style>
 </head>
 <body>
@@ -417,24 +486,127 @@ const PROJECTS = [
       {file:'02.jpg',label:'Рекламные карточки'},
       {file:'03.jpg',label:'QR-карта'},
       {file:'04.jpg',label:'Дополнительные материалы'}]},
-  { slug:'wedding-mini-site', folder:'wedding-mini-site', title:'Wedding Mini Site', subtitle:'Website / Mini site', category:'event', year:'2026',
+  { slug:'lumiere', folder:'lumiere', title:'Lumière Beauty Studio', subtitle:'Brand identity / Print / Digital', category:'graphic', year:'2026', row:'full', cover:0,
+    summary:'Визуальная система студии красоты: материалы для печати и экрана в единой палитре — от прайс-листа и подарочного сертификата до визиток и мобильной версии.',
+    done:['Прайс-лист','Подарочный сертификат','Визитки','Рекламный баннер','Мобильная версия'],
+    images:[
+      {file:'01.jpg',w:1672,h:941,label:'Фирменный стиль: обложка, прайс-лист, сертификат, визитки, баннер и мобильная версия'},
+      {file:'02.jpg',w:1536,h:1024,label:'Подарочный сертификат'},
+      {file:'03.jpg',w:1536,h:1024,label:'Визитка — вариант 1'},
+      {file:'04.jpg',w:1536,h:1024,label:'Визитка — вариант 2'}],
+    blocks:[
+      {t:'full',i:0},
+      {t:'aside',i:1,side:'r',k:'Подарочный сертификат',h:'Продолжение фирменной графики',p:'Сертификат на 10 000 ₽ собран из тех же листьев, золотых линий и спокойной типографики, что и остальные материалы студии.'},
+      {t:'pair',i:[2,3]}]},
+  { slug:'io-skin', folder:'io-skin', title:'IO Skin Clinic', subtitle:'Brand identity / Packaging', category:'graphic', year:'2026', row:'split', cover:0,
+    summary:'Фирменный стиль клиники красоты: упаковка, полиграфия и рекламные материалы в сдержанной зелёно-бежевой палитре.',
+    done:['Пакет и коробка','Конверт с печатью','Буклеты','Визитки'],
+    images:[
+      {file:'01.jpg',w:1672,h:941,label:'Упаковка, конверт с печатью, буклеты и визитки клиники'}],
+    blocks:[
+      {t:'full',i:0}]},
+  { slug:'price-lists', folder:'price-lists', title:'Прайс-листы', subtitle:'Graphic / Print', category:'graphic', year:'2026', row:'duo', cover:[0,1],
+    summary:'Прайс-листы для студии красоты и студии движения: понятная структура услуг, фотографии и блок контактов в одном вертикальном макете.',
+    done:['Структура услуг и цен','Подбор фотографий','Блок контактов и кнопка записи'],
+    images:[
+      {file:'01.jpg',w:1024,h:1536,label:'Прайс-лист студии красоты'},
+      {file:'02.jpg',w:1024,h:1536,label:'Прайс-лист студии движения'}],
+    blocks:[
+      {t:'pair',i:[0,1],stag:true}]},
+  { slug:'restaurant-menus', folder:'restaurant-menus', title:'Меню ресторанов', subtitle:'Graphic / Menu design', category:'graphic', year:'2026', row:'splitr', cover:0,
+    summary:'Развороты меню для ресторанов разной кухни. У каждого своя подача при общей спокойной эстетике: крупные фото блюд, тактильные текстуры и аккуратная иерархия позиций.',
+    done:['Структура меню','Макет разворота','Оформление блюд и цен','Два варианта меню VERDE'],
+    images:[
+      {file:'01.jpg',w:1536,h:1024,label:'NOBU Restaurant — меню ресторана современной кухни'},
+      {file:'02.jpg',w:1536,h:1024,label:'VERDE — вариант 1'},
+      {file:'03.jpg',w:1536,h:1024,label:'VERDE — вариант 2'},
+      {file:'04.jpg',w:1536,h:1024,label:'BELLA Ristorante — меню итальянской кухни'}],
+    blocks:[
+      {t:'full',i:0},
+      {t:'pair',i:[1,2]},
+      {t:'full',i:3}]},
+  { slug:'ad-banners', folder:'ad-banners', title:'Рекламные баннеры', subtitle:'Graphic / Advertising', category:'graphic', year:'2026', row:'full', cover:0,
+    summary:'Рекламные баннеры и афиши для брендов из разных сфер: отель, жилой комплекс, туризм, студия йоги, косметика и концерт.',
+    done:['Баннер загородного отеля','Туристическое агентство','Жилой комплекс','Студия йоги','Упаковка косметического бренда','Афиша концерта'],
+    images:[
+      {file:'01.jpg',w:1536,h:1024,label:'Alta Vista — рекламный баннер загородного отеля'},
+      {file:'02.jpg',w:1672,h:941,label:'Сертификат Lumière, меню OLIVA и баннеры Alba Travel и Riviera (жилой комплекс)'},
+      {file:'03.jpg',w:1672,h:941,label:'Balance Yoga Studio, Riviera Boutique Hotel, упаковка ÉCLAT и афиша Summer Nights Event'}],
+    blocks:[
+      {t:'full',i:0},
+      {t:'aside',i:1,side:'l',k:'Подборка',h:'Туризм и недвижимость',p:'Баннеры для туристического агентства и жилого комплекса, меню ресторана OLIVA и подарочный сертификат — в одной подборке.'},
+      {t:'aside',i:2,side:'r',k:'Подборка',h:'Йога, отель, косметика, концерт',p:'Общая сетка и сдержанная типографика при разном настроении: от светлой упаковки до тёмной афиши.'}]},
+  { slug:'smm-carousels', folder:'smm-carousels', title:'SMM-карусели', subtitle:'Graphic / Social media', category:'graphic', year:'2026', row:'split', cover:0,
+    summary:'Карусели для социальных сетей: образовательный формат, товарная подборка и серия слайдов для студии красоты. Единая сетка, крупная типографика и иконки.',
+    done:['Образовательная карусель','Товарная карусель','Карусель для студии красоты','Иконки и инфографика'],
+    images:[
+      {file:'01.jpg',w:1536,h:1024,label:'DOMA — «5 шагов к дому, в котором легко дышать»: образовательная карусель'},
+      {file:'02.jpg',w:1536,h:1024,label:'MAISON — товарная карусель для магазина товаров для дома'},
+      {file:'03.jpg',w:1536,h:1024,label:'Карусель для студии красоты: услуги, преимущества, отзыв и контакты'}],
+    blocks:[
+      {t:'aside',i:0,side:'l',k:'Образовательный формат',h:'DOMA: 5 шагов',p:'Пять слайдов-инструкций: крупный заголовок, короткое пояснение и иконки-подсказки в единой сетке.'},
+      {t:'full',i:1},
+      {t:'aside',i:2,side:'r',k:'Услуги и отзывы',h:'Студия красоты',p:'Шесть слайдов: оффер, услуги, преимущества, до и после, отзыв и контакты. Места под фото «до / после» оставлены под материалы клиента.'}]},
+  { slug:'business-cards', folder:'business-cards', title:'Business Cards', subtitle:'Graphic / Print', category:'graphic', year:'2026', row:'full', cover:0,
+    summary:'Визитки для студий, кафе и фотографа: шесть направлений и шесть палитр — от тёплых нейтральных до графичного чёрно-розового.',
+    done:['Лицевая и оборотная стороны','Контакты и QR-коды','Тиснение и текстуры в макетах'],
+    images:[
+      {file:'01.jpg',w:1536,h:1024,label:'Визитки: Monalis, Terra, Nørd, Cèdre, étoile, Blush'}],
+    blocks:[
+      {t:'full',i:0}]},
+  { slug:'brand-boards', folder:'brand-boards', title:'Brand Boards', subtitle:'Graphic / Brand & Packaging', category:'graphic', year:'2026', row:'splitr', cover:0,
+    summary:'Сводные листы с фирменной полиграфией, меню, упаковкой и афишами для нескольких брендов — как они выглядят рядом и в связке.',
+    done:['Подарочные сертификаты','Меню и стаканы для кофейни','Билеты и афиша мероприятия','Баннер натуральной косметики','Визитки и упаковка'],
+    images:[
+      {file:'01.jpg',w:1672,h:941,label:'Lumière, Nørd Coffee Roasters, Summer Nights Event, Natura Balance'},
+      {file:'02.jpg',w:1672,h:941,label:'Подарочный сертификат, Lumière, Balance Coffee & More, билет Summer Nights'}],
+    blocks:[
+      {t:'full',i:0},
+      {t:'aside',i:1,side:'l',k:'Вторая подборка',h:'Сертификат, кофейня, билет',p:'Подарочный сертификат с конвертом, визитка и услуги Lumière, меню и стакан Balance Coffee & More и билет на концерт.'}]},
+  { slug:'wedding-mini-site', folder:'wedding-mini-site', title:'Wedding Mini Site', subtitle:'Website / Mini site', category:'event', year:'2026', row:'full', cover:0,
     summary:'Свадебные мини-сайты с датой, программой мероприятия и подтверждением присутствия. Разработала структуру, визуальный стиль и мобильную версию.',
     done:['Главный экран','Программа мероприятия','Информация о событии','RSVP','Мобильная версия'],
     images:[
-      {file:'01.jpg',label:'Главный экран'},
-      {file:'02.jpg',label:'Программа'},
-      {file:'03.jpg',label:'RSVP'},
-      {file:'04.jpg',label:'Мобильная версия'}]},
-  { slug:'wedding-identity', folder:'wedding-identity', title:'Wedding Identity', subtitle:'Graphic / Event design', category:'event', year:'2026', collage:true,
+      {file:'01.jpg',w:1536,h:1024,label:'Дарья и Иван — обложка, программа дня и подтверждение присутствия'},
+      {file:'02.jpg',w:1536,h:1024,label:'София и Марк — тёмная обложка и арочные акценты'},
+      {file:'03.jpg',w:1536,h:1024,label:'Ольга и Кирилл — бумажный коллаж и полароиды'},
+      {file:'04.jpg',w:1536,h:1024,label:'Елизавета и Артём — тёмная обложка и рукописные подписи'}],
+    blocks:[
+      {t:'full',i:0},
+      {t:'aside',i:1,side:'r',k:'Вариант 2',h:'Тёмная обложка',p:'Фотография на весь экран, арка с местом проведения и палитра дресс-кода.'},
+      {t:'aside',i:2,side:'l',k:'Вариант 3',h:'Бумажный коллаж',p:'Полароиды, рваная бумага и сургучная печать превращают мини-сайт в тактильную открытку.'},
+      {t:'full',i:3}]},
+  { slug:'wedding-identity', folder:'wedding-identity', title:'Wedding Identity', subtitle:'Graphic / Event design', category:'event', year:'2026', row:'split', cover:0,
     summary:'Единая визуальная система для свадебного мероприятия: приглашение, welcome-материалы и печатная продукция.',
-    done:['Приглашение','Welcome-материалы','Карточки','Рассадка','QR','Подарочные материалы'],
+    done:['Свадебное приглашение','Карточка «Детали дня»','Конверт с печатью','Палитра и иллюстрации','Упаковка и welcome-материалы'],
     images:[
-      {file:'01.jpg',label:'Приглашение'},
-      {file:'02.jpg',label:'Welcome-материалы'},
-      {file:'03.jpg',label:'Карточки'},
-      {file:'04.jpg',label:'Рассадка'},
-      {file:'05.jpg',label:'QR'},
-      {file:'06.jpg',label:'Подарочные материалы'}]}
+      {file:'01.jpg',w:1536,h:1024,label:'Екатерина и Александр — приглашение, карточка «Детали дня», палитра и конверт с печатью'},
+      {file:'02.jpg',w:1536,h:1024,label:'Вероника и Максим — приглашение на сухоцветах'},
+      {file:'03.jpg',w:1536,h:1024,label:'Екатерина и Максим — приглашение и карточка «Детали дня»'},
+      {file:'04.jpg',w:1672,h:941,label:'Пакет, коробка, конверты и карточки — welcome-материалы'}],
+    blocks:[
+      {t:'full',i:0},
+      {t:'aside',i:1,side:'l',k:'Второе приглашение',h:'Сухоцветы и тёплая бумага',p:'Лепестки сухоцветов, пергаментный тон и сургучная печать в мягкой нейтральной палитре.'},
+      {t:'aside',i:2,side:'r',k:'Третье приглашение',h:'Белые цветы и оливковые листья',p:'Цветочная рамка приглашения и карточка деталей дня с линейными иконками.'},
+      {t:'full',i:3}]},
+  { slug:'event-invitations', folder:'event-invitations', title:'Event Invitations', subtitle:'Print / Digital / Invitations', category:'event', year:'2026', row:'splitr', cover:0,
+    summary:'Приглашения на мероприятия: полная система для арт-вечера и подборка приглашений для выставки, показа мод, открытия студии, концерта, мастер-класса и форума.',
+    done:['Приглашение и карточка программы','Афиша и мобильная версия','Палитра мероприятия','Приглашения для разных форматов'],
+    images:[
+      {file:'01.jpg',w:1536,h:1024,label:'Арт-вечер: приглашение, карточка программы, афиша и мобильная версия'},
+      {file:'02.jpg',w:1536,h:1024,label:'Приглашения на выставку, показ, открытие студии, концерт, мастер-класс и форум'}],
+    blocks:[
+      {t:'full',i:0},
+      {t:'aside',i:1,side:'l',k:'Другие форматы',h:'Шесть событий — шесть настроений',p:'Sculptura, Fashion Night, Balance, Sound of City, «Вкус вдохновения» и «Новые горизонты»: у каждого приглашения своя форма, палитра и носитель.'}]},
+  { slug:'love-posters', folder:'love-posters', title:'Love Story Posters', subtitle:'Graphic / Photo posters', category:'event', year:'2026', row:'duo', cover:[0,1],
+    summary:'Три постера для романтической фотоистории: чёрно-белые кадры, крупная типографика с акцентом глубокого красного и редакционная вёрстка.',
+    done:['Вёрстка фотоколлажей','Типографика и акцентный цвет','Шаблон с местами под фото'],
+    images:[
+      {file:'01.jpg',w:1024,h:1536,label:'LOVE — постер с шестью кадрами и крупной вертикальной надписью'},
+      {file:'02.jpg',w:1024,h:1536,label:'«С тобой даже обычное особенное» — редакционная вёрстка кадров'},
+      {file:'03.jpg',w:1024,h:1536,label:'«Дом — это всегда люди» — шаблон с местами под фотографии'}],
+    blocks:[
+      {t:'trio',i:[0,1,2]}]}
 ];
 
 /* Текст рядом с последним мобильным экраном в кейсе (ключ — folder проекта) */
@@ -472,8 +644,59 @@ function mediaBlock(p, cls){
 }
 
 /* ---------- pages ---------- */
+/* ---------- case system v2 ---------- */
+const imgPath = (p,im) => `images/projects/${p.folder}/${im.file}`;
+/* a figure keeps the original proportions of the artwork: no crop, no overlays; the caption lives outside the image */
+function fig(p, n, o){
+  o = o||{};
+  const im = p.images[n];
+  const img = `<img src="${imgPath(p,im)}" width="${im.w}" height="${im.h}" alt="${p.title} — ${im.label}" loading="${o.eager?'eager':'lazy'}" decoding="async" onerror="this.closest('.fig').classList.add('error')">`;
+  const inner = o.zoom===false ? img : `<button class="zoom" type="button" data-lb aria-label="Открыть крупнее: ${im.label}">${img}</button>`;
+  return `<figure class="fig">${inner}${o.cap===false?'':`<figcaption class="cap">${o.cap||im.label}</figcaption>`}</figure>`;
+}
+function blockHtml(p, b, eager){
+  const f = (n,o) => fig(p,n,Object.assign({eager:eager},o));
+  if(b.t==='full') return f(b.i);
+  if(b.t==='aside') return `<div class="b-aside${b.side==='l'?' l':''}">${f(b.i)}<div class="b-txt"><p class="b-k">${b.k}</p><h2>${b.h}</h2><p>${b.p}</p></div></div>`;
+  if(b.t==='pair') return `<div class="b-pair${b.stag?' stag':''}">${b.i.map(n=>f(n)).join('')}</div>`;
+  if(b.t==='trio') return `<div class="b-trio">${b.i.map(n=>f(n)).join('')}</div>`;
+  return '';
+}
+function caseBlocksHtml(p){
+  const cat = catInfo(p.category);
+  const list = inCat(p.category);
+  const i = list.indexOf(p);
+  const next = list.length>1 ? list[(i+1)%list.length] : null;
+  const done = `<div class="blk rv"><h2>Что сделано</h2><ul class="done">${p.done.map(d=>`<li>${d}</li>`).join('')}</ul></div>`;
+  const body = p.blocks.map((b,k)=>`<div class="rv">${blockHtml(p,b,k===0)}</div>${k===0?done:''}`).join('');
+  return `<article class="case case-${p.folder}">
+    <div class="wrap">
+      <a class="back" href="#/works/${cat.key}">← Назад: ${cat.title}</a>
+      <h1 class="case-h">${p.title}</h1>
+      <p class="case-sub">${p.subtitle} · ${p.year}</p>
+      <p class="case-sum">${p.summary}</p>
+      <div class="blocks">${body}</div>
+      ${next?`<a class="next" href="#/project/${next.slug}"><small>Следующий проект</small><span>${next.title} →</span></a>`
+            :`<a class="next" href="#/works/${cat.key}"><small>Назад к направлению</small><span>${cat.title} →</span></a>`}
+    </div></article>`;
+}
+/* a row on the direction page: cover without a fixed-height box, three rhythms (full / split / duo) */
+function coverFig(p, n){ return fig(p, n, {zoom:false, cap:false}); }
+function caseRowNew(p, i){
+  const head = `<div class="proj-head"><span class="proj-n">${pad(i+1)}</span><div><h3>${p.title}</h3><p class="proj-sub">${p.subtitle}</p></div></div>`;
+  const view = `<span class="proj-view">Смотреть кейс <i aria-hidden="true">→</i></span>`;
+  const media = p.row==='duo' ? `<div class="row-duo">${coverFig(p,p.cover[0])}${coverFig(p,p.cover[1])}</div>` : coverFig(p,p.cover);
+  const split = p.row==='split' || p.row==='splitr';
+  const body = split
+    ? `<div class="row-txt">${head}<p class="proj-sum">${p.summary}</p></div><div class="proj-media">${media}</div>${view}`
+    : `${head}<p class="proj-sum">${p.summary}</p><div class="proj-media">${media}</div>${view}`;
+  return `<article class="proj rv">
+    <a class="proj-link${split?' row-split':''}${p.row==='splitr'?' r':''}" href="#/project/${p.slug}" aria-label="${p.title} — открыть кейс">${body}</a>
+  </article>`;
+}
 /* a case row — used inside a category page */
 function caseRow(p,i){
+  if(p.blocks) return caseRowNew(p,i);
   return `<article class="proj rv">
     <a class="proj-link" href="#/project/${p.slug}" aria-label="${p.title} — открыть кейс">
       <div class="proj-head"><span class="proj-n">${pad(i+1)}</span><div><h3>${p.title}</h3><p class="proj-sub">${p.subtitle}</p></div>${p.demoUrl?'<span class="demo-tag">Демонстрационный проект</span>':''}</div>
@@ -581,6 +804,7 @@ function categoryHtml(cat){
 
 /* case page: big visual, short text, what was done, more visuals */
 function caseHtml(p){
+  if(p.blocks) return caseBlocksHtml(p);
   const cat = catInfo(p.category);
   const list = inCat(p.category);
   const i = list.indexOf(p);
@@ -644,6 +868,53 @@ function observe(){
   main.querySelectorAll('.rv').forEach(el=>io.observe(el));
 }
 
+/* ---------- image viewer (opens artwork at full size, original proportions) ---------- */
+const lb = document.createElement('div');
+lb.className = 'lb';
+lb.setAttribute('role','dialog'); lb.setAttribute('aria-modal','true'); lb.setAttribute('aria-label','Просмотр изображения');
+lb.innerHTML = '<span class="lb-c"></span><button type="button" class="lb-x" aria-label="Закрыть">×</button><button type="button" class="lb-p" aria-label="Предыдущее изображение">←</button><button type="button" class="lb-n" aria-label="Следующее изображение">→</button><figure><img alt=""><figcaption></figcaption></figure>';
+document.body.appendChild(lb);
+const lbImg=$('img',lb), lbCap=$('figcaption',lb), lbCnt=$('.lb-c',lb), lbPrev=$('.lb-p',lb), lbNext=$('.lb-n',lb), lbX=$('.lb-x',lb);
+let lbItems=[], lbIdx=0, lbFrom=null;
+function lbShow(i){
+  lbIdx=(i+lbItems.length)%lbItems.length;
+  const it=lbItems[lbIdx];
+  lbImg.src=it.src; lbImg.alt=it.alt; lbCap.textContent=it.cap;
+  lbCnt.textContent=pad(lbIdx+1)+' / '+pad(lbItems.length);
+  lbPrev.hidden=lbNext.hidden=lbItems.length<2;
+}
+function lbClose(){
+  if(!lb.classList.contains('open')) return;
+  lb.classList.remove('open'); document.body.style.overflow='';
+  if(lbFrom&&document.contains(lbFrom)) lbFrom.focus({preventScroll:true});
+}
+main.addEventListener('click',e=>{
+  const b=e.target.closest('[data-lb]'); if(!b) return;
+  const btns=[...main.querySelectorAll('[data-lb]')];
+  lbItems=btns.map(x=>{const im=x.querySelector('img'),c=x.parentElement.querySelector('figcaption');return {src:im.getAttribute('src'),alt:im.alt,cap:c?c.textContent:''}});
+  lbFrom=b; lbShow(btns.indexOf(b));
+  lb.classList.add('open'); document.body.style.overflow='hidden'; lbX.focus({preventScroll:true});
+});
+lb.addEventListener('click',e=>{
+  if(e.target.closest('.lb-p')) return lbShow(lbIdx-1);
+  if(e.target.closest('.lb-n')) return lbShow(lbIdx+1);
+  if(!e.target.closest('img')) lbClose();
+});
+addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open')) return;
+  if(e.key==='Escape') lbClose();
+  else if(e.key==='ArrowRight'&&lbItems.length>1) lbShow(lbIdx+1);
+  else if(e.key==='ArrowLeft'&&lbItems.length>1) lbShow(lbIdx-1);
+  else if(e.key==='Tab'){e.preventDefault();lbX.focus()}
+});
+let lbX0=null;
+lb.addEventListener('touchstart',e=>{lbX0=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',e=>{
+  if(lbX0===null||lbItems.length<2) return;
+  const d=e.changedTouches[0].clientX-lbX0; lbX0=null;
+  if(Math.abs(d)>50) lbShow(lbIdx+(d<0?1:-1));
+},{passive:true});
+
 /* ---------- router (hash) + smooth scroll ---------- */
 const SECTIONS=['work','about','services','process','contact'];
 const behavior=()=>reduce?'auto':'smooth';
@@ -652,6 +923,7 @@ function target(a,b){
 }
 let current=null;
 function route(){
+  lbClose();
   const parts=location.hash.replace(/^#\/?/,'').split('/');
   const a=parts[0], b=parts[1];
   const idx=a==='project'?PROJECTS.findIndex(x=>x.slug===b):-1;
