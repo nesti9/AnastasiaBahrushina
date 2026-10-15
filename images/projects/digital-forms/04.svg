@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#e9e3d8"/><stop offset="1" stop-color="#d6ccbb"/></linearGradient><linearGradient id="paper" x2="0" y2="1"><stop stop-color="#fffdf8"/><stop offset="1" stop-color="#f4f0e7"/></linearGradient><filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#29251e" flood-opacity=".17"/></filter></defs>
+<rect width="1536" height="1024" fill="url(#bg)"/><circle cx="1375" cy="150" r="260" fill="#f7f2e9" opacity=".48"/><circle cx="115" cy="900" r="220" fill="#c6b99f" opacity=".25"/>
+<text x="82" y="66" font-family="Arial,sans-serif" font-size="14" letter-spacing="4" fill="#716b5f">DIGITAL FORMS  /  CONFIRMATION</text>
+<g filter="url(#shadow)"><rect x="104" y="112" width="1328" height="800" rx="24" fill="url(#paper)"/>
+<circle cx="158" cy="164" r="18" fill="#29362f"/><path d="M158 152l3 8 8 2-8 3-3 8-3-8-8-3 8-2z" fill="#c8ac78"/>
+<text x="190" y="159" font-family="Georgia,serif" font-size="20" letter-spacing="1.5" fill="#28332c">MAISON ÉCLAT</text><text x="191" y="178" font-family="Arial,sans-serif" font-size="8" letter-spacing="2" fill="#8c8170">AESTHETIC STUDIO</text><line x1="104" y1="208" x2="1432" y2="208" stroke="#e5ded2"/>
+<circle cx="770" cy="326" r="48" fill="#e8ecdf"/><circle cx="770" cy="326" r="34" fill="#29362f"/><path d="M754 326l11 11 23-25" fill="none" stroke="#d5bd8b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="770" y="420" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" letter-spacing="2.4" fill="#9a825c">ВАШЕ ВРЕМЯ ДЛЯ СЕБЯ УЖЕ ЗАПЛАНИРОВАНО</text>
+<text x="770" y="482" text-anchor="middle" font-family="Georgia,serif" font-size="49" fill="#28332c">Вы записаны</text><text x="770" y="517" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#777166">Мы отправили детали визита на вашу почту.</text>
+<rect x="397" y="565" width="746" height="203" rx="14" fill="#fffefa" stroke="#e2dbcf"/>
+<text x="445" y="610" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.5" fill="#9a825c">ВАШ ВИЗИТ</text><text x="445" y="651" font-family="Georgia,serif" font-size="24" fill="#30382f">Ритуал сияния</text><text x="445" y="678" font-family="Arial,sans-serif" font-size="11" fill="#857e71">75 минут · косметолог София</text><line x1="445" y1="702" x2="1095" y2="702" stroke="#e9e2d7"/>
+<text x="445" y="741" font-family="Arial,sans-serif" font-size="12" fill="#424a40">Среда, 21 октября 2026</text><text x="1095" y="741" text-anchor="end" font-family="Georgia,serif" font-size="17" fill="#30382f">12:30</text>
+<rect x="570" y="804" width="400" height="49" rx="24.5" fill="#29362f"/><text x="770" y="835" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.1" fill="#fffdf8">ДОБАВИТЬ В КАЛЕНДАРЬ  ↗</text>
+<text x="770" y="885" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#968b7a">MAISON ÉCLAT  ·  ПАТРИАРШИЕ ПРУДЫ</text></g>
+<text x="1450" y="976" text-anchor="end" font-family="Arial,sans-serif" font-size="11" letter-spacing="2" fill="#716b5f">STEP 03 — A LITTLE MORE TIME FOR YOURSELF</text>
+</svg>
