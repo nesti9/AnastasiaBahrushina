@@ -399,6 +399,14 @@ html{-webkit-tap-highlight-color:transparent}
   .cb-n i{font-style:normal;flex:none}
 }
 @media (prefers-reduced-motion:reduce){.rv:not(.in) .fig img{opacity:1}.cb{transition:none}}
+
+/* Med AI: crisp full-page interface compositions, spaced as individual screens */
+.case-med-ai .case-media .frame,.case-med-ai .gal .frame{height:auto;min-height:0;background:transparent;border:0;overflow:visible}
+.case-med-ai .case-media .frame img,.case-med-ai .gal .frame img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;mix-blend-mode:normal}
+.case-med-ai .gal{grid-template-columns:minmax(0,1fr);gap:clamp(28px,4vw,56px);background:transparent;margin-top:clamp(32px,5vw,64px)}
+.case-med-ai .gal>div{background:transparent}
+.case-med-ai .gal .frame{height:auto}
+
 </style>
 </head>
 <body>
@@ -506,10 +514,10 @@ const PROJECTS = [
     summary:'Med AI помогает разобраться в товарах интернет-магазина, анализах и медицинских услугах клиники Med. Разработала сценарий общения и адаптивный интерфейс помощника.',
     done:['Экран приветствия','Первый диалог с помощником','Сценарии для товаров и услуг','Адаптивный интерфейс'],
     images:[
-      {file:'01.jpg',label:'Направления Med AI — desktop и mobile'},
-      {file:'02.jpg',label:'Экран приветствия и первый диалог'},
-      {file:'03.jpg',label:'Мобильная версия — направления'},
-      {file:'04.jpg',label:'Мобильная версия — диалог'}]},
+      {file:'01.svg',label:'Главный экран Med AI'},
+      {file:'02.svg',label:'Диалог с помощником'},
+      {file:'03.svg',label:'Направления помощи'},
+      {file:'04.svg',label:'Переход к сервисам'}]},
   { slug:'prevent', folder:'prevent', title:'Prevent', subtitle:'Mini App / UI UX / E-commerce', category:'digital', year:'2026',
     summary:'Telegram-магазин Prevent, реализованный как Mini App — от каталога до оформления заказа. Разработала интерфейс магазина и AI-помощника внутри приложения.',
     done:['Главный экран','Каталог','Карточка товара','Корзина','Оформление заказа','AI-помощник'],

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="Направления помощи Med AI">
+<rect width="1600" height="1000" fill="#f4f3ec"/>
+<defs>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#18392f" flood-opacity=".10"/></filter>
+  <clipPath id="photoA"><rect x="78" y="174" width="486" height="680" rx="3 28 3 28"/></clipPath>
+  <clipPath id="photoB"><rect x="72" y="164" width="610" height="720" rx="3 30 3 30"/></clipPath>
+</defs>
+<g font-family="Arial, sans-serif" fill="#18392f">
+  <text x="76" y="67" font-family="Georgia, serif" font-size="32" letter-spacing="-1.4">Med AI</text>
+  <text x="174" y="63" font-size="11" fill="#738178">медицинский помощник</text>
+  <g font-size="12" fill="#5e7065">
+    <text x="930" y="61">Возможности</text>
+    <text x="1060" y="61">Направления</text>
+    <text x="1195" y="61">О сервисе</text>
+  </g>
+  <rect x="1342" y="32" width="180" height="42" rx="21" fill="none" stroke="#b8c5b6"/>
+  <text x="1432" y="58" text-anchor="middle" font-size="11" font-weight="700">Задать вопрос　→</text>
+  <path d="M76 101H1524" stroke="#d9ddd3"/>
+</g>
+<image x="78" y="174" width="486" height="680" preserveAspectRatio="xMidYMid slice" clip-path="url(#photoA)" href="https://nesti9.github.io/aimed/assets/clinic-consultation.png"/>
+<g font-family="Arial, sans-serif" fill="#18392f">
+  <text x="632" y="207" font-size="11" font-weight="700" letter-spacing="2.2" fill="#496b59">ВЫБЕРИТЕ ТЕМУ</text>
+  <path d="M632 184h24" stroke="#c9b78f" stroke-width="2"/>
+  <text x="626" y="287" font-family="Georgia,serif" font-size="60" letter-spacing="-2.3">С чем я помогу</text>
+  <text x="632" y="330" font-size="15" fill="#738178">Можно начать с одного из направлений или просто написать вопрос.</text>
+  <path d="M632 365H1518" stroke="#cdd5cb"/>
+  <text x="635" y="407" font-family="Georgia,serif" font-size="16" fill="#9caa9d">01</text><text x="690" y="403" font-size="16" font-weight="700">Подобрать БАД</text><text x="690" y="426" font-size="12" fill="#7d8981">Подбор варианта под вашу цель</text><text x="1494" y="410" text-anchor="end" font-size="20" fill="#819184">↗</text><path d="M632 445H1518" stroke="#d9ddd3"/>
+  <text x="635" y="487" font-family="Georgia,serif" font-size="16" fill="#9caa9d">02</text><text x="690" y="483" font-size="16" font-weight="700">Узнать о товаре</text><text x="690" y="506" font-size="12" fill="#7d8981">Состав, назначение и применение</text><text x="1494" y="490" text-anchor="end" font-size="20" fill="#819184">↗</text><path d="M632 525H1518" stroke="#d9ddd3"/>
+  <text x="635" y="567" font-family="Georgia,serif" font-size="16" fill="#9caa9d">03</text><text x="690" y="563" font-size="16" font-weight="700">Подобрать программу</text><text x="690" y="586" font-size="12" fill="#7d8981">Индивидуальные комплексы</text><text x="1494" y="570" text-anchor="end" font-size="20" fill="#819184">↗</text><path d="M632 605H1518" stroke="#d9ddd3"/>
+  <text x="635" y="647" font-family="Georgia,serif" font-size="16" fill="#9caa9d">04</text><text x="690" y="643" font-size="16" font-weight="700">Сдать анализы</text><text x="690" y="666" font-size="12" fill="#7d8981">Лабораторные исследования</text><text x="1494" y="650" text-anchor="end" font-size="20" fill="#819184">↗</text><path d="M632 685H1518" stroke="#d9ddd3"/>
+  <text x="635" y="727" font-family="Georgia,serif" font-size="16" fill="#9caa9d">05</text><text x="690" y="723" font-size="16" font-weight="700">Клиника Med</text><text x="690" y="746" font-size="12" fill="#7d8981">Медицинские услуги и филиалы</text><text x="1494" y="730" text-anchor="end" font-size="20" fill="#819184">↗</text><path d="M632 765H1518" stroke="#d9ddd3"/>
+  <text x="635" y="807" font-family="Georgia,serif" font-size="16" fill="#9caa9d">06</text><text x="690" y="803" font-size="16" font-weight="700">Расшифровать анализы</text><text x="690" y="826" font-size="12" fill="#7d8981">Стоимость услуги — 300 ₽</text><text x="1494" y="810" text-anchor="end" font-size="20" fill="#819184">↗</text><path d="M632 845H1518" stroke="#d9ddd3"/>
+</g>
+</svg>

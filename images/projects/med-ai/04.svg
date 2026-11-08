@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="Сервисы клиники Med">
+<rect width="1600" height="1000" fill="#f4f3ec"/>
+<defs>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#18392f" flood-opacity=".10"/></filter>
+  <clipPath id="photoA"><rect x="78" y="174" width="486" height="680" rx="3 28 3 28"/></clipPath>
+  <clipPath id="photoB"><rect x="72" y="164" width="610" height="720" rx="3 30 3 30"/></clipPath>
+</defs>
+<rect y="120" width="1600" height="880" fill="#123d31"/>
+<image x="72" y="164" width="610" height="720" preserveAspectRatio="xMidYMid slice" clip-path="url(#photoB)" href="https://nesti9.github.io/aimed/assets/laboratory.png"/>
+<g font-family="Arial, sans-serif">
+  <text x="76" y="67" font-family="Georgia, serif" font-size="32" letter-spacing="-1.4" fill="#18392f">Med AI</text>
+  <text x="174" y="63" font-size="11" fill="#738178">медицинский помощник</text>
+  <g font-size="12" fill="#5e7065"><text x="930" y="61">Возможности</text><text x="1060" y="61">Направления</text><text x="1195" y="61">О сервисе</text></g>
+  <rect x="1342" y="32" width="180" height="42" rx="21" fill="none" stroke="#b8c5b6"/><text x="1432" y="58" text-anchor="middle" font-size="11" fill="#18392f" font-weight="700">Задать вопрос　→</text>
+  <path d="M76 101H1524" stroke="#d9ddd3"/>
+  <text x="770" y="228" font-size="11" font-weight="700" letter-spacing="2.2" fill="#c7d5b8">КУДА ПЕРЕЙТИ ДАЛЬШЕ</text>
+  <path d="M770 205h24" stroke="#c9b78f" stroke-width="2"/>
+  <text x="764" y="311" font-family="Georgia,serif" font-size="57" letter-spacing="-2" fill="#f6f5ed">Всё необходимое</text>
+  <text x="764" y="375" font-family="Georgia,serif" font-size="57" letter-spacing="-2" fill="#f6f5ed">рядом</text>
+  <text x="770" y="428" font-size="15" fill="#c3d0c5">Если вопрос требует подробностей, откройте каталог</text>
+  <text x="770" y="454" font-size="15" fill="#c3d0c5">интернет-магазина, раздел анализов или страницу клиники Med.</text>
+  <path d="M770 504H1500" stroke="#47695d"/>
+  <text x="776" y="551" font-family="Georgia,serif" font-size="18" fill="#c9bb93">01</text><text x="835" y="551" font-size="16" font-weight="700" fill="#f6f5ed">Интернет-магазин</text><text x="835" y="577" font-size="12" fill="#b7c8bb">Товары и наличие</text><text x="1488" y="558" text-anchor="end" font-size="18" fill="#c9bb93">↗</text>
+  <path d="M770 604H1500" stroke="#47695d"/>
+  <text x="776" y="651" font-family="Georgia,serif" font-size="18" fill="#c9bb93">02</text><text x="835" y="651" font-size="16" font-weight="700" fill="#f6f5ed">Анализы</text><text x="835" y="677" font-size="12" fill="#b7c8bb">Лабораторные исследования</text><text x="1488" y="658" text-anchor="end" font-size="18" fill="#c9bb93">↗</text>
+  <path d="M770 704H1500" stroke="#47695d"/>
+  <text x="776" y="751" font-family="Georgia,serif" font-size="18" fill="#c9bb93">03</text><text x="835" y="751" font-size="16" font-weight="700" fill="#f6f5ed">Клиника Med</text><text x="835" y="777" font-size="12" fill="#b7c8bb">Медицинские услуги</text><text x="1488" y="758" text-anchor="end" font-size="18" fill="#c9bb93">↗</text>
+  <path d="M770 804H1500" stroke="#47695d"/>
+  <text x="770" y="847" font-size="10" fill="#b7c8bb">СПРАВОЧНАЯ ИНФОРМАЦИЯ</text>
+  <text x="770" y="875" font-size="11" fill="#b7c8bb">Не заменяет консультацию медицинского специалиста.</text>
+</g>
+</svg>
