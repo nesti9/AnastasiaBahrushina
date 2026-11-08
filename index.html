@@ -438,7 +438,7 @@ const CONFIG = {
 /* Изображения проектов: положите файлы в images/projects/<folder>/<file>.jpg
    Пока файла нет — на его месте спокойный пустой слот с подписью. */
 const CATEGORIES = [
-  { key:'web', title:'Web Design', subtitle:'Сайты, landing pages и digital-страницы.' },
+  { key:'web', title:'Web Design', subtitle:'Сайты, landing pages и digital-страницы.', preview:{folder:'ClimatZone',file:'01.png',label:'Все проекты'} },
   { key:'digital', title:'Digital Products', subtitle:'Mini Apps, AI-интерфейсы и цифровые сервисы.' },
   { key:'ecommerce', title:'E-commerce & Product Design', subtitle:'Визуал продукта — от карточки товара до упаковки и рекламных материалов.' },
   { key:'graphic', title:'Graphic Design', subtitle:'Визуальные материалы, упаковка, полиграфия и графические решения.' },
@@ -448,7 +448,7 @@ const catInfo = key => CATEGORIES.find(c=>c.key===key);
 const inCat = key => PROJECTS.filter(p=>p.category===key);
 
 const PROJECTS = [
-  { slug:'ClimatZone', folder:'ClimatZone', title:'ClimatZone', subtitle:'Website / UI UX / Calculator', category:'web', year:'2026', coverImage:'case-study.png', demoUrl:'https://nesti9.github.io/ClimatZona/',
+  { slug:'ClimatZone', folder:'ClimatZone', title:'ClimatZone', subtitle:'Website / UI UX / Calculator', category:'web', year:'2026', coverImage:'01-laptop.png', demoUrl:'https://nesti9.github.io/ClimatZona/',
     summary:'Сервис с интерактивным калькулятором для подбора кондиционера за три шага. Разработала структуру, интерфейс и адаптивную версию.',
     done:['Структура сайта','UI / UX','Калькулятор подбора','Desktop','Mobile'],
     phoneTitle:'Подбор за три шага', phoneNote:'Выберите тип объекта, укажите площадь — сервис покажет рекомендацию по кондиционеру.',
@@ -767,7 +767,9 @@ function caseRow(p,i){
 /* a direction block — used on the homepage; links to its category page */
 function dirBlock(cat,i){
   const projs = inCat(cat.key);
-  const visual = projs.length
+  const visual = cat.preview
+    ? frame({folder:cat.preview.folder,title:cat.title},{file:cat.preview.file,label:cat.preview.label||'Избранные проекты'})
+    : projs.length
     ? (projs[0].coverImage
         ? frame(projs[0],{file:projs[0].coverImage,label:'Обложка проекта'})
         : mediaBlock(projs[0]))
