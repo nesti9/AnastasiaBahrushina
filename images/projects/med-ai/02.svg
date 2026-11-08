@@ -1,46 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="Диалог с Med AI">
-<rect width="1600" height="1000" fill="#f4f3ec"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="Р”РёР°Р»РѕРі СЃ РїРѕРјРѕС‰РЅРёРєРѕРј Med AI">
 <defs>
-  <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#18392f" flood-opacity=".10"/></filter>
-  <clipPath id="photoA"><rect x="78" y="174" width="486" height="680" rx="3 28 3 28"/></clipPath>
-  <clipPath id="photoB"><rect x="72" y="164" width="610" height="720" rx="3 30 3 30"/></clipPath>
+  <linearGradient id="edge" x2="1" y2="1"><stop stop-color="#66706c"/><stop offset=".18" stop-color="#171b19"/><stop offset=".8" stop-color="#050706"/><stop offset="1" stop-color="#737a77"/></linearGradient>
+  <linearGradient id="paper" x2="0" y2="1"><stop stop-color="#fffefa"/><stop offset="1" stop-color="#f5f3eb"/></linearGradient>
+  <filter id="shadow" x="-25%" y="-20%" width="150%" height="145%"><feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#193d31" flood-opacity=".2"/></filter>
+  <clipPath id="phone"><rect x="194" y="102" width="350" height="780" rx="46"/></clipPath>
 </defs>
-<g font-family="Arial, sans-serif" fill="#18392f">
-  <text x="76" y="67" font-family="Georgia, serif" font-size="32" letter-spacing="-1.4">Med AI</text>
-  <text x="174" y="63" font-size="11" fill="#738178">медицинский помощник</text>
-  <g font-size="12" fill="#5e7065">
-    <text x="930" y="61">Возможности</text>
-    <text x="1060" y="61">Направления</text>
-    <text x="1195" y="61">О сервисе</text>
+<rect width="1600" height="1000" fill="#ece9df"/><path d="M0 0h614v1000H0z" fill="#dfe8dc"/><ellipse cx="1300" cy="525" rx="350" ry="420" fill="#e1e8dd"/>
+<g filter="url(#shadow)">
+  <rect x="180" y="88" width="378" height="808" rx="58" fill="url(#edge)" stroke="#c5c9c6" stroke-width="2"/>
+  <rect x="189" y="97" width="360" height="790" rx="52" fill="#070908"/>
+  <rect x="194" y="102" width="350" height="780" rx="46" fill="url(#paper)"/>
+  <g clip-path="url(#phone)" font-family="Arial,sans-serif" fill="#18392f">
+    <rect x="194" y="102" width="350" height="780" fill="#f8f6ef"/>
+    <text x="220" y="133" font-size="11" font-weight="700">9:41</text><rect x="337" y="111" width="66" height="21" rx="10.5" fill="#060807"/>
+    <text x="220" y="183" font-family="Georgia,serif" font-size="24">Med AI</text><circle cx="241" cy="202" r="4" fill="#91af78"/><text x="254" y="206" font-size="10" fill="#718176">РџРѕРјРѕС‰РЅРёРє РЅР° СЃРІСЏР·Рё</text><path d="M215 223H523" stroke="#e3e1d8"/>
+    <text x="369" y="256" text-anchor="middle" font-size="9" letter-spacing="1.5" fill="#a2aaa0">РЎР•Р“РћР”РќРЇ</text>
+    <rect x="218" y="286" width="270" height="66" rx="17" fill="#fffefa" stroke="#e8e7df"/><text x="238" y="326" font-size="13" fill="#52665a">Р—РґСЂР°РІСЃС‚РІСѓР№С‚Рµ! Р§С‚Рѕ РІР°СЃ РёРЅС‚РµСЂРµСЃСѓРµС‚?</text>
+    <rect x="318" y="373" width="202" height="58" rx="17" fill="#245943"/><text x="339" y="408" font-size="13" fill="#fffefa">РҐРѕС‡Сѓ РїРѕРґРѕР±СЂР°С‚СЊ Р‘РђР”</text>
+    <rect x="218" y="454" width="286" height="116" rx="17" fill="#fffefa" stroke="#e8e7df"/><text x="239" y="491" font-size="12" fill="#52665a">РџРѕРјРѕРіСѓ СЂР°Р·РѕР±СЂР°С‚СЊСЃСЏ РІ Р°СЃСЃРѕСЂС‚РёРјРµРЅС‚Рµ</text><text x="239" y="512" font-size="12" fill="#52665a">РёРЅС‚РµСЂРЅРµС‚-РјР°РіР°Р·РёРЅР°. Р Р°СЃСЃРєР°Р¶РёС‚Рµ,</text><text x="239" y="533" font-size="12" fill="#52665a">РєР°РєСѓСЋ Р·Р°РґР°С‡Сѓ РІС‹ С…РѕС‚РёС‚Рµ СЂРµС€РёС‚СЊ.</text>
+    <circle cx="230" cy="592" r="8" fill="none" stroke="#47735c"/><path d="m226 592 3 3 6-7" fill="none" stroke="#47735c" stroke-width="1.5"/><text x="247" y="596" font-size="9" fill="#748276">РЎРїСЂР°РІРѕС‡РЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ</text>
+    <path d="M218 623H520" stroke="#e2e3da"/>
+    <text x="220" y="658" font-size="10" font-weight="700" fill="#718176">РњРћР–РќРћ РЎРџР РћРЎРРўР¬</text>
+    <rect x="218" y="678" width="142" height="38" rx="19" fill="#fffefa" stroke="#dce2d9"/><text x="289" y="702" text-anchor="middle" font-size="10" fill="#52665a">РџРѕРґРѕР±СЂР°С‚СЊ Р‘РђР”</text>
+    <rect x="368" y="678" width="150" height="38" rx="19" fill="#fffefa" stroke="#dce2d9"/><text x="443" y="702" text-anchor="middle" font-size="10" fill="#52665a">РЈР·РЅР°С‚СЊ Рѕ С‚РѕРІР°СЂРµ</text>
+    <rect x="218" y="731" width="300" height="95" rx="18" fill="#fffefa" stroke="#dfe4dc"/><text x="238" y="766" font-size="11" fill="#9aa59b">РќР°РїРёС€РёС‚Рµ, С‡С‚Рѕ РІР°СЃ РёРЅС‚РµСЂРµСЃСѓРµС‚вЂ¦</text><path d="M238 781H500" stroke="#ecece5"/><text x="238" y="811" font-size="8" fill="#9ba59b">РћС‚РІРµС‚С‹ РЅРѕСЃСЏС‚ СЃРїСЂР°РІРѕС‡РЅС‹Р№ С…Р°СЂР°РєС‚РµСЂ</text><circle cx="492" cy="803" r="15" fill="#245943"/><path d="M485 803h12m-5-5 5 5-5 5" fill="none" stroke="#fffefa" stroke-width="1.5"/>
   </g>
-  <rect x="1342" y="32" width="180" height="42" rx="21" fill="none" stroke="#b8c5b6"/>
-  <text x="1432" y="58" text-anchor="middle" font-size="11" font-weight="700">Задать вопрос　→</text>
-  <path d="M76 101H1524" stroke="#d9ddd3"/>
+  <rect x="186" y="276" width="4" height="64" rx="2" fill="#7e8582"/><rect x="552" y="228" width="4" height="92" rx="2" fill="#7e8582"/>
 </g>
-<rect x="192" y="148" width="1216" height="738" rx="30" fill="#fffefa" stroke="#e2e7de" filter="url(#shadow)"/>
-<g font-family="Arial, sans-serif">
-  <circle cx="252" cy="206" r="23" fill="#245943"/><text x="252" y="213" text-anchor="middle" fill="#f4f3ec" font-family="Georgia,serif" font-size="21">M</text>
-  <text x="290" y="201" fill="#18392f" font-size="16" font-weight="700">Med AI</text>
-  <circle cx="297" cy="221" r="4" fill="#98b87f"/><text x="309" y="225" fill="#738178" font-size="11">Помощник на связи</text>
-  <circle cx="1350" cy="206" r="19" fill="none" stroke="#e1e5dc"/><text x="1350" y="211" text-anchor="middle" fill="#829087" font-size="18">···</text>
-  <path d="M225 250H1375" stroke="#e1e5dc"/>
-  <text x="800" y="288" text-anchor="middle" fill="#9aa59b" font-size="10" letter-spacing="1.8">СЕГОДНЯ</text>
-  <rect x="242" y="316" width="560" height="62" rx="18" fill="#f6f7f1" stroke="#e7eae2"/>
-  <text x="268" y="354" fill="#3e574a" font-size="15">Здравствуйте! Что вас интересует?</text>
-  <rect x="932" y="397" width="410" height="60" rx="18" fill="#245943"/>
-  <text x="960" y="434" fill="#fffefa" font-size="15">Хочу подобрать БАД</text>
-  <rect x="242" y="480" width="912" height="128" rx="18" fill="#f6f7f1" stroke="#e7eae2"/>
-  <text x="270" y="520" fill="#3e574a" font-size="15">Помогу разобраться в ассортименте интернет-магазина.</text>
-  <text x="270" y="550" fill="#3e574a" font-size="15">Расскажите, какую задачу вы хотите решить.</text>
-  <circle cx="258" cy="582" r="9" fill="none" stroke="#245943"/><path d="m254 582 3 3 6-7" fill="none" stroke="#245943" stroke-width="1.6"/>
-  <text x="278" y="587" fill="#6c806f" font-size="11">Справочная информация</text>
-  <rect x="242" y="648" width="1116" height="117" rx="19" fill="#fffefa" stroke="#dfe5dc"/>
-  <text x="271" y="687" fill="#9ca69d" font-size="14">Напишите, что вас интересует…</text>
-  <path d="M270 705H1328" stroke="#eff0ea"/>
-  <text x="271" y="744" fill="#95a097" font-size="10">Ответы носят справочный характер</text>
-  <circle cx="1315" cy="727" r="19" fill="#245943"/><path d="M1307 727h14m-5-5 5 5-5 5" fill="none" stroke="#fffefa" stroke-width="1.6"/>
-  <rect x="242" y="795" width="190" height="44" rx="22" fill="#fffefa" stroke="#e2e7de"/><text x="337" y="823" text-anchor="middle" fill="#61756a" font-size="12">Подобрать БАД</text>
-  <rect x="444" y="795" width="190" height="44" rx="22" fill="#fffefa" stroke="#e2e7de"/><text x="539" y="823" text-anchor="middle" fill="#61756a" font-size="12">Узнать о товаре</text>
-  <rect x="646" y="795" width="236" height="44" rx="22" fill="#fffefa" stroke="#e2e7de"/><text x="764" y="823" text-anchor="middle" fill="#61756a" font-size="12">Расшифровать анализ</text>
+<g fill="#18392f">
+  <text x="760" y="323" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2.3" fill="#6f806f">РЎР¦Р•РќРђР РР™ РћР‘Р©Р•РќРРЇ</text>
+  <path d="M760 348h35" stroke="#b39b6d" stroke-width="2"/>
+  <text x="755" y="433" font-family="Georgia,serif" font-size="55" letter-spacing="-1.8">РќР°С‡Р°С‚СЊ СЃ</text>
+  <text x="755" y="492" font-family="Georgia,serif" font-size="55" letter-spacing="-1.8">РїСЂРѕСЃС‚РѕРіРѕ РІРѕРїСЂРѕСЃР°</text>
+  <text x="760" y="548" font-family="Arial,sans-serif" font-size="17" fill="#68796d">РџРѕРјРѕС‰РЅРёРє СѓС‚РѕС‡РЅСЏРµС‚ Р·Р°РґР°С‡Сѓ Рё РїРѕРјРѕРіР°РµС‚</text>
+  <text x="760" y="575" font-family="Arial,sans-serif" font-size="17" fill="#68796d">РІС‹Р±СЂР°С‚СЊ СЃР»РµРґСѓСЋС‰РёР№ С€Р°Рі вЂ” Р±РµР· СЃР»РѕР¶РЅРѕР№</text>
+  <text x="760" y="602" font-family="Arial,sans-serif" font-size="17" fill="#68796d">РЅР°РІРёРіР°С†РёРё РїРѕ СЂР°Р·РґРµР»Р°Рј.</text>
+  <path d="M760 657H1438" stroke="#d1d8cf"/>
+  <text x="760" y="698" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="1.2" fill="#829087">Р”РРђР›РћР“ В· РЈРўРћР§РќР•РќРР• В· Р Р•РљРћРњР•РќР”РђР¦РРЇ</text>
+  <circle cx="770" cy="756" r="5" fill="#b39b6d"/><text x="790" y="761" font-family="Arial,sans-serif" font-size="14" fill="#53685a">РџРѕРЅСЏС‚РЅР°СЏ С„РѕСЂРјСѓР»РёСЂРѕРІРєР° РІРѕРїСЂРѕСЃР°</text>
+  <circle cx="770" cy="798" r="5" fill="#b39b6d"/><text x="790" y="803" font-family="Arial,sans-serif" font-size="14" fill="#53685a">Р‘С‹СЃС‚СЂС‹Рµ РІР°СЂРёР°РЅС‚С‹ РґР»СЏ РЅР°С‡Р°Р»Р°</text>
 </g>
 </svg>
