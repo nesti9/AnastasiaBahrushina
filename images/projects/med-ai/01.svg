@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="Med AI — главная версия сервиса на компьютере и телефоне">
+<defs>
+  <linearGradient id="silver" x2="0" y2="1"><stop stop-color="#fafafa"/><stop offset=".18" stop-color="#c8ccca"/><stop offset=".5" stop-color="#f5f6f5"/><stop offset=".82" stop-color="#8e9493"/><stop offset="1" stop-color="#d7d9d7"/></linearGradient>
+  <linearGradient id="edge" x2="1" y2="1"><stop stop-color="#737a79"/><stop offset=".22" stop-color="#161918"/><stop offset=".78" stop-color="#080a09"/><stop offset="1" stop-color="#59605e"/></linearGradient>
+  <linearGradient id="paper" x2="0" y2="1"><stop stop-color="#fffefa"/><stop offset="1" stop-color="#f2f1e9"/></linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#233d32" flood-opacity=".23"/></filter>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="34"/></filter>
+  <clipPath id="screen"><rect x="77" y="173" width="866" height="541" rx="14"/></clipPath>
+  <clipPath id="phoneScreen"><rect x="884" y="192" width="210" height="531" rx="29"/></clipPath>
+</defs>
+<rect width="1600" height="1000" fill="#eeeae0"/>
+<ellipse cx="503" cy="521" rx="510" ry="390" fill="#dfe9df" opacity=".8" filter="url(#soft)"/>
+<path d="M0 855C280 788 502 940 790 865s527-15 810-132v267H0z" fill="#e4e9df" opacity=".65"/>
+<!-- laptop display -->
+<g filter="url(#shadow)">
+  <rect x="53" y="148" width="914" height="584" rx="27" fill="url(#edge)" stroke="#bdc1bf" stroke-width="2"/>
+  <rect x="65" y="160" width="890" height="560" rx="19" fill="#090c0b"/>
+  <g clip-path="url(#screen)"><g transform="translate(77 173) scale(0.541)">
+<rect width="1600" height="1000" fill="#f4f3ec"/>
+<defs>
+  <filter id="hero-shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#18392f" flood-opacity=".10"/></filter>
+  <clipPath id="photoA"><rect x="78" y="174" width="486" height="680" rx="3 28 3 28"/></clipPath>
+  <clipPath id="photoB"><rect x="72" y="164" width="610" height="720" rx="3 30 3 30"/></clipPath>
+</defs>
+<g font-family="Arial, sans-serif" fill="#18392f">
+  <text x="76" y="67" font-family="Georgia, serif" font-size="32" letter-spacing="-1.4">Med AI</text>
+  <text x="174" y="63" font-size="11" fill="#738178">медицинский помощник</text>
+  <g font-size="12" fill="#5e7065">
+    <text x="930" y="61">Возможности</text>
+    <text x="1060" y="61">Направления</text>
+    <text x="1195" y="61">О сервисе</text>
+  </g>
+  <rect x="1342" y="32" width="180" height="42" rx="21" fill="none" stroke="#b8c5b6"/>
+  <text x="1432" y="58" text-anchor="middle" font-size="11" font-weight="700">Задать вопрос　→</text>
+  <path d="M76 101H1524" stroke="#d9ddd3"/>
+</g>
+<g font-family="Arial, sans-serif" fill="#18392f">
+  <text x="84" y="227" font-size="12" font-weight="700" letter-spacing="2.4" fill="#496b59">МЕДИЦИНСКИЙ ПОМОЩНИК</text>
+  <path d="M84 202h26" stroke="#c9b78f" stroke-width="2"/>
+  <text x="80" y="338" font-family="Georgia, serif" font-size="76" letter-spacing="-4">Разберёмся</text>
+  <text x="80" y="422" font-family="Georgia, serif" font-size="76" font-style="italic" letter-spacing="-3" fill="#245943">вместе.</text>
+  <text x="84" y="488" font-size="19" fill="#62756b">Я помогу разобраться в товарах интернет-магазина</text>
+  <text x="84" y="519" font-size="19" fill="#62756b">и медицинских услугах клиники Med.</text>
+  <text x="84" y="550" font-size="19" fill="#62756b">Задайте вопрос — подскажу, с чего начать.</text>
+  <rect x="84" y="602" width="196" height="52" rx="26" fill="#245943"/>
+  <text x="182" y="634" text-anchor="middle" fill="#fffefa" font-size="13" font-weight="700">Начать разговор　→</text>
+</g>
+<rect x="910" y="160" width="578" height="628" rx="28" fill="#123d31"/>
+<g filter="url(#hero-shadow)">
+  <rect x="866" y="184" width="578" height="628" rx="26" fill="#fffefa" stroke="#e5e8df"/>
+</g>
+<g font-family="Arial, sans-serif">
+  <circle cx="910" cy="229" r="20" fill="#245943"/><text x="910" y="235" text-anchor="middle" fill="#f4f3ec" font-family="Georgia,serif" font-size="18">M</text>
+  <text x="942" y="224" font-size="14" font-weight="700" fill="#18392f">Med AI</text>
+  <circle cx="949" cy="241" r="3" fill="#98b87f"/><text x="959" y="245" font-size="10" fill="#738178">Помощник на связи</text>
+  <circle cx="1392" cy="229" r="17" fill="none" stroke="#e1e5dc"/><text x="1392" y="233" text-anchor="middle" font-size="16" fill="#829087">···</text>
+  <path d="M889 270H1421" stroke="#e4e7df"/>
+  <text x="1155" y="301" text-anchor="middle" font-size="9" fill="#9aa59b" letter-spacing="1.5">СЕГОДНЯ</text>
+  <rect x="898" y="323" width="312" height="53" rx="16" fill="#f6f7f1" stroke="#e7eae2"/>
+  <text x="918" y="355" font-size="13" fill="#3e574a">Здравствуйте! Что вас интересует?</text>
+  <rect x="1124" y="395" width="276" height="48" rx="16" fill="#245943"/>
+  <text x="1145" y="425" font-size="13" fill="#fffefa">Хочу подобрать БАД</text>
+  <rect x="898" y="460" width="494" height="92" rx="16" fill="#f6f7f1" stroke="#e7eae2"/>
+  <text x="919" y="492" font-size="13" fill="#3e574a">Помогу разобраться в ассортименте интернет-магазина.</text>
+  <text x="919" y="516" font-size="13" fill="#3e574a">Расскажите, какую задачу вы хотите решить.</text>
+  <circle cx="909" cy="580" r="8" fill="none" stroke="#245943"/><path d="m905 580 3 3 6-7" fill="none" stroke="#245943" stroke-width="1.5"/>
+  <text x="925" y="584" font-size="10" fill="#6c806f">Справочная информация</text>
+  <rect x="898" y="610" width="494" height="91" rx="17" fill="#fffefa" stroke="#dfe5dc"/>
+  <text x="920" y="641" font-size="12" fill="#9ca69d">Напишите, что вас интересует…</text>
+  <path d="M919 657H1370" stroke="#eff0ea"/>
+  <text x="920" y="682" font-size="9" fill="#95a097">Ответы носят справочный характер</text>
+  <circle cx="1363" cy="672" r="16" fill="#245943"/><path d="M1357 672h10m-4-4 4 4-4 4" fill="none" stroke="#fffefa" stroke-width="1.5"/>
+  <rect x="898" y="720" width="132" height="34" rx="17" fill="#fffefa" stroke="#e2e7de"/>
+  <text x="964" y="742" text-anchor="middle" font-size="10" fill="#61756a">Подобрать БАД</text>
+  <rect x="1038" y="720" width="132" height="34" rx="17" fill="#fffefa" stroke="#e2e7de"/>
+  <text x="1104" y="742" text-anchor="middle" font-size="10" fill="#61756a">Узнать о товаре</text>
+  <rect x="1178" y="720" width="218" height="34" rx="17" fill="#fffefa" stroke="#e2e7de"/>
+  <text x="1287" y="742" text-anchor="middle" font-size="10" fill="#61756a">Расшифровать анализ</text>
+</g>
+<path d="M78 866H1522" stroke="#d9ddd3"/>
+<g font-family="Arial, sans-serif" font-size="12">
+  <text x="82" y="900" fill="#829087" font-weight="700" letter-spacing="1.5">В ОДНОМ РАЗГОВОРЕ</text>
+  <text x="590" y="900" fill="#586c60">✓　Товары интернет-магазина</text>
+  <text x="930" y="900" fill="#586c60">✓　Анализы</text>
+  <text x="1115" y="900" fill="#586c60">✓　Медицинские услуги клиники Med</text>
+</g>
+</g></g>
+  <circle cx="510" cy="155" r="2.3" fill="#47514d"/>
+  <path d="M18 734H1002l78 21q3 3-3 6H27q-8-2-9-6z" fill="url(#silver)" stroke="#969b99" stroke-width="1.5"/>
+  <path d="M419 736h177l-11 13H429z" fill="#9ca09e" opacity=".72"/>
+  <path d="M33 757H987" stroke="#fff" stroke-opacity=".7"/>
+</g>
+<!-- phone with a complete mobile view -->
+<g filter="url(#shadow)" transform="translate(989 0) scale(1.14 1) translate(-989 0)">
+  <rect x="868" y="174" width="242" height="568" rx="39" fill="url(#edge)" stroke="#c5c9c7" stroke-width="2"/>
+  <rect x="875" y="181" width="228" height="554" rx="34" fill="#090b0a"/>
+  <rect x="884" y="192" width="210" height="531" rx="29" fill="url(#paper)"/>
+  <g clip-path="url(#phoneScreen)" font-family="Arial,sans-serif" fill="#18392f">
+    <rect x="884" y="192" width="210" height="531" fill="#f7f5ee"/>
+    <text x="902" y="217" font-size="8" font-weight="700">9:41</text><rect x="1014" y="202" width="55" height="16" rx="8" fill="#060807"/>
+    <text x="902" y="245" font-family="Georgia,serif" font-size="16">Med AI</text><text x="1059" y="244" font-size="11" fill="#51685a">☰</text><path d="M899 259H1079" stroke="#e3e1d8"/>
+    <text x="900" y="283" font-size="7" font-weight="700" letter-spacing="1.2" fill="#748576">МЕДИЦИНСКИЙ ПОМОЩНИК</text>
+    <text x="899" y="318" font-family="Georgia,serif" font-size="27">Разберёмся</text><text x="899" y="347" font-family="Georgia,serif" font-size="27" font-style="italic" fill="#245943">вместе.</text>
+    <text x="901" y="372" font-size="8.4" fill="#66756b">Помощь с товарами магазина</text><text x="901" y="385" font-size="8.4" fill="#66756b">и медицинскими услугами клиники Med.</text>
+    <rect x="901" y="400" width="176" height="33" rx="16.5" fill="#245943"/><text x="989" y="421" text-anchor="middle" font-size="8" font-weight="700" fill="#fffefa">Начать разговор　→</text>
+    <rect x="897" y="450" width="184" height="190" rx="18" fill="#fffefa" stroke="#e5e5dc"/>
+    <circle cx="918" cy="472" r="12" fill="#245943"/><text x="918" y="476" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#fffefa">M</text>
+    <text x="937" y="470" font-size="8" font-weight="700">Med AI</text><text x="937" y="481" font-size="6.5" fill="#7b897d">Помощник на связи</text>
+    <rect x="908" y="495" width="133" height="28" rx="10" fill="#f4f4ee"/><text x="917" y="512" font-size="6.5" fill="#475f51">Здравствуйте! Что вас интересует?</text>
+    <rect x="957" y="531" width="111" height="26" rx="10" fill="#245943"/><text x="966" y="547" font-size="6.5" fill="#fffefa">Хочу подобрать БАД</text>
+    <rect x="908" y="565" width="160" height="48" rx="10" fill="#f4f4ee"/><text x="917" y="582" font-size="6.5" fill="#475f51">Расскажите, какую задачу вы</text><text x="917" y="594" font-size="6.5" fill="#475f51">хотите решить.</text>
+    <rect x="901" y="654" width="176" height="42" rx="13" fill="#f7f5ee" stroke="#dedfd5"/><text x="912" y="678" font-size="7" fill="#849087">Напишите ваш вопрос…</text><circle cx="1056" cy="675" r="12" fill="#245943"/><text x="1056" y="679" text-anchor="middle" font-size="10" fill="#fffefa">↑</text>
+  </g>
+  <rect x="875" y="349" width="3" height="47" rx="1.5" fill="#7a807f"/><rect x="1103" y="310" width="3" height="75" rx="1.5" fill="#858b8a"/>
+</g>
+<!-- editorial caption -->
+<g fill="#18392f">
+  <text x="1172" y="326" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2.2" fill="#6f806f">МЕДИЦИНСКИЙ ПОМОЩНИК</text>
+  <path d="M1172 350h33" stroke="#b39b6d" stroke-width="2"/>
+  <text x="1168" y="419" font-family="Georgia,serif" font-size="48" letter-spacing="-1.6">Разберёмся</text>
+  <text x="1168" y="471" font-family="Georgia,serif" font-size="48" font-style="italic" letter-spacing="-1.5" fill="#245943">вместе.</text>
+  <text x="1172" y="526" font-family="Arial,sans-serif" font-size="16" fill="#68796d">Товары интернет-магазина,</text>
+  <text x="1172" y="551" font-family="Arial,sans-serif" font-size="16" fill="#68796d">анализы и услуги клиники Med —</text>
+  <text x="1172" y="576" font-family="Arial,sans-serif" font-size="16" fill="#68796d">в одном разговоре.</text>
+  <path d="M1172 620H1515" stroke="#d2d8cf"/>
+  <text x="1172" y="655" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1.4" fill="#829087">ИНТЕРФЕЙС · WEB / MOBILE</text>
+</g>
+</svg>
