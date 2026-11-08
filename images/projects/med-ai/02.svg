@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="Диалог с помощником Med AI">
+<defs>
+  <linearGradient id="edge" x2="1" y2="1"><stop stop-color="#66706c"/><stop offset=".18" stop-color="#171b19"/><stop offset=".8" stop-color="#050706"/><stop offset="1" stop-color="#737a77"/></linearGradient>
+  <linearGradient id="paper" x2="0" y2="1"><stop stop-color="#fffefa"/><stop offset="1" stop-color="#f5f3eb"/></linearGradient>
+  <filter id="shadow" x="-25%" y="-20%" width="150%" height="145%"><feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#193d31" flood-opacity=".2"/></filter>
+  <clipPath id="phone"><rect x="194" y="102" width="350" height="780" rx="46"/></clipPath>
+</defs>
+<rect width="1600" height="1000" fill="#ece9df"/><path d="M0 0h614v1000H0z" fill="#dfe8dc"/><ellipse cx="1300" cy="525" rx="350" ry="420" fill="#e1e8dd"/>
+<g filter="url(#shadow)" transform="translate(369 0) scale(1.05 1) translate(-369 0)">
+  <rect x="180" y="88" width="378" height="808" rx="58" fill="url(#edge)" stroke="#c5c9c6" stroke-width="2"/>
+  <rect x="189" y="97" width="360" height="790" rx="52" fill="#070908"/>
+  <rect x="194" y="102" width="350" height="780" rx="46" fill="url(#paper)"/>
+  <g clip-path="url(#phone)" font-family="Arial,sans-serif" fill="#18392f">
+    <rect x="194" y="102" width="350" height="780" fill="#f8f6ef"/>
+      <text x="220" y="133" font-size="11" font-weight="700">9:41</text><rect x="337" y="111" width="66" height="21" rx="10.5" fill="#060807"/>
+      <text x="220" y="183" font-family="Georgia,serif" font-size="24">Med AI</text><circle cx="241" cy="202" r="4" fill="#91af78"/><text x="254" y="206" font-size="10" fill="#718176">Помощник на связи</text><path d="M215 223H523" stroke="#e3e1d8"/>
+      <text x="369" y="256" text-anchor="middle" font-size="9" letter-spacing="1.5" fill="#a2aaa0">СЕГОДНЯ</text>
+      <rect x="218" y="274" width="286" height="58" rx="17" fill="#fffefa" stroke="#e8e7df"/><text x="238" y="298" font-size="12" fill="#52665a">Здравствуйте! Помогу с товарами,</text><text x="238" y="317" font-size="12" fill="#52665a">анализами и услугами клиники.</text>
+      <rect x="294" y="344" width="226" height="58" rx="17" fill="#245943"/><text x="314" y="368" font-size="12" fill="#fffefa">Как найти анализ</text><text x="314" y="387" font-size="12" fill="#fffefa">из направления?</text>
+      <rect x="218" y="414" width="286" height="99" rx="17" fill="#fffefa" stroke="#e8e7df"/><text x="239" y="441" font-size="12" fill="#52665a">Откройте «Анализы» и введите</text><text x="239" y="461" font-size="12" fill="#52665a">название. Помогу найти карточку</text><text x="239" y="481" font-size="12" fill="#52665a">с описанием и стоимостью.</text>
+      <rect x="294" y="525" width="226" height="54" rx="17" fill="#245943"/><text x="314" y="558" font-size="12" fill="#fffefa">А результат вы объясните?</text>
+      <rect x="218" y="591" width="286" height="111" rx="17" fill="#fffefa" stroke="#e8e7df"/><text x="239" y="620" font-size="12" fill="#52665a">Да, поясню термины и показатели.</text><text x="239" y="641" font-size="12" fill="#52665a">Диагноз и лечение определяет врач.</text><text x="239" y="678" font-size="9" font-weight="700" fill="#718176">СПРАВОЧНАЯ ИНФОРМАЦИЯ</text>
+    <rect x="218" y="756" width="300" height="78" rx="18" fill="#fffefa" stroke="#dfe4dc"/><text x="238" y="786" font-size="11" fill="#849087">Напишите, что ещё важно…</text><path d="M238 800H472" stroke="#ecece5"/><circle cx="492" cy="795" r="15" fill="#245943"/><path d="M485 795h12m-5-5 5 5-5 5" fill="none" stroke="#fffefa" stroke-width="1.5"/>
+  </g>
+  <rect x="186" y="276" width="4" height="64" rx="2" fill="#7e8582"/><rect x="552" y="228" width="4" height="92" rx="2" fill="#7e8582"/>
+</g>
+<g fill="#18392f">
+    <text x="760" y="323" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2.3" fill="#6f806f">ПОДДЕРЖКА ПОЛЬЗОВАТЕЛЯ</text>
+  <path d="M760 348h35" stroke="#b39b6d" stroke-width="2"/>
+    <text x="755" y="433" font-family="Georgia,serif" font-size="53" letter-spacing="-1.8">От вопроса —</text>
+    <text x="755" y="492" font-family="Georgia,serif" font-size="53" letter-spacing="-1.8">к понятному шагу</text>
+    <text x="760" y="548" font-family="Arial,sans-serif" font-size="17" fill="#68796d">Med AI помогает найти товар или анализ,</text>
+    <text x="760" y="575" font-family="Arial,sans-serif" font-size="17" fill="#68796d">разобраться в информации и выбрать</text>
+    <text x="760" y="602" font-family="Arial,sans-serif" font-size="17" fill="#68796d">услугу клиники.</text>
+  <path d="M760 657H1438" stroke="#d1d8cf"/>
+    <text x="760" y="698" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="1.2" fill="#829087">ТОВАРЫ · АНАЛИЗЫ · КЛИНИКА MED</text>
+    <circle cx="770" cy="756" r="5" fill="#b39b6d"/><text x="790" y="761" font-family="Arial,sans-serif" font-size="14" fill="#53685a">Поиск товара или анализа</text>
+    <circle cx="770" cy="798" r="5" fill="#b39b6d"/><text x="790" y="803" font-family="Arial,sans-serif" font-size="14" fill="#53685a">Пояснение сложных терминов</text>
+</g>
+</svg>
