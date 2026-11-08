@@ -8,7 +8,7 @@
 <rect x="66" y="135" width="496" height="730" rx="4 32 4 32" fill="none" stroke="#fffefa" stroke-opacity=".42"/>
 <g filter="url(#shadow)" font-family="Arial,sans-serif">
   <rect x="445" y="92" width="738" height="802" rx="24" fill="#fffefa" stroke="#e1e5dc"/>
-  <text x="490" y="146" font-family="Georgia,serif" font-size="28" fill="#18392f">Med AI</text><text x="574" y="143" font-size="10" fill="#829087">МЕДИЦИНСКИЙ ПОМОЩНИК</text>
+  <text x="490" y="146" font-family="Georgia,serif" font-size="28" fill="#18392f">Med AI</text><text x="600" y="143" font-size="10" fill="#829087">МЕДИЦИНСКИЙ ПОМОЩНИК</text>
   <path d="M487 172H1140" stroke="#e2e5dd"/>
   <text x="490" y="216" font-size="10" font-weight="700" letter-spacing="1.8" fill="#748576">ВЫБЕРИТЕ ТЕМУ</text>
   <text x="486" y="274" font-family="Georgia,serif" font-size="40" letter-spacing="-1.2" fill="#18392f">С чем я помогу</text>
