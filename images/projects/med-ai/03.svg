@@ -22,11 +22,11 @@
   <text x="493" y="790" font-family="Georgia,serif" font-size="14" fill="#a2ae9f">06</text><text x="538" y="785" font-size="14" font-weight="700" fill="#18392f">Расшифровать анализы</text><text x="538" y="805" font-size="10" fill="#7b8980">Стоимость услуги — 300 ₽</text><text x="1120" y="790" text-anchor="end" font-size="18" fill="#728375">↗</text><path d="M488 824H1140" stroke="#e1e4dc"/>
 </g>
 <g fill="#f3f1e8">
-  <text x="618" y="234" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="2.2" fill="#d1c4a4">НАПРАВЛЕНИЯ</text>
-  <path d="M618 258h34" stroke="#d1c4a4" stroke-width="2"/>
-  <text x="614" y="340" font-family="Georgia,serif" font-size="48">Один помощник —</text><text x="614" y="394" font-family="Georgia,serif" font-size="48" font-style="italic">шесть тем</text>
-  <text x="618" y="442" font-family="Arial,sans-serif" font-size="15" fill="#d2ddd4">От товаров интернет-магазина</text><text x="618" y="467" font-family="Arial,sans-serif" font-size="15" fill="#d2ddd4">до медицинских услуг клиники.</text>
-  <circle cx="627" cy="521" r="4" fill="#c9b88c"/><text x="644" y="525" font-family="Arial,sans-serif" font-size="11" fill="#d2ddd4">Понятные разделы</text>
-  <circle cx="627" cy="554" r="4" fill="#c9b88c"/><text x="644" y="558" font-family="Arial,sans-serif" font-size="11" fill="#d2ddd4">Единая точка входа</text>
+  <text x="1220" y="234" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="2.2" fill="#d1c4a4">НАПРАВЛЕНИЯ</text>
+  <path d="M1220 258h34" stroke="#d1c4a4" stroke-width="2"/>
+  <text x="1216" y="340" font-family="Georgia,serif" font-size="40">Один помощник —</text><text x="1216" y="394" font-family="Georgia,serif" font-size="40" font-style="italic">шесть тем</text>
+  <text x="1220" y="442" font-family="Arial,sans-serif" font-size="13" fill="#d2ddd4">От товаров интернет-магазина</text><text x="1220" y="467" font-family="Arial,sans-serif" font-size="13" fill="#d2ddd4">до медицинских услуг клиники.</text>
+  <circle cx="1229" cy="521" r="4" fill="#c9b88c"/><text x="1246" y="525" font-family="Arial,sans-serif" font-size="11" fill="#d2ddd4">Понятные разделы</text>
+  <circle cx="1229" cy="554" r="4" fill="#c9b88c"/><text x="1246" y="558" font-family="Arial,sans-serif" font-size="11" fill="#d2ddd4">Единая точка входа</text>
 </g>
 </svg>
