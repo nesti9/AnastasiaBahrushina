@@ -453,7 +453,7 @@ const PROJECTS = [
     done:['Структура сайта','UI / UX','Калькулятор подбора','Desktop','Mobile'],
     phoneTitle:'Подбор за три шага', phoneNote:'Выберите тип объекта, укажите площадь — сервис покажет рекомендацию по кондиционеру.',
     images:[
-      {file:'01.png',label:'Главный экран — ноутбук'},
+      {file:'01-laptop.png',label:'Главный экран — ноутбук'},
       {file:'02.png',label:'Главный экран — mobile'},
       {file:'03.png',label:'Шаг площади — ноутбук'},
       {file:'04.png',label:'Результат калькулятора — mobile'}]},
@@ -768,7 +768,9 @@ function caseRow(p,i){
 function dirBlock(cat,i){
   const projs = inCat(cat.key);
   const visual = projs.length
-    ? mediaBlock(projs[0])
+    ? (projs[0].coverImage
+        ? frame(projs[0],{file:projs[0].coverImage,label:'Обложка проекта'})
+        : mediaBlock(projs[0]))
     : `<div class="frame"><span class="empty-cap">${cat.title}</span></div>`;
   return `<article class="dir rv">
     <a class="dir-link" href="#/works/${cat.key}" aria-label="${cat.title} — смотреть проекты">
