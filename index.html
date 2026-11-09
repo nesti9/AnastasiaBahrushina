@@ -453,10 +453,10 @@ const CONFIG = {
    Пока файла нет — на его месте спокойный пустой слот с подписью. */
 const CATEGORIES = [
   { key:'web', title:'Web Design', subtitle:'Сайты и digital-страницы.', preview:{folder:'ClimatZone',file:'01.png',label:'Все проекты'} },
-  { key:'digital', title:'Digital Products', subtitle:'AI-интерфейсы, цифровые сервисы и landing pages.' },
-  { key:'ecommerce', title:'E-commerce', subtitle:'Интернет-магазины и Mini App в telegram.' },
-  { key:'graphic', title:'Graphic Design', subtitle:'Визуальные материалы, упаковка, полиграфия и графические решения.' },
-  { key:'event', title:'Event & Wedding', subtitle:'Визуальные системы и digital-решения для мероприятий.' }
+  { key:'digital', title:'Digital Products', subtitle:'AI-интерфейсы, цифровые сервисы и landing pages.', preview:{folder:'category-overviews',file:'digital-products-overview.png',label:'Все проекты'} },
+  { key:'ecommerce', title:'E-commerce', subtitle:'Интернет-магазины и Mini App в telegram.', preview:{folder:'category-overviews',file:'ecommerce-overview.png',label:'Все проекты'} },
+  { key:'graphic', title:'Graphic Design', subtitle:'Визуальные материалы, упаковка, полиграфия и графические решения.', preview:{folder:'category-overviews',file:'graphic-design-overview.png',label:'Все проекты'} },
+  { key:'event', title:'Event & Wedding', subtitle:'Визуальные системы и digital-решения для мероприятий.', preview:{folder:'category-overviews',file:'event-wedding-overview.png',label:'Все проекты'} }
 ];
 const catInfo = key => CATEGORIES.find(c=>c.key===key);
 const inCat = key => PROJECTS.filter(p=>p.category===key);
