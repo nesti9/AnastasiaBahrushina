@@ -407,6 +407,12 @@ html{-webkit-tap-highlight-color:transparent}
 .case-med-ai .gal>div{background:transparent}
 .case-med-ai .gal .frame{height:auto}
 
+
+/* SOMNA presentation images: preserve their original colors and full landscape ratio. */
+.case-somna .case-media .frame,.case-somna .gal .frame{height:auto;min-height:0;background:transparent;border:0;overflow:visible}
+.case-somna .case-media .frame img,.case-somna .gal .frame img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;mix-blend-mode:normal}
+.case-somna .gal{grid-template-columns:minmax(0,1fr);gap:clamp(28px,4vw,56px);background:transparent;margin-top:clamp(32px,5vw,64px)}
+.case-somna .gal>div{background:transparent}
 </style>
 </head>
 <body>
@@ -448,7 +454,7 @@ const CONFIG = {
 const CATEGORIES = [
   { key:'web', title:'Web Design', subtitle:'Сайты, landing pages и digital-страницы.', preview:{folder:'ClimatZone',file:'01.png',label:'Все проекты'} },
   { key:'digital', title:'Digital Products', subtitle:'Mini Apps, AI-интерфейсы и цифровые сервисы.' },
-  { key:'ecommerce', title:'E-commerce & Product Design', subtitle:'Визуал продукта — от карточки товара до упаковки и рекламных материалов.' },
+  { key:'ecommerce', title:'E-commerce', subtitle:'Интернет-магазины и магазины в Telegram.' },
   { key:'graphic', title:'Graphic Design', subtitle:'Визуальные материалы, упаковка, полиграфия и графические решения.' },
   { key:'event', title:'Event & Wedding', subtitle:'Визуальные системы и digital-решения для мероприятий.' }
 ];
@@ -518,9 +524,17 @@ const PROJECTS = [
       {file:'02.png',label:'Диалог с помощником'},
       {file:'03.png',label:'Направления помощи'},
       {file:'04.png',label:'Переход к сервисам'}]},
-  { slug:'prevent', folder:'prevent', title:'Prevent', subtitle:'Mini App / UI UX / E-commerce', category:'digital', year:'2026',
-    summary:'Telegram-магазин Prevent, реализованный как Mini App — от каталога до оформления заказа. Разработала интерфейс магазина и AI-помощника внутри приложения.',
-    done:['Главный экран','Каталог','Карточка товара','Корзина','Оформление заказа','AI-помощник'],
+  { slug:'somna', folder:'somna', title:'SOMNA', subtitle:'E-commerce / Beauty', category:'ecommerce', year:'2026', coverImage:'01.png', demoUrl:'https://nesti9.github.io/somna/',
+    summary:'Интернет-магазин уходовой косметики SOMNA. Проработала структуру каталога, карточки средств и адаптивные страницы магазина.',
+    done:['Структура интернет-магазина','Каталог средств','Карточки товаров','Интерфейс desktop и mobile'],
+    images:[
+      {file:'01.png',label:'Главная — desktop и mobile'},
+      {file:'02.png',label:'Карточка сыворотки — mobile'},
+      {file:'03.png',label:'Каталог средств — desktop'},
+      {file:'04.png',label:'Ритуал ухода — mobile'}]},
+  { slug:'prevent', folder:'prevent', title:'PreventShop', subtitle:'Интернет-магазин · Telegram Mini App', category:'ecommerce', year:'2026', demoUrl:'https://preventshop.ucoz.net/',
+    summary:'Единый проект PreventShop: интернет-магазин и его версия в Telegram. Каталог, карточки товаров и оформление заказа доступны в обеих точках входа.',
+    done:['Сайт интернет-магазина','Telegram-магазин и Mini App','Каталог товаров','Карточки товаров','Корзина и оформление заказа','AI-помощник'],
     images:[
       {file:'01.jpg',label:'Главный экран'},
       {file:'02.jpg',label:'Каталог'},
