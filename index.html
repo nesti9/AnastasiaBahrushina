@@ -13,7 +13,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%2346604F'/%3E%3Ctext x='16' y='22' font-size='15' font-family='Georgia,serif' font-style='italic' text-anchor='middle' fill='%23F6F1E6'%3EAB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700&family=Marck+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   /* тёплая светлая палитра: молочный фон, шалфей, тёмно-зелёный текст */
@@ -21,15 +21,15 @@
   --line:rgba(35,48,39,.15); --line-strong:rgba(35,48,39,.4);
   --gap:clamp(16px,2.2vw,32px); --pad:clamp(20px,4.6vw,72px);
   --sans:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
-  --serif:'Cormorant Garamond','Cormorant','Lora','Iowan Old Style','Palatino Linotype',Georgia,serif;
-  --script:'Marck Script','Cormorant Garamond','Lora',Georgia,serif;
+  --serif:'Prata','Cormorant Garamond','Lora','Iowan Old Style','Palatino Linotype',Georgia,serif;
+  --script:var(--serif);
   --ease:cubic-bezier(.2,.7,.2,1);
-  --case-board:#EEE9DD;
+  --case-board:#EEE9DD;--ps:0;
   color-scheme:light;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
-body{margin:0;min-height:100%;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{margin:0;min-height:100%;background:var(--paper);transition:background-color .7s ease,color .7s ease;color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 h1,h2,h3,p,ol,ul,dl,dd,figure{margin:0;padding:0}
@@ -43,31 +43,33 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 /* ---------- типографика ---------- */
 .serif{font-family:var(--serif)}
-.it{font-style:italic;color:var(--moss)}
+.it{font-style:normal;color:var(--moss)}
 .kicker{display:inline-flex;align-items:center;gap:14px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);font-weight:600}
-.kicker::before{content:"";width:34px;height:1px;background:var(--clay)}
-.h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.3rem,5.6vw,5rem);line-height:1.02;letter-spacing:-.015em}
-.h2 em{font-style:italic;color:var(--moss);font-weight:400}
+.kicker::before{content:"";width:34px;height:1px;background:var(--clay);transform-origin:left;animation:draw 1s var(--ease) .1s both}
+@keyframes draw{from{transform:scaleX(0)}}
+.h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4.4vw,4rem);line-height:1.08;letter-spacing:-.015em}
+.h2 em{font-style:normal;color:var(--moss);font-weight:400}
 .sub{color:var(--mute);max-width:24em;font-size:1.04rem}
 
 /* ---------- шапка ---------- */
-.hdr{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .35s,box-shadow .35s;border-bottom:1px solid transparent}
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .35s,box-shadow .35s,transform .5s var(--ease);border-bottom:1px solid transparent}
 .hdr-in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:84px;transition:height .35s var(--ease)}
 .hdr.sc{background:color-mix(in srgb,var(--paper) 92%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
 .hdr.sc .hdr-in{height:62px}
-.brand{font-family:var(--script);font-size:1.7rem;line-height:1;color:var(--moss);white-space:nowrap;letter-spacing:.01em}
+.brand{font-family:var(--serif);font-size:1.3rem;line-height:1;color:var(--ink);white-space:nowrap;letter-spacing:.02em}
 #nav{display:flex;align-items:center;gap:clamp(18px,2.6vw,42px)}
 #nav a:not(.btn){font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;position:relative;padding:6px 0}
 #nav a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--moss);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
 #nav a:not(.btn):hover::after{transform:scaleX(1)}
 .menu{display:none}
+.hdr.hide{transform:translateY(-110%)}
 
 /* ---------- кнопки ---------- */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.7em;padding:1em 1.8em;border:1px solid var(--moss);color:var(--moss);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;min-height:50px;transition:background .3s,color .3s,transform .2s var(--ease)}
-.btn:hover{background:var(--moss);color:var(--paper)}
+.btn{background-image:linear-gradient(var(--moss),var(--moss));background-repeat:no-repeat;background-size:0% 100%;display:inline-flex;align-items:center;justify-content:center;gap:.7em;padding:1em 1.8em;border:1px solid var(--moss);color:var(--moss);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;min-height:50px;transition:background-size .5s var(--ease),color .35s,transform .2s var(--ease)}
+.btn:hover{background-size:100% 100%;color:var(--paper)}
 .btn:active{transform:scale(.98)}
-.btn-solid{background:var(--moss);color:var(--paper)}
-.btn-solid:hover{background:var(--ink);border-color:var(--ink)}
+.btn-solid{background-color:var(--moss);background-image:linear-gradient(var(--ink),var(--ink));color:var(--paper)}
+.btn-solid:hover{border-color:var(--ink)}
 .btn-sm{padding:.7em 1.2em;min-height:40px}
 .btn-lg{padding:1.2em 2.1em;font-size:.78rem}
 .btn .ar{transition:transform .3s var(--ease)}
@@ -78,15 +80,17 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hero-grid{display:grid;gap:clamp(28px,4vw,56px);align-items:center}
 .hero-meta{display:flex;flex-wrap:wrap;gap:8px 22px;color:var(--mute);font-size:.78rem;letter-spacing:.06em;margin-bottom:clamp(20px,3vw,36px)}
 .hero-meta b{color:var(--ink);font-weight:700}
-.hero-h{font-family:var(--serif);font-weight:500;font-size:clamp(2.5rem,6.2vw,5.8rem);line-height:1.02;letter-spacing:-.02em;max-width:11.5em;overflow-wrap:break-word}
-.hero-h em{display:block;font-style:italic;font-weight:400;color:var(--moss)}
+.hero-h{font-family:var(--serif);font-weight:400;font-size:clamp(2.3rem,5vw,4.8rem);line-height:1.08;letter-spacing:-.02em;max-width:11.5em;overflow-wrap:break-word}
+.hero-h .ln{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
+.hero-h .ln>*{display:block;transform:translateY(108%);animation:lnUp 1.1s var(--ease) both;animation-delay:calc(var(--l,0)*.11s + .1s)}
+@keyframes lnUp{to{transform:none}}
+.hero-h em{display:block;font-style:normal;font-weight:400;color:var(--moss)}
 .lead{font-size:clamp(1.05rem,1.5vw,1.3rem);max-width:27em;line-height:1.55;color:var(--mute);margin-top:clamp(18px,2.6vw,32px)}
 .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:clamp(24px,3.4vw,40px)}
 .hero-art{position:relative;aspect-ratio:1/1.05;max-width:520px;width:100%;justify-self:center}
 .hero-art .disc{position:absolute;inset:2% 0 auto 8%;aspect-ratio:1;border-radius:50%;background:var(--sage-soft)}
 .hero-art .arch{position:absolute;left:0;bottom:0;width:62%;height:78%;border-radius:999px 999px 0 0;background:var(--sage);opacity:.55}
 .hero-art .arch.b{left:auto;right:4%;width:34%;height:46%;background:var(--paper-2);opacity:1}
-.hero-art .mono{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--script);font-size:clamp(7rem,15vw,12rem);line-height:1;color:var(--moss)}
 .hero-art .vline{position:absolute;right:4%;top:6%;writing-mode:vertical-rl;font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;color:var(--mute)}
 .hero-art .tag{position:absolute;left:4%;top:12%;padding:8px 14px;background:var(--paper);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--moss)}
 .index{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--gap);margin-top:clamp(40px,6vw,88px);border-top:1px solid var(--line)}
@@ -95,10 +99,17 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .index a:hover{color:var(--moss)}
 @keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 @keyframes grow{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
-.hero-meta,.hero-h,.lead,.btns,.index{animation:up .8s var(--ease) both}
-.hero-h{animation-delay:.08s}.lead{animation-delay:.18s}.btns{animation-delay:.26s}.index{animation-delay:.36s}
-.hero-art .disc,.hero-art .arch,.hero-art .mono,.hero-art .tag,.hero-art .vline{animation:grow .9s var(--ease) both}
-.hero-art .arch{animation-delay:.12s}.hero-art .mono{animation-delay:.22s}.hero-art .tag,.hero-art .vline{animation-delay:.34s}
+.hero-meta,.lead,.btns,.index{animation:up .9s var(--ease) both}
+.hero-meta{animation-delay:0s}.lead{animation-delay:.55s}.btns{animation-delay:.7s}.index{animation-delay:.85s}
+.hero-art{transform:translateY(calc(var(--ps,0)*-46px))}
+.hero-art .disc{animation:grow 1.2s var(--ease) .15s both}
+.hero-art .arch,.hero-art .ring{animation:archUp 1.3s var(--ease) both}
+.hero-art .arch{animation-delay:.3s}.hero-art .arch.b{animation-delay:.5s}.hero-art .ring.r1{animation-delay:.45s}.hero-art .ring.r2{animation-delay:.65s}
+.hero-art .tag,.hero-art .vline{animation:up 1s var(--ease) .9s both}
+@keyframes archUp{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0)}}
+.hero-art .ring{position:absolute;border:1px solid var(--line-strong);border-radius:999px 999px 0 0;border-bottom:0}
+.hero-art .ring.r1{left:-5%;bottom:0;width:62%;height:84%}
+.hero-art .ring.r2{right:-2%;bottom:0;width:38%;height:56%}
 @media (min-width:900px){.hero-grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}}
 
 /* ---------- секции ---------- */
@@ -110,14 +121,17 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @media (min-width:900px){.split{grid-template-columns:4fr 8fr;gap:var(--gap)}}
 .rv{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .rv.in{opacity:1;transform:none}
+.st{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--i,0)*90ms)}
+.rv.in .st{opacity:1;transform:none}
+.w{opacity:.2;transition:opacity .5s ease}.w.on{opacity:1}
 
 /* ---------- направления на главной ---------- */
 .works{display:grid}
 .dir{padding:clamp(36px,5.6vw,80px) 0;border-top:1px solid var(--line)}
 .dir:last-child{border-bottom:1px solid var(--line)}
 .dir-link{display:grid;gap:clamp(20px,3vw,36px)}
-.dir-n{font-family:var(--serif);font-size:clamp(1rem,1.4vw,1.2rem);color:var(--clay);font-style:italic}
-.dir h3{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,5vw,4.4rem);line-height:1;letter-spacing:-.015em;margin-top:6px;transition:color .3s}
+.dir-n{font-family:var(--serif);font-size:clamp(1rem,1.4vw,1.2rem);color:var(--clay);font-style:normal}
+.dir h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,3.8vw,3.4rem);line-height:1.08;letter-spacing:-.015em;margin-top:6px;transition:color .3s}
 .dir-link:hover h3{color:var(--moss)}
 .dir-sub{color:var(--mute);margin-top:12px;max-width:26em}
 .dir-list{margin-top:18px;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.84rem;color:var(--mute)}
@@ -128,27 +142,27 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .go i{font-style:normal;transition:transform .3s var(--ease)}
 .dir-link:hover .go i,.proj-link:hover .go i{transform:translateX(6px)}
 @media (min-width:900px){
-  .dir-link{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,88px);align-items:center}
-  .dir:nth-child(even) .dir-link{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+  .dir-link{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,6vw,110px);align-items:center}
+  .dir:nth-child(even) .dir-link{grid-template-columns:minmax(0,6fr) minmax(0,5fr)}
   .dir:nth-child(even) .dir-txt{order:2}
 }
 
 /* ---------- услуги / процесс / обо мне ---------- */
-.about-l{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,4vw,3.6rem);line-height:1.08;letter-spacing:-.01em;max-width:16em}
-.about-l em{font-style:italic;font-weight:400;color:var(--moss)}
+.about-l{font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,3.1vw,2.8rem);line-height:1.18;letter-spacing:-.01em;max-width:16em}
+.about-l em{font-style:normal;font-weight:400;color:var(--moss)}
 .about-r{display:grid;gap:16px;max-width:34em;margin-top:clamp(20px,3vw,36px);font-size:1.04rem;color:var(--mute)}
 .svc{display:grid}
 .svc-i{display:grid;grid-template-columns:auto 1fr;gap:4px 22px;padding:22px 0;border-top:1px solid var(--line);transition:padding .4s var(--ease)}
 .svc-i:last-child{border-bottom:1px solid var(--line)}
-.svc-n{font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--clay);padding-top:.2em}
-.svc-i h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.6rem,2.8vw,2.5rem);line-height:1.1;transition:color .3s,transform .4s var(--ease)}
+.svc-n{font-family:var(--serif);font-style:normal;font-size:1.2rem;color:var(--clay);padding-top:.2em}
+.svc-i h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.4rem,2.3vw,2.1rem);line-height:1.15;transition:color .3s,transform .4s var(--ease)}
 .svc-i p{grid-column:2;color:var(--mute);max-width:28em}
 .svc-i:hover h3{color:var(--moss);transform:translateX(8px)}
 .steps{display:grid;gap:0}
 .step{position:relative;padding:0 0 26px 28px;border-left:1px solid var(--line-strong)}
 .step:last-child{padding-bottom:0}
 .step::before{content:"";position:absolute;left:-5px;top:.7em;width:9px;height:9px;border-radius:50%;background:var(--moss)}
-.step h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.5rem,2.4vw,2.1rem);line-height:1.1;display:flex;gap:14px;align-items:baseline}
+.step h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.3rem,2vw,1.8rem);line-height:1.15;display:flex;gap:14px;align-items:baseline}
 .step h3 b{font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;color:var(--clay);font-weight:700}
 .step p{color:var(--mute);margin-top:6px;max-width:24em}
 @media (min-width:900px){
@@ -161,7 +175,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .cta{padding-bottom:clamp(52px,8vw,120px)}
 .cta-box{position:relative;overflow:hidden;background:var(--sage-soft);padding:clamp(32px,6vw,96px) clamp(22px,5vw,80px)}
 .cta-box::after{content:"";position:absolute;right:-6%;bottom:-30%;width:min(46vw,520px);aspect-ratio:1;border-radius:50%;background:var(--paper);opacity:.55;pointer-events:none}
-.cta-h{position:relative;z-index:1;font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,7vw,6.4rem);line-height:1;letter-spacing:-.02em;max-width:10em;overflow-wrap:break-word}
+.cta-h{position:relative;z-index:1;font-family:var(--serif);font-weight:400;font-size:clamp(2rem,5.2vw,4.6rem);line-height:1.08;letter-spacing:-.02em;max-width:10em;overflow-wrap:break-word}
 .cta-h em{font-family:var(--script);font-style:normal;font-weight:400;color:var(--moss);letter-spacing:0}
 .cta-p{position:relative;z-index:1;margin-top:clamp(16px,2.4vw,28px);max-width:28em;color:var(--mute);font-size:clamp(1.02rem,1.4vw,1.25rem)}
 .cta-row{position:relative;z-index:1;margin-top:clamp(22px,3vw,40px)}
@@ -169,7 +183,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .contacts a{display:flex;flex-direction:column;gap:4px;padding:18px 0;border-top:1px solid var(--line-strong);position:relative;transition:color .3s}
 .contacts a:last-child{border-bottom:1px solid var(--line-strong)}
 .contacts small{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);font-weight:700}
-.contacts span{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2.5rem);line-height:1.1;overflow-wrap:anywhere;padding-right:36px}
+.contacts span{font-family:var(--serif);font-size:clamp(1.2rem,2.2vw,1.9rem);line-height:1.15;overflow-wrap:anywhere;padding-right:36px}
 .contacts .ca{position:absolute;right:0;top:18px;font-style:normal;font-size:1.2rem;transition:transform .35s var(--ease)}
 .contacts a:hover{color:var(--moss)}
 .contacts a:hover .ca{transform:translate(4px,-4px)}
@@ -186,37 +200,40 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 /* ---------- изображения: без рамок, без обрезки ---------- */
 .fig{margin:0;position:relative}
-.fig img{display:block;width:100%;height:auto}
-.fig .zoom{display:block;width:100%;padding:0;cursor:zoom-in;line-height:0}
+.fig .frame{display:flex;justify-content:center;overflow:hidden;line-height:0;max-width:100%}
+.fig img{display:block;width:auto;max-width:100%;height:auto;max-height:min(64vh,620px)}
+.fig .zoom{display:flex;justify-content:center;width:100%;padding:0;cursor:zoom-in;line-height:0}
+.rv .frame{transition:clip-path 1.2s var(--ease)}
+.rv .frame img{transition:transform 1.6s var(--ease)}
+.rv:not(.in) .frame{clip-path:inset(0 0 100% 0)}
+.rv:not(.in) .frame img{transform:scale(1.1)}
+.rv.in .zoom:hover img{transform:scale(1.025);transition-duration:.9s}
 .fig .cap{margin-top:12px;font-size:.78rem;line-height:1.5;letter-spacing:.02em;color:var(--mute);max-width:46em}
 .fig .empty-cap{display:none}
-.fig.error .zoom,.fig.error>img,.fig.error .plain{display:none}
+.fig.error .frame{display:none}
 .fig.error::before{content:"";display:block;aspect-ratio:3/2;background:var(--sage-soft)}
 .fig.error.tall::before{aspect-ratio:2/3}
 .fig.error .empty-cap{display:block;position:absolute;left:0;right:0;top:0;aspect-ratio:3/2;display:grid;place-items:center;text-align:center;padding:0 24px;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
-.fig.cover img{max-height:78vh;object-fit:contain}
-.case-board .zoom{background:var(--case-board)}
+.fig.cover img{max-height:min(46vh,440px);object-fit:contain}
+.proj-link:hover .fig.cover .frame img,.dir-link:hover .fig.cover .frame img{transform:scale(1.04)}
+.fig.cover .frame img{transition:transform 1s var(--ease)}
+.case-hero .fig img{max-height:min(66vh,640px)}
+.b-full{max-width:960px;margin-inline:auto}
+.b-full .fig img,.b-aside .fig img{max-height:min(66vh,640px)}
+.case-board .frame{background:var(--case-board)}
 .case-board .fig img{mix-blend-mode:multiply}
-.case-ClimatZone{--case-board:#E6F0F2}
-.case-k-sebe{--case-board:#F2EFE4}
-.case-makeyourself{--case-board:#EFE6DA}
-.case-sferapreobrajenia{--case-board:#EEE5D9}
-.case-skin-clinic{--case-board:#EEE9E1}
-.case-dentaservice{--case-board:#EBE2D6}
-.proj-link .fig img{transition:opacity .4s var(--ease)}
-.proj-link:hover .fig img{opacity:.94}
 
 /* ---------- категория: ряды проектов ---------- */
 .cat-head{padding-top:calc(84px + clamp(20px,4vw,56px))}
 .back{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--moss);padding:8px 0;margin-bottom:clamp(22px,3.4vw,44px)}
 .back:hover{color:var(--ink)}
-.cat-h{font-family:var(--serif);font-weight:500;font-size:clamp(2.8rem,8vw,7rem);line-height:1;letter-spacing:-.02em;margin-top:14px}
+.cat-h{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,6.4vw,5.6rem);line-height:1.05;letter-spacing:-.02em;margin-top:14px}
 .cat-sub{margin-top:clamp(14px,2vw,24px);max-width:30em;color:var(--mute);font-size:clamp(1.05rem,1.5vw,1.3rem)}
 .proj{padding:clamp(36px,5.6vw,80px) 0;border-top:1px solid var(--line)}
 .proj:last-child{border-bottom:1px solid var(--line)}
 .proj-link{display:grid;gap:clamp(18px,3vw,36px)}
-.proj-n{font-family:var(--serif);font-style:italic;color:var(--clay);font-size:1.15rem}
-.proj h3{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4.4vw,3.8rem);line-height:1.02;letter-spacing:-.015em;margin-top:6px;transition:color .3s;overflow-wrap:break-word}
+.proj-n{font-family:var(--serif);font-style:normal;color:var(--clay);font-size:1.15rem}
+.proj h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,3.2vw,2.9rem);line-height:1.1;letter-spacing:-.015em;margin-top:6px;transition:color .3s;overflow-wrap:break-word}
 .proj-link:hover h3{color:var(--moss)}
 .proj-kind{margin-top:10px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--mute)}
 .proj-sum{color:var(--mute);margin-top:clamp(12px,1.8vw,20px);max-width:30em}
@@ -225,13 +242,13 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .row-duo .fig:nth-child(2){margin-top:clamp(28px,6vw,90px)}
 .demo-actions{margin-top:20px}
 @media (min-width:900px){
-  .proj-link{grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(32px,5vw,88px);align-items:center}
-  .proj.r .proj-link{grid-template-columns:minmax(0,8fr) minmax(0,4fr)}
+  .proj-link{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,6vw,110px);align-items:center}
+  .proj.r .proj-link{grid-template-columns:minmax(0,6fr) minmax(0,5fr)}
   .proj.r .proj-txt{order:2}
 }
 .next{display:block;margin-top:clamp(64px,10vw,150px);padding-block:clamp(32px,5vw,72px);border-top:1px solid var(--line)}
 .next small{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);font-weight:700}
-.next span{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(2rem,6.4vw,5.6rem);letter-spacing:-.02em;line-height:1.02;margin-top:10px;transition:transform .5s var(--ease),color .3s;overflow-wrap:break-word}
+.next span{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,4.6vw,4rem);letter-spacing:-.01em;line-height:1.08;margin-top:10px;transition:transform .5s var(--ease),color .3s;overflow-wrap:break-word}
 .next:hover span{transform:translateX(14px);color:var(--moss)}
 
 /* ---------- страница проекта ---------- */
@@ -240,14 +257,15 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .case-head{grid-area:head}
 .case-hero{grid-area:hero;min-width:0}
 .case-details{grid-area:details;display:grid;gap:clamp(26px,3.4vw,38px)}
-.case-h{font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,5vw,4.6rem);line-height:1.02;letter-spacing:-.015em;margin-top:16px;overflow-wrap:break-word}
+.case-h{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,3.6vw,3.4rem);line-height:1.1;letter-spacing:-.015em;margin-top:16px;overflow-wrap:break-word}
 .case-sub{margin-top:10px;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:700}
-.case-sum{margin-top:clamp(16px,2.2vw,26px);font-family:var(--serif);font-size:clamp(1.25rem,1.9vw,1.65rem);line-height:1.35;color:var(--ink);max-width:24em}
+.case-sum{margin-top:clamp(16px,2.2vw,26px);font-family:var(--serif);font-size:clamp(1.1rem,1.5vw,1.35rem);line-height:1.5;color:var(--ink);max-width:24em}
+.case .kicker,.case .back,.b-k{color:var(--moss)}
 .case-details h2{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);font-weight:700;margin-bottom:12px}
 .case-details p{color:var(--mute);max-width:32em}
 .tasks li,.done li{position:relative;padding:8px 0 8px 22px;color:var(--ink);font-size:.98rem;line-height:1.5}
 .tasks li::before,.done li::before{content:"";position:absolute;left:0;top:1.05em;width:7px;height:7px;border-radius:50%;background:var(--sage)}
-.done li::before{background:var(--clay)}
+.done li::before{background:var(--moss)}
 .result{padding:20px 22px;background:var(--sage-soft)}
 .result h2{margin-bottom:8px}
 .result p{color:var(--ink)}
@@ -257,14 +275,14 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .b-aside{display:grid;gap:clamp(20px,3vw,40px);align-items:center}
 .b-txt{max-width:26em}
 .b-k{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--moss);font-weight:700}
-.b-txt h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.8rem,3vw,2.8rem);line-height:1.05;margin-top:12px}
+.b-txt h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.5rem,2.4vw,2.2rem);line-height:1.15;margin-top:12px}
 .b-txt p:last-child{color:var(--mute);margin-top:14px;font-size:1.02rem}
 .b-pair,.b-trio{display:grid;gap:var(--gap)}
 @media (min-width:900px){
-  .case-grid{grid-template-columns:minmax(0,4fr) minmax(0,8fr);grid-template-areas:"head hero" "details hero";column-gap:clamp(32px,5vw,84px);row-gap:clamp(24px,3vw,36px);align-items:start}
+  .case-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-areas:"head hero" "details hero";column-gap:clamp(32px,5vw,84px);row-gap:clamp(24px,3vw,36px);align-items:start}
   .case-hero{position:sticky;top:84px}
-  .b-aside{grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:clamp(32px,5vw,88px)}
-  .b-aside.l{grid-template-columns:minmax(0,4fr) minmax(0,8fr)}
+  .b-aside{grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(32px,6vw,110px)}
+  .b-aside.l{grid-template-columns:minmax(0,4fr) minmax(0,7fr)}
   .b-aside.l .b-txt{order:-1}
   .b-pair{grid-template-columns:1fr 1fr}
   .b-pair.stag .fig:nth-child(2){margin-top:clamp(48px,9vw,140px)}
@@ -306,7 +324,7 @@ main.out{opacity:0}
   .menu[aria-expanded="true"]{background:var(--moss);color:var(--paper)}
   #nav{position:fixed;inset:0;background:var(--paper);flex-direction:column;align-items:stretch;justify-content:center;gap:0;padding:72px var(--pad) 32px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:-1}
   #nav.open{opacity:1;visibility:visible}
-  #nav a:not(.btn){font-family:var(--serif);font-size:clamp(2.2rem,9vw,3.2rem);letter-spacing:0;text-transform:none;font-weight:500;padding:10px 0;min-height:60px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+  #nav a:not(.btn){font-family:var(--serif);font-size:clamp(2.2rem,9vw,3.2rem);letter-spacing:0;text-transform:none;font-weight:400;padding:10px 0;min-height:60px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
   #nav a:not(.btn)::after{position:static;content:"→";height:auto;background:none;transform:none;font-family:var(--sans);font-size:.5em;color:var(--clay)}
   #nav a{opacity:0;transform:translateY(14px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
   #nav.open a{opacity:1;transform:none}
@@ -320,7 +338,7 @@ main.out{opacity:0}
   .index a:last-child{grid-column:1/-1}
   .case,.cat-head{padding-top:calc(64px + 18px)}
 }
-@media (max-width:480px){.brand{font-size:1.25rem}.menu{font-size:.66rem}.hdr-in{gap:12px}.menu{padding:0 14px}}
+@media (max-width:480px){.brand{font-size:1.05rem}.menu{font-size:.66rem}.hdr-in{gap:12px}.menu{padding:0 14px}}
 @media (max-width:640px){
   .btns{flex-direction:column;align-items:stretch}
   .btns .btn,.cta-row .btn,.demo-actions .btn{width:100%;min-height:56px}
@@ -356,7 +374,9 @@ main.out{opacity:0}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
-  .rv{opacity:1;transform:none}
+  .rv,.st,.w{opacity:1;transform:none}
+  .rv .frame,.rv:not(.in) .frame{clip-path:none}
+  .hero-h .ln>*{transform:none}
 }
 </style>
 </head>
@@ -397,7 +417,7 @@ const CONFIG = {
 /* Изображения проектов: положите файлы в images/projects/<folder>/<file>
    Пока файла нет — на его месте спокойный пустой слот с подписью. */
 const CATEGORIES = [
-  { key:'web', title:'Web Design', subtitle:'Сайты и digital-страницы.', preview:{folder:'ClimatZone',file:'01-laptop.png',label:'Все проекты'} },
+  { key:'web', title:'Web Design', subtitle:'Сайты и digital-страницы.', preview:{folder:'ClimatZone',file:'01.png',label:'Все проекты'} },
   { key:'digital', title:'Digital Products', subtitle:'AI-интерфейсы, цифровые сервисы и landing pages.', preview:{folder:'category-overviews',file:'digital-products-overview.png',label:'Все проекты'} },
   { key:'ecommerce', title:'E-commerce', subtitle:'Интернет-магазины и Mini App в telegram.', preview:{folder:'category-overviews',file:'ecommerce-overview.png',label:'Все проекты'} },
   { key:'graphic', title:'Graphic Design', subtitle:'Визуальные материалы, упаковка, полиграфия и графические решения.', preview:{folder:'category-overviews',file:'graphic-design-overview.png',label:'Все проекты'} },
@@ -474,10 +494,10 @@ const PROJECTS = [
     summary:'Интернет-магазин уходовой косметики SOMNA. Проработала структуру каталога, карточки средств и адаптивные страницы магазина.',
     done:['Структура интернет-магазина','Каталог средств','Карточки товаров','Интерфейс desktop и mobile'],
     images:[
-      {file:'01.png',label:'Главная — desktop и mobile'},
-      {file:'02.png',label:'Карточка сыворотки — mobile'},
-      {file:'03.png',label:'Каталог средств — desktop'},
-      {file:'04.png',label:'Ритуал ухода — mobile'}]},
+      {file:'01.png',label:'Главная — desktop'},
+      {file:'02.png',label:'Каталог средств — desktop'},
+      {file:'03.png',label:'Ритуал ухода — desktop'},
+      {file:'04.png',label:'Фотография продуктов SOMNA'}]},
   { slug:'prevent', folder:'prevent', title:'PreventShop', subtitle:'Интернет-магазин · Telegram Mini App', category:'ecommerce', year:'2026', demoUrl:'https://preventshop.ucoz.net/',
     summary:'Единый проект PreventShop: интернет-магазин и его версия в Telegram. Каталог, карточки товаров и оформление заказа доступны в обеих точках входа.',
     done:['Сайт интернет-магазина','Telegram-магазин и Mini App','Каталог товаров','Карточки товаров','Корзина и оформление заказа','AI-помощник'],
@@ -537,7 +557,7 @@ const PROJECTS = [
     summary:'Визуальная система студии красоты: материалы для печати и экрана в единой палитре — от прайс-листа и подарочного сертификата до визиток и мобильной версии.',
     done:['Прайс-лист','Подарочный сертификат','Визитки','Рекламный баннер','Мобильная версия'],
     images:[
-      {file:'01.png',w:1672,h:941,label:'Фирменный стиль: обложка, прайс-лист, сертификат, визитки, баннер и мобильная версия'},
+      {file:'01.png',w:1670,h:942,label:'Фирменный стиль: обложка, прайс-лист, сертификат, визитки, баннер и мобильная версия'},
       {file:'02.jpg',w:1536,h:1024,label:'Подарочный сертификат'},
       {file:'03.jpg',w:1536,h:1024,label:'Визитка — вариант 1'},
       {file:'04.jpg',w:1536,h:1024,label:'Визитка — вариант 2'}],
@@ -699,8 +719,8 @@ const CASE_TEXT = {
   'somna':{
     kind:'Интернет-магазин',
     brief:'Интернет-магазин уходовой косметики SOMNA для покупателя, который выбирает средства для ежедневного ухода и хочет сразу понять, как они сочетаются.',
-    tasks:['Выстроить структуру каталога','Оформить карточки товаров','Показать уход как короткий ритуал из шагов','Подготовить версии для desktop и mobile'],
-    result:'Презентация магазина: главная для desktop и mobile, карточка сыворотки, каталог средств и страница ритуала ухода.'},
+    tasks:['Выстроить структуру каталога','Оформить карточки товаров с ценой и кнопкой «В корзину»','Показать уход как короткий ритуал из трёх шагов','Собрать страницы магазина в единой стилистике'],
+    result:'Четыре материала: главная страница, каталог из четырёх средств, страница «Соберите свой ритм ухода» с тремя шагами и фотография продуктов.'},
   'prevent':{
     kind:'Интернет-магазин и Telegram Mini App',
     brief:'Магазин с двумя точками входа: сайт и Telegram. Дизайн связывает их в один опыт — покупатель может начать выбор там, где ему удобнее.',
@@ -806,7 +826,7 @@ function fig(p, im, o){
   const img = `<img src="${imgPath(p,im)}"${dims} alt="${p.title} — ${im.label}" loading="${o.eager?'eager':'lazy'}" decoding="async" onerror="this.closest('.fig').classList.add('error')">`;
   const inner = o.zoom===false ? img : `<button class="zoom" type="button" data-lb aria-label="Открыть крупнее: ${im.label}">${img}</button>`;
   const tall = im.w&&im.h&&im.h>im.w ? ' tall' : '';
-  return `<figure class="fig${o.cls?' '+o.cls:''}${tall}">${inner}<span class="empty-cap">${im.label}</span>${o.cap===false?'':`<figcaption class="cap">${o.cap||im.label}</figcaption>`}</figure>`;
+  return `<figure class="fig${o.cls?' '+o.cls:''}${tall}"><span class="frame">${inner}</span><span class="empty-cap">${im.label}</span>${o.cap===false?'':`<figcaption class="cap">${o.cap||im.label}</figcaption>`}</figure>`;
 }
 
 /* ---------- блоки страницы проекта ---------- */
@@ -826,7 +846,7 @@ function blocksOf(p){
 }
 function blockHtml(p, b, eager){
   const f = n => fig(p,p.images[n],{eager});
-  if(b.t==='full') return f(b.i);
+  if(b.t==='full') return eager ? f(b.i) : `<div class="b-full">${f(b.i)}</div>`;
   if(b.t==='aside') return `<div class="b-aside${b.side==='l'?' l':''}">${f(b.i)}<div class="b-txt"><p class="b-k">${b.k}</p><h2>${b.h}</h2><p>${b.p}</p></div></div>`;
   if(b.t==='pair') return `<div class="b-pair${b.stag?' stag':''}">${b.i.map(f).join('')}</div>`;
   if(b.t==='trio') return `<div class="b-trio">${b.i.map(f).join('')}</div>`;
@@ -850,11 +870,11 @@ function caseHtml(p){
           <p class="case-sub">${p.subtitle} · ${p.year}</p>
           <p class="case-sum">${p.summary}</p>
         </header>
-        <div class="case-hero">${hero}</div>
-        <div class="case-details">
+        <div class="case-hero rv">${hero}</div>
+        <div class="case-details rv" data-stagger>
           ${p.brief?`<section><h2>О проекте</h2><p>${p.brief}</p></section>`:''}
-          ${p.tasks?`<section><h2>Задачи</h2><ul class="tasks">${p.tasks.map(x=>`<li>${x}</li>`).join('')}</ul></section>`:''}
-          <section><h2>Что было сделано</h2><ul class="done">${p.done.map(x=>`<li>${x}</li>`).join('')}</ul></section>
+          ${p.tasks?`<section><h2>Задачи</h2><ul class="tasks" data-stagger>${p.tasks.map(x=>`<li>${x}</li>`).join('')}</ul></section>`:''}
+          <section><h2>Что было сделано</h2><ul class="done" data-stagger>${p.done.map(x=>`<li>${x}</li>`).join('')}</ul></section>
           ${p.result?`<section class="result"><h2>Результат</h2><p>${p.result}</p></section>`:''}
           ${p.demoUrl?`<div class="case-demo"><a class="btn btn-solid" href="${p.demoUrl}" target="_blank" rel="noopener noreferrer">Открыть демо-сайт <span class="ar" aria-hidden="true">↗</span></a><span class="demo-note">Демонстрационный проект</span></div>`:''}
         </div>
@@ -915,7 +935,7 @@ function dirBlock(cat,i){
         <span class="dir-n">${pad(i+1)}</span>
         <h3>${cat.title}</h3>
         <p class="dir-sub">${cat.subtitle}</p>
-        <ul class="dir-list">${projs.map(p=>`<li>${p.title}</li>`).join('')}</ul>
+        <ul class="dir-list" data-stagger>${projs.map(p=>`<li>${p.title}</li>`).join('')}</ul>
         <span class="count">${projs.length} ${plural(projs.length,'проект','проекта','проектов')}</span><br>
         <span class="go">Смотреть проекты <i aria-hidden="true">→</i></span>
       </div>
@@ -943,11 +963,11 @@ function home(){
       <div class="hero-grid">
         <div>
           <div class="hero-meta"><span><b>Анастасия Бахрушина</b> · Графический / Web / Digital дизайнер</span><span>${CONFIG.location} · Открыта к фриланс-проектам</span></div>
-          <h1 class="hero-h">Дизайн, который делает бизнес <em>понятным и заметным.</em></h1>
+          <h1 class="hero-h"><span class="ln" style="--l:0"><span>Дизайн, который</span></span><span class="ln" style="--l:1"><span>делает бизнес</span></span><span class="ln" style="--l:2"><em>понятным и</em></span><span class="ln" style="--l:3"><em>заметным.</em></span></h1>
           <p class="lead">Сайты, digital-продукты, визуал бренда и графический дизайн.</p>
           <div class="btns"><a class="btn btn-solid" href="#/work">Смотреть работы</a><a class="btn" href="#/contact">Связаться</a></div>
         </div>
-        <div class="hero-art" aria-hidden="true"><span class="disc"></span><span class="arch"></span><span class="arch b"></span><span class="mono">Аб</span><span class="tag">${CATEGORIES.length} направлений</span><span class="vline">Портфолио · ${CONFIG.year}</span></div>
+        <div class="hero-art" aria-hidden="true"><span class="disc"></span><span class="ring r1"></span><span class="ring r2"></span><span class="arch"></span><span class="arch b"></span><span class="tag">${CATEGORIES.length} направлений</span><span class="vline">Портфолио · ${CONFIG.year}</span></div>
       </div>
       <nav class="index" aria-label="Направления">${CATEGORIES.map((c,i)=>`<a href="#/works/${c.key}"><small>${pad(i+1)}</small>${c.title}</a>`).join('')}</nav>
     </div>
@@ -971,19 +991,19 @@ function home(){
 
   <section class="sec" id="services"><div class="wrap"><div class="split">
     <div class="rv"><span class="kicker">Услуги</span></div>
-    <ul class="svc rv">${SERVICES.map((s,i)=>`<li class="svc-i"><span class="svc-n">${pad(i+1)}</span><h3>${s[0]}</h3><p>${s[1]}</p></li>`).join('')}</ul>
+    <ul class="svc rv" data-stagger>${SERVICES.map((s,i)=>`<li class="svc-i"><span class="svc-n">${pad(i+1)}</span><h3>${s[0]}</h3><p>${s[1]}</p></li>`).join('')}</ul>
   </div></div></section>
 
   <section class="sec tint" id="process"><div class="wrap">
     <div class="sec-head rv"><div><span class="kicker">Процесс</span><h2 class="h2">Пять <em>спокойных</em> шагов</h2></div></div>
-    <ol class="steps rv">${STEPS.map((s,i)=>`<li class="step"><h3><b>${pad(i+1)}</b>${s[0]}</h3><p>${s[1]}</p></li>`).join('')}</ol>
+    <ol class="steps rv" data-stagger>${STEPS.map((s,i)=>`<li class="step"><h3><b>${pad(i+1)}</b>${s[0]}</h3><p>${s[1]}</p></li>`).join('')}</ol>
   </div></section>
 
   <section class="cta" id="contact"><div class="wrap"><div class="cta-box rv">
     <h2 class="cta-h">Есть проект? Давайте <em>обсудим.</em></h2>
     <p class="cta-p">Расскажите немного о задаче — я отвечу и предложу подходящий формат работы.</p>
     <div class="cta-row"><a class="btn btn-solid btn-lg" data-tg target="_blank" rel="noopener">Написать <span class="ar" aria-hidden="true">→</span></a></div>
-    <div class="contacts">
+    <div class="contacts" data-stagger>
       <a data-tg target="_blank" rel="noopener"><small>Telegram</small><span data-tgname></span><i class="ca" aria-hidden="true">↗</i></a>
       <a data-mail><small>Почта</small><span data-mailname></span><i class="ca" aria-hidden="true">↗</i></a>
     </div>
@@ -999,11 +1019,34 @@ function fillContacts(){
   document.querySelectorAll('[data-year]').forEach(e=>e.textContent=CONFIG.year);
 }
 const hdr=$('#hdr'), nav=$('#nav'), menu=$('#menu'), main=$('#main'), bar=$('#bar');
-addEventListener('scroll',()=>{
-  hdr.classList.toggle('sc',scrollY>24);
+let lastY=0, ticking=false, aboutEl=null, aboutWords=[];
+function splitWords(el){
+  const walk=n=>{[...n.childNodes].forEach(c=>{
+    if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(t=>{if(!t)return;if(/^\s+$/.test(t))f.appendChild(document.createTextNode(t));else{const w=document.createElement('span');w.className='w';w.textContent=t;f.appendChild(w)}});c.replaceWith(f)}
+    else if(c.nodeType===1)walk(c)})};
+  walk(el);return [...el.querySelectorAll('.w')];
+}
+function onScroll(){
+  ticking=false;
+  const y=scrollY;
+  hdr.classList.toggle('sc',y>24);
+  hdr.classList.toggle('hide',y>260&&y>lastY+2&&!nav.classList.contains('open')||false);
+  if(y<lastY-2||y<=260)hdr.classList.remove('hide');
+  lastY=y;
   const max=document.documentElement.scrollHeight-innerHeight;
-  bar.style.transform='scaleX('+(max>0?Math.min(scrollY/max,1):0)+')';
-},{passive:true});
+  bar.style.transform='scaleX('+(max>0?Math.min(y/max,1):0)+')';
+  if(!reduce){
+    const art=main.querySelector('.hero-art');
+    if(art)art.style.setProperty('--ps',Math.min(y/innerHeight,1).toFixed(3));
+    if(aboutEl&&aboutWords.length){
+      const r=aboutEl.getBoundingClientRect();
+      const p=Math.max(0,Math.min(1,(innerHeight*.86-r.top)/(r.height+innerHeight*.3)));
+      const n=Math.round(p*aboutWords.length);
+      aboutWords.forEach((w,i)=>w.classList.toggle('on',i<n));
+    }
+  }
+}
+addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});
 function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='Меню';document.body.style.overflow=''}
 menu.addEventListener('click',()=>{const o=!nav.classList.contains('open');nav.classList.toggle('open',o);menu.setAttribute('aria-expanded',o);menu.textContent=o?'Закрыть':'Меню';document.body.style.overflow=o?'hidden':''});
 nav.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu()});
@@ -1014,6 +1057,8 @@ $('#skip').addEventListener('click',e=>{e.preventDefault();main.focus()});
 let io;
 function observe(){
   io&&io.disconnect();
+  main.querySelectorAll('[data-stagger]').forEach(c=>[...c.children].forEach((k,i)=>{k.classList.add('st');k.style.setProperty('--i',i)}));
+  main.querySelectorAll('.contacts').forEach(c=>{const r=c.closest('.rv');if(!r)c.classList.add('rv')});
   const els=main.querySelectorAll('.rv');
   if(!('IntersectionObserver' in window)){els.forEach(el=>el.classList.add('in'));return}
   io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px -4% 0px'});
@@ -1102,6 +1147,44 @@ function enhance(){
   cbScroll=show; addEventListener('scroll',cbScroll,{passive:true}); show();
 }
 
+/* ---------- цвета страницы проекта: из главной картинки кейса ----------
+   Сайт считает основной оттенок изображения и окрашивает страницу в него.
+   Пока картинка не загрузилась (или недоступна) — запасной оттенок ниже. */
+const HUES = {ClimatZone:205,'k-sebe':140,makeyourself:28,sferapreobrajenia:34,'skin-clinic':40,dentaservice:190,'ai-assistant':150,somna:150,prevent:150,'digital-forms':38,'maison-cards':36,packaging:150,antiparasitic:145,'prevent-packaging':150,lumiere:140,'price-lists':30,'restaurant-menus':140,'ad-banners':38,'smm-carousels':36,'business-cards':20,'brand-boards':140,'wedding-mini-site':150,'wedding-identity':140,'event-invitations':150,'love-posters':8};
+const THEME_KEYS = ['--paper','--paper-2','--sage-soft','--sage','--moss','--ink','--mute','--line','--line-strong','--case-board','--clay'];
+function themeVars(h,sm){
+  const k=Math.max(.4,Math.min(1,sm*1.7)), S=v=>Math.round(v*k);
+  return {'--paper':`hsl(${h} ${S(36)}% 95.5%)`,'--paper-2':`hsl(${h} ${S(34)}% 91%)`,'--sage-soft':`hsl(${h} ${S(38)}% 87%)`,'--sage':`hsl(${h} ${S(32)}% 68%)`,
+    '--moss':`hsl(${h} ${S(52)+8}% 28%)`,'--ink':`hsl(${h} ${S(44)}% 12%)`,'--mute':`hsl(${h} ${S(16)+4}% 36%)`,
+    '--line':`hsl(${h} ${S(30)}% 14% / .16)`,'--line-strong':`hsl(${h} ${S(30)}% 14% / .4)`,'--case-board':`hsl(${h} ${S(38)}% 89%)`,'--clay':`hsl(${h} ${S(40)}% 44%)`};
+}
+function setTheme(h,sm){const v=themeVars(h,sm),r=document.documentElement.style;THEME_KEYS.forEach(k=>r.setProperty(k,v[k]))}
+function clearTheme(){const r=document.documentElement.style;THEME_KEYS.forEach(k=>r.removeProperty(k))}
+function dominantHue(img){
+  try{
+    const c=document.createElement('canvas');c.width=c.height=40;
+    const x=c.getContext('2d',{willReadFrequently:true});x.drawImage(img,0,0,40,40);
+    const d=x.getImageData(0,0,40,40).data;let sx=0,sy=0,w=0,sat=0;
+    for(let i=0;i<d.length;i+=4){
+      const r=d[i]/255,g=d[i+1]/255,b=d[i+2]/255,mx=Math.max(r,g,b),mn=Math.min(r,g,b),l=(mx+mn)/2,dd=mx-mn;
+      if(dd<.04) continue;
+      const s=dd/(1-Math.abs(2*l-1)||1);
+      let h=mx===r?((g-b)/dd)%6:mx===g?(b-r)/dd+2:(r-g)/dd+4; h*=Math.PI/3;
+      const wt=s*(1-Math.abs(2*l-1))+.001;
+      sx+=Math.cos(h)*wt;sy+=Math.sin(h)*wt;w+=wt;sat+=s*wt;
+    }
+    if(w<1) return null;
+    let deg=Math.atan2(sy,sx)*180/Math.PI; if(deg<0)deg+=360;
+    return {h:Math.round(deg),s:Math.min(1,sat/w)};
+  }catch(e){return null}
+}
+function caseTheme(p){
+  setTheme(HUES[p.folder]??150,.45);
+  const img=main.querySelector('.case-hero img'); if(!img) return;
+  const go=()=>{const r=dominantHue(img);if(r)setTheme(r.h,r.s)};
+  img.complete&&img.naturalWidth?go():img.addEventListener('load',go,{once:true});
+}
+
 /* ---------- маршрутизатор (hash) ---------- */
 const SECTIONS=['work','about','services','process','contact'];
 const behavior=()=>reduce?'auto':'smooth';
@@ -1129,10 +1212,12 @@ function route(){
     else { main.innerHTML=home(); document.title='Анастасия Бахрушина — графический и веб-дизайнер'; }
     const prev=current; current=key;
     fillContacts(); observe(); enhance();
+    if(idx>=0) caseTheme(PROJECTS[idx]); else clearTheme();
+    aboutEl=main.querySelector('.about-l'); aboutWords=aboutEl?splitWords(aboutEl):[]; lastY=0; hdr.classList.remove('hide');
     scrollTo({top:0,behavior:'auto'});
     main.classList.remove('out');
     if(prev) main.focus({preventScroll:true});
-    settle();
+    settle(); onScroll();
   };
   if(current&&!reduce){ main.classList.add('out'); setTimeout(swap,200); } else swap();
 }
