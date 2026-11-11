@@ -411,8 +411,8 @@ const CONFIG = {
 const CATEGORIES = [
   { key:'web', title:'Web Design', subtitle:'Сайты и digital-страницы.', preview:{folder:'ClimatZone',file:'01.png',label:'Все проекты'} },
   { key:'digital', title:'Digital Products', subtitle:'AI-интерфейсы, цифровые сервисы и landing pages.', preview:{folder:'category-overviews',file:'digital-products-overview.png',label:'Все проекты'} },
-  { key:'ecommerce', title:'E-commerce', subtitle:'Интернет-магазины и Mini App в telegram.', preview:{folder:'category-overviews',file:'ecommerce-overview.png',label:'Все проекты'} },
-  { key:'graphic', title:'Graphic Design', subtitle:'Визуальные материалы, упаковка, полиграфия и графические решения.', preview:{folder:'category-overviews',file:'graphic-design-overview.png',label:'Все проекты'} },
+  { key:'ecommerce', title:'E-commerce', subtitle:'Интернет-магазины и Telegram Mini App.', preview:{folder:'category-overviews',file:'ecommerce-overview.jpg',label:'Все проекты'} },
+  { key:'graphic', title:'Graphic Design', subtitle:'Визуальные материалы, упаковка, полиграфия и графические решения.', preview:{folder:'category-overviews',file:'graphic-design-overview.jpg',label:'Все проекты'} },
   { key:'event', title:'Event & Wedding', subtitle:'Визуальные системы и digital-решения для мероприятий.', preview:{folder:'category-overviews',file:'event-wedding-overview.png',label:'Все проекты'} }
 ];
 const catInfo = key => CATEGORIES.find(c=>c.key===key);
@@ -507,14 +507,14 @@ const PROJECTS = [
       {file:'02.svg',w:1536,h:1024,label:'Выбор процедуры и специалиста'},
       {file:'03.svg',w:1536,h:1024,label:'Выбор даты и времени'},
       {file:'04.svg',w:1536,h:1024,label:'Контактные данные и подтверждение записи'}]},
-  { slug:'maison-cards', folder:'maison-cards', title:'MAISON — карточки товаров', subtitle:'E-commerce / Product cards', category:'ecommerce', year:'2026', row:'full', cover:0,
+  { slug:'maison-cards', folder:'maison-cards', title:'MAISON — карточки товаров', subtitle:'Graphic Design / Product cards', category:'graphic', year:'2026', row:'full', cover:0,
     summary:'Серия из пяти карточек товаров для магазина товаров для дома: керамические вазы, ароматические свечи, постельное бельё, посуда и интерьерные ароматы. Единая сетка, иконки преимуществ и кнопки действия.',
     done:['Карточки товаров','Иконки преимуществ','Кнопки действия','Единая сетка серии'],
     images:[
       {file:'01.jpg',w:1536,h:1024,label:'MAISON — серия карточек товаров: вазы, свечи, постельное бельё, посуда, ароматы'}],
     blocks:[
       {t:'full',i:0}]},
-  { slug:'packaging', folder:'packaging', title:'Упаковка и фирменный стиль', subtitle:'E-commerce / Packaging', category:'ecommerce', year:'2026', row:'splitr', cover:0,
+  { slug:'packaging', folder:'packaging', title:'Упаковка и фирменный стиль', subtitle:'Graphic Design / Packaging', category:'graphic', year:'2026', row:'splitr', cover:0,
     summary:'Упаковка и сопутствующая полиграфия: пакеты, коробки, конверты с печатью, стаканы и крафт-пакеты. Тиснение, золотая фольга и спокойная зелёно-бежевая палитра.',
     done:['Пакеты и коробки','Конверты с сургучной печатью','Стаканы и пакеты для кофе','Буклеты и визитки'],
     images:[
@@ -525,7 +525,7 @@ const PROJECTS = [
       {t:'full',i:0},
       {t:'aside',i:1,side:'l',k:'Набор',h:'Пакет, коробка и конверт',p:'Тиснёная текстура, золотой рисунок и сургучная печать превращают упаковку в часть фирменного стиля.'},
       {t:'full',i:2}]},
-  { slug:'antiparasitic', folder:'antiparasitic', title:'Antiparasitic Program', subtitle:'Product Visual System', category:'ecommerce', year:'2026', row:'full', cover:0,
+  { slug:'antiparasitic', folder:'antiparasitic', title:'Antiparasitic Program', subtitle:'Graphic Design / Product Visuals', category:'graphic', year:'2026', row:'full', cover:0,
     summary:'Оформление wellness-продукта из четырёх позиций для рекламы и продажи. Разработала визуальную концепцию и рекламные материалы.',
     done:['Рекламные карточки','Telegram-магазин','QR-карта','Дополнительные материалы'],
     images:[
@@ -937,8 +937,8 @@ function dirBlock(cat,i){
 const SERVICES = [
   ['Web Design','Лендинги, сайты и digital-страницы под ключ.'],
   ['Digital Products','Mini Apps, AI-интерфейсы и цифровые сервисы.'],
-  ['E-commerce & Product','Карточки товаров, упаковка и визуал для продаж.'],
-  ['Graphic Design','Рекламные материалы, презентации и полиграфия.'],
+  ['E-commerce','Интернет-магазины и Telegram Mini App.'],
+  ['Graphic Design','Карточки товаров, упаковка, реклама и полиграфия.'],
   ['Event & Wedding','Сайты и визуальные системы для мероприятий.']
 ];
 const STEPS = [
