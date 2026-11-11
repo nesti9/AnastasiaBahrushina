@@ -13,18 +13,18 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%2346604F'/%3E%3Ctext x='16' y='22' font-size='15' font-family='Georgia,serif' font-style='italic' text-anchor='middle' fill='%23F6F1E6'%3EAB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   /* тёплая светлая палитра: молочный фон, шалфей, тёмно-зелёный текст */
-  --paper:#F6F1E6; --paper-2:#EEE7D8; --sage-soft:#E3E8DA; --sage:#A9B8A3; --moss:#46604F; --ink:#233027; --mute:#66705F; --clay:#B08B5F;
-  --line:rgba(35,48,39,.15); --line-strong:rgba(35,48,39,.4);
+  --paper:#F8F6F0; --paper-2:#EFEDE3; --sage-soft:#E4EBE0; --sage:#9DB1A0; --moss:#2D5841; --ink:#14221B; --mute:#55645A; --clay:#9A8156;
+  --line:rgba(20,34,27,.14); --line-strong:rgba(20,34,27,.38);
   --gap:clamp(16px,2.2vw,32px); --pad:clamp(20px,4.6vw,72px);
   --sans:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
   --serif:'Prata','Cormorant Garamond','Lora','Iowan Old Style','Palatino Linotype',Georgia,serif;
-  --script:var(--serif);
+  --script:'Cormorant Garamond','Playfair Display',Georgia,serif;
   --ease:cubic-bezier(.2,.7,.2,1);
-  --case-board:#EEE9DD;--ps:0;
+  --case-board:#EFEDE3;--ps:0;
   color-scheme:light;
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -84,32 +84,25 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hero-h .ln{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
 .hero-h .ln>*{display:block;transform:translateY(108%);animation:lnUp 1.1s var(--ease) both;animation-delay:calc(var(--l,0)*.11s + .1s)}
 @keyframes lnUp{to{transform:none}}
-.hero-h em{display:block;font-style:normal;font-weight:400;color:var(--moss)}
+.hero-h em{display:block;font-family:var(--script);font-style:italic;font-weight:500;font-size:1.12em;line-height:1;color:var(--moss);letter-spacing:0}
 .lead{font-size:clamp(1.05rem,1.5vw,1.3rem);max-width:27em;line-height:1.55;color:var(--mute);margin-top:clamp(18px,2.6vw,32px)}
 .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:clamp(24px,3.4vw,40px)}
-.hero-art{position:relative;aspect-ratio:1/1.05;max-width:520px;width:100%;justify-self:center}
-.hero-art .disc{position:absolute;inset:2% 0 auto 8%;aspect-ratio:1;border-radius:50%;background:var(--sage-soft)}
-.hero-art .arch{position:absolute;left:0;bottom:0;width:62%;height:78%;border-radius:999px 999px 0 0;background:var(--sage);opacity:.55}
-.hero-art .arch.b{left:auto;right:4%;width:34%;height:46%;background:var(--paper-2);opacity:1}
-.hero-art .vline{position:absolute;right:4%;top:6%;writing-mode:vertical-rl;font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;color:var(--mute)}
-.hero-art .tag{position:absolute;left:4%;top:12%;padding:8px 14px;background:var(--paper);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--moss)}
+.hero-art{position:relative;aspect-ratio:1/.95;max-width:540px;width:100%;justify-self:center}
+.hp{position:absolute;display:block;background:var(--paper-2);box-shadow:0 18px 44px -22px rgba(20,34,27,.35);animation:up 1.1s var(--ease) both}
+.hp img{width:100%;height:auto;display:block}
+.hp small{position:absolute;left:0;bottom:-24px;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);white-space:nowrap}
+.hp.a{left:0;top:9%;width:70%;animation-delay:.2s}
+.hp.b{right:0;top:0;width:35%;animation-delay:.45s}
+.hp.c{right:0;bottom:0;width:60%;animation-delay:.7s}
+.hero-art .script{position:absolute;left:0;bottom:12%;max-width:34%;font-family:var(--script);font-style:italic;font-weight:500;font-size:clamp(1.6rem,2.6vw,2.4rem);line-height:1.05;color:var(--moss);animation:up 1s var(--ease) 1s both}
 .index{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--gap);margin-top:clamp(40px,6vw,88px);border-top:1px solid var(--line)}
 .index a{display:block;padding:18px 0 4px;font-family:var(--serif);font-size:1.35rem;line-height:1.2;transition:color .3s}
 .index a small{display:block;font-family:var(--sans);color:var(--mute);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
 .index a:hover{color:var(--moss)}
 @keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-@keyframes grow{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
 .hero-meta,.lead,.btns,.index{animation:up .9s var(--ease) both}
 .hero-meta{animation-delay:0s}.lead{animation-delay:.55s}.btns{animation-delay:.7s}.index{animation-delay:.85s}
-.hero-art{transform:translateY(calc(var(--ps,0)*-46px))}
-.hero-art .disc{animation:grow 1.2s var(--ease) .15s both}
-.hero-art .arch,.hero-art .ring{animation:archUp 1.3s var(--ease) both}
-.hero-art .arch{animation-delay:.3s}.hero-art .arch.b{animation-delay:.5s}.hero-art .ring.r1{animation-delay:.45s}.hero-art .ring.r2{animation-delay:.65s}
-.hero-art .tag,.hero-art .vline{animation:up 1s var(--ease) .9s both}
-@keyframes archUp{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0)}}
-.hero-art .ring{position:absolute;border:1px solid var(--line-strong);border-radius:999px 999px 0 0;border-bottom:0}
-.hero-art .ring.r1{left:-5%;bottom:0;width:62%;height:84%}
-.hero-art .ring.r2{right:-2%;bottom:0;width:38%;height:56%}
+.hero-art{transform:translateY(calc(var(--ps,0)*-24px))}
 @media (min-width:900px){.hero-grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}}
 
 /* ---------- секции ---------- */
@@ -176,7 +169,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .cta-box{position:relative;overflow:hidden;background:var(--sage-soft);padding:clamp(32px,6vw,96px) clamp(22px,5vw,80px)}
 .cta-box::after{content:"";position:absolute;right:-6%;bottom:-30%;width:min(46vw,520px);aspect-ratio:1;border-radius:50%;background:var(--paper);opacity:.55;pointer-events:none}
 .cta-h{position:relative;z-index:1;font-family:var(--serif);font-weight:400;font-size:clamp(2rem,5.2vw,4.6rem);line-height:1.08;letter-spacing:-.02em;max-width:10em;overflow-wrap:break-word}
-.cta-h em{font-family:var(--script);font-style:normal;font-weight:400;color:var(--moss);letter-spacing:0}
+.cta-h em{font-family:var(--script);font-style:italic;font-weight:500;font-size:1.1em;color:var(--moss);letter-spacing:0}
 .cta-p{position:relative;z-index:1;margin-top:clamp(16px,2.4vw,28px);max-width:28em;color:var(--mute);font-size:clamp(1.02rem,1.4vw,1.25rem)}
 .cta-row{position:relative;z-index:1;margin-top:clamp(22px,3vw,40px)}
 .contacts{position:relative;z-index:1;display:grid;margin-top:clamp(36px,5vw,72px)}
@@ -206,8 +199,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .rv .frame{transition:clip-path 1.2s var(--ease)}
 .rv .frame img{transition:transform 1.6s var(--ease)}
 .rv:not(.in) .frame{clip-path:inset(0 0 100% 0)}
-.rv:not(.in) .frame img{transform:scale(1.1)}
-.rv.in .zoom:hover img{transform:scale(1.025);transition-duration:.9s}
+.rv:not(.in) .frame img{transform:scale(1.03)}
+.rv.in .zoom:hover img{transform:scale(1.015);transition-duration:.9s}
 .fig .cap{margin-top:12px;font-size:.78rem;line-height:1.5;letter-spacing:.02em;color:var(--mute);max-width:46em}
 .fig .empty-cap{display:none}
 .fig.error .frame{display:none}
@@ -215,13 +208,12 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .fig.error.tall::before{aspect-ratio:2/3}
 .fig.error .empty-cap{display:block;position:absolute;left:0;right:0;top:0;aspect-ratio:3/2;display:grid;place-items:center;text-align:center;padding:0 24px;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
 .fig.cover img{max-height:min(46vh,440px);object-fit:contain}
-.proj-link:hover .fig.cover .frame img,.dir-link:hover .fig.cover .frame img{transform:scale(1.04)}
+.proj-link:hover .fig.cover .frame img,.dir-link:hover .fig.cover .frame img{transform:scale(1.02)}
 .fig.cover .frame img{transition:transform 1s var(--ease)}
 .case-hero .fig img{max-height:min(66vh,640px)}
 .b-full{max-width:960px;margin-inline:auto}
 .b-full .fig img,.b-aside .fig img{max-height:min(66vh,640px)}
 .case-board .frame{background:var(--case-board)}
-.case-board .fig img{mix-blend-mode:multiply}
 
 /* ---------- категория: ряды проектов ---------- */
 .cat-head{padding-top:calc(84px + clamp(20px,4vw,56px))}
@@ -956,6 +948,11 @@ const STEPS = [
   ['Доработка','Учитываю комментарии и дорабатываю проект.'],
   ['Передача','Передаю готовые материалы.']
 ];
+function heroPiece(cls,folder,file,w,h,alt){
+  const p=PROJECTS.find(x=>x.folder===folder);
+  if(!p) return '';
+  return `<a class="hp ${cls}" href="#/project/${p.slug}" style="aspect-ratio:${w}/${h}" aria-label="${p.title} — открыть кейс"><img src="images/projects/${folder}/${file}" width="${w}" height="${h}" alt="${alt}" decoding="async" onerror="this.parentNode.style.display='none'"></a>`;
+}
 function home(){
   return `
   <section class="hero" id="top">
@@ -967,7 +964,7 @@ function home(){
           <p class="lead">Сайты, digital-продукты, визуал бренда и графический дизайн.</p>
           <div class="btns"><a class="btn btn-solid" href="#/work">Смотреть работы</a><a class="btn" href="#/contact">Связаться</a></div>
         </div>
-        <div class="hero-art" aria-hidden="true"><span class="disc"></span><span class="ring r1"></span><span class="ring r2"></span><span class="arch"></span><span class="arch b"></span><span class="tag">${CATEGORIES.length} направлений</span><span class="vline">Портфолио · ${CONFIG.year}</span></div>
+        <div class="hero-art">${heroPiece('a','lumiere','02.jpg',1536,1024,'Lumière — подарочный сертификат')}${heroPiece('b','love-posters','03.jpg',1024,1536,'Love Story Posters')}${heroPiece('c','packaging','01.jpg',1672,941,'Упаковка и бренд-материалы')}<span class="script" aria-hidden="true">избранные работы</span></div>
       </div>
       <nav class="index" aria-label="Направления">${CATEGORIES.map((c,i)=>`<a href="#/works/${c.key}"><small>${pad(i+1)}</small>${c.title}</a>`).join('')}</nav>
     </div>
@@ -1152,11 +1149,23 @@ function enhance(){
    Пока картинка не загрузилась (или недоступна) — запасной оттенок ниже. */
 const HUES = {ClimatZone:205,'k-sebe':140,makeyourself:28,sferapreobrajenia:34,'skin-clinic':40,dentaservice:190,'ai-assistant':150,somna:150,prevent:150,'digital-forms':38,'maison-cards':36,packaging:150,antiparasitic:145,'prevent-packaging':150,lumiere:140,'price-lists':30,'restaurant-menus':140,'ad-banners':38,'smm-carousels':36,'business-cards':20,'brand-boards':140,'wedding-mini-site':150,'wedding-identity':140,'event-invitations':150,'love-posters':8};
 const THEME_KEYS = ['--paper','--paper-2','--sage-soft','--sage','--moss','--ink','--mute','--line','--line-strong','--case-board','--clay'];
+/* Предсказуемая система: оттенок картинки округляется до одного из пяти семейств,
+   насыщенность и светлота у всех семейств одинаковые — меняется только тон. */
+const FAMILIES=[{h:150,s:20},{h:205,s:22},{h:38,s:26},{h:10,s:22},{h:285,s:12}];
+function familyOf(h,sm){
+  if(sm<.1) return FAMILIES[0];
+  h=((h%360)+360)%360;
+  if(h<25||h>=340) return FAMILIES[3];
+  if(h<70) return FAMILIES[2];
+  if(h<185) return FAMILIES[0];
+  if(h<260) return FAMILIES[1];
+  return FAMILIES[4];
+}
 function themeVars(h,sm){
-  const k=Math.max(.4,Math.min(1,sm*1.7)), S=v=>Math.round(v*k);
-  return {'--paper':`hsl(${h} ${S(36)}% 95.5%)`,'--paper-2':`hsl(${h} ${S(34)}% 91%)`,'--sage-soft':`hsl(${h} ${S(38)}% 87%)`,'--sage':`hsl(${h} ${S(32)}% 68%)`,
-    '--moss':`hsl(${h} ${S(52)+8}% 28%)`,'--ink':`hsl(${h} ${S(44)}% 12%)`,'--mute':`hsl(${h} ${S(16)+4}% 36%)`,
-    '--line':`hsl(${h} ${S(30)}% 14% / .16)`,'--line-strong':`hsl(${h} ${S(30)}% 14% / .4)`,'--case-board':`hsl(${h} ${S(38)}% 89%)`,'--clay':`hsl(${h} ${S(40)}% 44%)`};
+  const f=familyOf(h,sm), H=f.h, S=f.s;
+  return {'--paper':`hsl(${H} ${S}% 96%)`,'--paper-2':`hsl(${H} ${S}% 92%)`,'--sage-soft':`hsl(${H} ${S+4}% 89%)`,'--sage':`hsl(${H} ${S+2}% 66%)`,
+    '--moss':`hsl(${H} ${S+14}% 26%)`,'--ink':`hsl(${H} ${S+4}% 11%)`,'--mute':`hsl(${H} ${S-6}% 34%)`,
+    '--line':`hsl(${H} ${S}% 12% / .14)`,'--line-strong':`hsl(${H} ${S}% 12% / .38)`,'--case-board':`hsl(${H} ${S}% 92%)`,'--clay':`hsl(${H} ${S+8}% 40%)`};
 }
 function setTheme(h,sm){const v=themeVars(h,sm),r=document.documentElement.style;THEME_KEYS.forEach(k=>r.setProperty(k,v[k]))}
 function clearTheme(){const r=document.documentElement.style;THEME_KEYS.forEach(k=>r.removeProperty(k))}
@@ -1178,12 +1187,7 @@ function dominantHue(img){
     return {h:Math.round(deg),s:Math.min(1,sat/w)};
   }catch(e){return null}
 }
-function caseTheme(p){
-  setTheme(HUES[p.folder]??150,.45);
-  const img=main.querySelector('.case-hero img'); if(!img) return;
-  const go=()=>{const r=dominantHue(img);if(r)setTheme(r.h,r.s)};
-  img.complete&&img.naturalWidth?go():img.addEventListener('load',go,{once:true});
-}
+function caseTheme(p){ setTheme(HUES[p.folder]??150,1); }
 
 /* ---------- маршрутизатор (hash) ---------- */
 const SECTIONS=['work','about','services','process','contact'];
