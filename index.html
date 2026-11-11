@@ -330,7 +330,33 @@ main.out{opacity:0}
   .index a:last-child{grid-column:1/-1}
   .case,.cat-head{padding-top:calc(64px + 18px)}
 }
-@media (max-width:480px){.brand{font-size:1.05rem}.menu{font-size:.66rem}.hdr-in{gap:12px}.menu{padding:0 14px}}
+/* ---------- мобильная доводка: размеры текста, зоны нажатия, переносы ---------- */
+@media (max-width:899px){
+  .brand{display:inline-flex;align-items:center;min-height:44px}
+  .menu{font-size:.74rem!important;min-height:44px}
+  .count,.demo-note,.index a small,.back{font-size:.74rem}
+  .tag-demo{font-size:.7rem;padding:6px 11px}
+  .fig .cap{font-size:.82rem}
+  .foot{flex-direction:column;gap:18px;padding-block:28px 36px}
+  .foot .fl{gap:8px 28px}
+  .foot .fl a{display:inline-flex;align-items:center;min-height:44px}
+  h1,h2,h3,.hero-h,.case-h{overflow-wrap:break-word;text-wrap:balance}
+  .lead,.case-lead,.b-txt p{text-wrap:pretty}
+  .index a{min-height:64px}
+  .hero-art{max-width:min(460px,100%)}
+  small,.contacts small,.next small,.step h3 b,.cb,.dots+*{font-size:max(.74rem,11.8px)}
+  .step h3 b{font-size:.78rem}
+  .back{min-height:44px}
+  .back.back,.tag-demo.tag-demo,.proj-kind.proj-kind,.b-k.b-k{font-size:max(.76rem,12px)}
+  .kicker,.go,.case section>h2,.case section h2:not(.case-h){font-size:max(.76rem,12px)}
+  .foot .fl a{min-width:44px;justify-content:center}
+  i.ca,.go i,.cb-n i{font-size:max(1em,12px)}
+}
+@media (max-width:360px){
+  .hero-art .script{font-size:1.35rem}
+  .hero-h{font-size:clamp(2rem,10.4vw,2.5rem)}
+}
+@media (max-width:480px){.brand{font-size:1.05rem}.hdr-in{gap:12px}.menu{padding:0 14px}}
 @media (max-width:640px){
   .btns{flex-direction:column;align-items:stretch}
   .btns .btn,.cta-row .btn,.demo-actions .btn{width:100%;min-height:56px}
@@ -411,8 +437,8 @@ const CONFIG = {
 const CATEGORIES = [
   { key:'web', title:'Web Design', subtitle:'Сайты и digital-страницы.', preview:{folder:'ClimatZone',file:'01.png',label:'Все проекты'} },
   { key:'digital', title:'Digital Products', subtitle:'AI-интерфейсы, цифровые сервисы и landing pages.', preview:{folder:'category-overviews',file:'digital-products-overview.png',label:'Все проекты'} },
-  { key:'ecommerce', title:'E-commerce', subtitle:'Интернет-магазины и Telegram Mini App.', preview:{folder:'category-overviews',file:'ecommerce-overview.jpg',label:'Все проекты'} },
-  { key:'graphic', title:'Graphic Design', subtitle:'Визуальные материалы, упаковка, полиграфия и графические решения.', preview:{folder:'category-overviews',file:'graphic-design-overview.jpg',label:'Все проекты'} },
+  { key:'ecommerce', title:'E-commerce', subtitle:'Интернет-магазины и Mini App в telegram.', preview:{folder:'category-overviews',file:'ecommerce-overview.png',label:'Все проекты'} },
+  { key:'graphic', title:'Graphic Design', subtitle:'Визуальные материалы, упаковка, полиграфия и графические решения.', preview:{folder:'category-overviews',file:'graphic-design-overview.png',label:'Все проекты'} },
   { key:'event', title:'Event & Wedding', subtitle:'Визуальные системы и digital-решения для мероприятий.', preview:{folder:'category-overviews',file:'event-wedding-overview.png',label:'Все проекты'} }
 ];
 const catInfo = key => CATEGORIES.find(c=>c.key===key);
@@ -507,14 +533,14 @@ const PROJECTS = [
       {file:'02.svg',w:1536,h:1024,label:'Выбор процедуры и специалиста'},
       {file:'03.svg',w:1536,h:1024,label:'Выбор даты и времени'},
       {file:'04.svg',w:1536,h:1024,label:'Контактные данные и подтверждение записи'}]},
-  { slug:'maison-cards', folder:'maison-cards', title:'MAISON — карточки товаров', subtitle:'Graphic Design / Product cards', category:'graphic', year:'2026', row:'full', cover:0,
+  { slug:'maison-cards', folder:'maison-cards', title:'MAISON — карточки товаров', subtitle:'E-commerce / Product cards', category:'graphic', year:'2026', row:'full', cover:0,
     summary:'Серия из пяти карточек товаров для магазина товаров для дома: керамические вазы, ароматические свечи, постельное бельё, посуда и интерьерные ароматы. Единая сетка, иконки преимуществ и кнопки действия.',
     done:['Карточки товаров','Иконки преимуществ','Кнопки действия','Единая сетка серии'],
     images:[
       {file:'01.jpg',w:1536,h:1024,label:'MAISON — серия карточек товаров: вазы, свечи, постельное бельё, посуда, ароматы'}],
     blocks:[
       {t:'full',i:0}]},
-  { slug:'packaging', folder:'packaging', title:'Упаковка и фирменный стиль', subtitle:'Graphic Design / Packaging', category:'graphic', year:'2026', row:'splitr', cover:0,
+  { slug:'packaging', folder:'packaging', title:'Упаковка и фирменный стиль', subtitle:'E-commerce / Packaging', category:'graphic', year:'2026', row:'splitr', cover:0,
     summary:'Упаковка и сопутствующая полиграфия: пакеты, коробки, конверты с печатью, стаканы и крафт-пакеты. Тиснение, золотая фольга и спокойная зелёно-бежевая палитра.',
     done:['Пакеты и коробки','Конверты с сургучной печатью','Стаканы и пакеты для кофе','Буклеты и визитки'],
     images:[
@@ -525,7 +551,7 @@ const PROJECTS = [
       {t:'full',i:0},
       {t:'aside',i:1,side:'l',k:'Набор',h:'Пакет, коробка и конверт',p:'Тиснёная текстура, золотой рисунок и сургучная печать превращают упаковку в часть фирменного стиля.'},
       {t:'full',i:2}]},
-  { slug:'antiparasitic', folder:'antiparasitic', title:'Antiparasitic Program', subtitle:'Graphic Design / Product Visuals', category:'graphic', year:'2026', row:'full', cover:0,
+  { slug:'antiparasitic', folder:'antiparasitic', title:'Antiparasitic Program', subtitle:'Product Visual System', category:'graphic', year:'2026', row:'full', cover:0,
     summary:'Оформление wellness-продукта из четырёх позиций для рекламы и продажи. Разработала визуальную концепцию и рекламные материалы.',
     done:['Рекламные карточки','Telegram-магазин','QR-карта','Дополнительные материалы'],
     images:[
@@ -937,8 +963,8 @@ function dirBlock(cat,i){
 const SERVICES = [
   ['Web Design','Лендинги, сайты и digital-страницы под ключ.'],
   ['Digital Products','Mini Apps, AI-интерфейсы и цифровые сервисы.'],
-  ['E-commerce','Интернет-магазины и Telegram Mini App.'],
-  ['Graphic Design','Карточки товаров, упаковка, реклама и полиграфия.'],
+  ['E-commerce & Product','Карточки товаров, упаковка и визуал для продаж.'],
+  ['Graphic Design','Рекламные материалы, презентации и полиграфия.'],
   ['Event & Wedding','Сайты и визуальные системы для мероприятий.']
 ];
 const STEPS = [
