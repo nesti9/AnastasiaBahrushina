@@ -44,7 +44,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 /* ---------- типографика ---------- */
 .serif{font-family:var(--serif)}
 .it{font-style:normal;color:var(--moss)}
-.kicker{display:inline-flex;align-items:center;gap:14px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);font-weight:600}
+.kicker{display:inline-flex;align-items:center;gap:14px;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);font-weight:600}
 .kicker::before{content:"";width:34px;height:1px;background:var(--clay);transform-origin:left;animation:draw 1s var(--ease) .1s both}
 @keyframes draw{from{transform:scaleX(0)}}
 .h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4.4vw,4rem);line-height:1.08;letter-spacing:-.015em}
@@ -309,19 +309,19 @@ main.out{opacity:0}
 .dots,.cb{display:none}
 
 /* ---------- мобильная версия ---------- */
-@media (max-width:999px){
+@media (max-width:1179px){
   .hdr-in{height:64px}.hdr.sc .hdr-in{height:56px}
   .menu{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid var(--line-strong);border-radius:999px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--moss);transition:background .3s,color .3s,transform .2s var(--ease)}
   .menu:active{transform:scale(.96)}
   .menu[aria-expanded="true"]{background:var(--moss);color:var(--paper)}
-  #nav{position:fixed;inset:0;background:var(--paper);flex-direction:column;align-items:stretch;justify-content:center;gap:0;padding:72px var(--pad) 32px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:-1}
+  #nav{position:fixed;inset:0;overflow-y:auto;background:var(--paper);flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;padding:80px var(--pad) 32px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:-1}
   #nav.open{opacity:1;visibility:visible}
-  #nav a:not(.btn){font-family:var(--serif);font-size:clamp(2.2rem,9vw,3.2rem);letter-spacing:0;text-transform:none;font-weight:400;padding:10px 0;min-height:60px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+  #nav a:not(.btn){font-family:var(--serif);font-size:clamp(1.7rem,7.2vw,2.6rem);letter-spacing:0;text-transform:none;font-weight:400;padding:6px 0;min-height:56px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
   #nav a:not(.btn)::after{position:static;content:"→";height:auto;background:none;transform:none;font-family:var(--sans);font-size:.5em;color:var(--clay)}
   #nav a{opacity:0;transform:translateY(14px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
   #nav.open a{opacity:1;transform:none}
-  #nav.open a:nth-child(2){transition-delay:.05s}#nav.open a:nth-child(3){transition-delay:.1s}#nav.open a:nth-child(4){transition-delay:.15s}#nav.open a:nth-child(5){transition-delay:.2s}#nav.open a:nth-child(6){transition-delay:.26s}
-  #nav .btn{width:100%;min-height:56px;margin-top:28px;background:var(--moss);color:var(--paper)}
+  #nav.open a:nth-child(2){transition-delay:.05s}#nav.open a:nth-child(3){transition-delay:.1s}#nav.open a:nth-child(4){transition-delay:.15s}#nav.open a:nth-child(5){transition-delay:.2s}#nav.open a:nth-child(6){transition-delay:.26s}#nav.open a:nth-child(7){transition-delay:.3s}#nav.open a:nth-child(8){transition-delay:.34s}#nav>:first-child{margin-top:auto}#nav>:last-child{margin-bottom:auto}
+  #nav .btn{width:100%;min-height:56px;margin-top:20px;flex:0 0 auto;background:var(--moss);color:var(--paper)}
 }
 @media (max-width:899px){
   .hero{padding-top:calc(64px + 24px)}
@@ -389,6 +389,63 @@ main.out{opacity:0}
   .cb-n span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-transform:none;letter-spacing:0;font-family:var(--serif);font-size:1.05rem}
   .cb-n i{font-style:normal;flex:none}
 }
+
+/* ---------- новые разделы: услуги, подход, этапы, условия (ледяные оттенки) ---------- */
+:root{--ice:#EAF1F6;--ice-2:#DCE8F0;--ice-line:rgba(58,98,128,.22);--ice-ink:#35607E}
+.sec.ice{background:var(--ice)}
+.sec-head .sub{max-width:26em;color:var(--mute)}
+.btn-ice{border-color:var(--ice-ink);color:var(--ice-ink);background-image:linear-gradient(var(--ice-ink),var(--ice-ink))}
+.btn-ice:hover{color:#fff}
+.svc-grid{display:grid;gap:var(--gap);grid-template-columns:minmax(0,1fr)}
+@media (min-width:760px){.svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.svc-cell{display:flex}
+.svc-card{flex:1;display:flex;flex-direction:column;gap:14px;padding:clamp(22px,3vw,40px);border:1px solid var(--ice-line);border-radius:22px;background:rgba(220,232,240,.38);transition:border-color .4s var(--ease),background-color .4s var(--ease)}
+.svc-card:hover{border-color:rgba(53,96,126,.5);background:rgba(220,232,240,.7)}
+.svc-card:active{background:rgba(220,232,240,.85)}
+.svc-no{font-size:.76rem;letter-spacing:.18em;font-weight:700;color:var(--ice-ink)}
+.svc-card h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.5rem,2.4vw,2.2rem);line-height:1.12;letter-spacing:-.01em;transition:color .35s}
+.svc-card:hover h3{color:var(--ice-ink)}
+.svc-d{color:var(--mute);max-width:30em}
+.svc-list{margin-top:4px}
+.svc-list li{display:flex;gap:12px;align-items:baseline;padding:10px 0;border-top:1px solid var(--ice-line);font-size:.95rem}
+.svc-list li::before{content:"";flex:0 0 14px;height:1px;background:var(--ice-ink);transform:translateY(-.3em);transition:flex-basis .4s var(--ease)}
+.svc-card:hover .svc-list li::before{flex-basis:22px}
+.svc-btn{margin-top:auto;align-self:flex-start}
+.svc-card .svc-list{margin-bottom:12px}
+.cost-note{margin-top:clamp(22px,3vw,40px);display:flex;gap:14px;align-items:flex-start;max-width:44em;color:var(--mute);font-size:.98rem}
+.cost-note::before{content:"";flex:0 0 28px;height:1px;background:var(--ice-ink);margin-top:.85em}
+.acc{border-top:1px solid var(--ice-line)}
+.acc-i{border-bottom:1px solid var(--ice-line)}
+.acc-b{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:6px 18px;width:100%;min-height:68px;padding:18px 0;background:none;border:0;cursor:pointer;text-align:left;color:var(--ink);font:inherit;transition:color .3s}
+.acc-b:hover,.acc-i.open .acc-b{color:var(--ice-ink)}
+.acc-b:focus-visible{outline:2px solid var(--ice-ink);outline-offset:4px;border-radius:6px}
+.acc-n{font-size:.76rem;letter-spacing:.16em;font-weight:700;color:var(--ice-ink)}
+.acc-t{font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.7rem);line-height:1.2;overflow-wrap:break-word}
+.acc-ic{position:relative;width:16px;height:16px}
+.acc-ic::before,.acc-ic::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:currentColor;transition:transform .4s var(--ease)}
+.acc-ic::after{transform:rotate(90deg)}
+.acc-i.open .acc-ic::after{transform:rotate(0)}
+.acc-p{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
+.acc-p>div{overflow:hidden;min-height:0;visibility:hidden;transition:visibility 0s .5s}
+.acc-i.open .acc-p{grid-template-rows:1fr}
+.acc-i.open .acc-p>div{visibility:visible;transition-delay:0s}
+.acc-p p{padding:0 clamp(0px,3vw,48px) 26px 42px;color:var(--mute);max-width:38em}
+.flow{display:grid;grid-template-columns:minmax(0,1fr)}
+.flow-i{position:relative;padding:0 0 30px 28px;border-left:1px solid var(--ice-line)}
+.flow-i:last-child{padding-bottom:0}
+.flow-i::before{content:"";position:absolute;left:-5px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--ice-ink)}
+.flow-i h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.3rem,2vw,1.7rem);line-height:1.15;display:flex;gap:14px;align-items:baseline}
+.flow-i h3 b{font-size:.76rem;letter-spacing:.16em;color:var(--ice-ink);font-weight:700}
+.flow-i p{color:var(--mute);margin-top:8px;max-width:26em}
+@media (min-width:900px){
+  .flow{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:clamp(32px,4vw,56px)}
+  .flow-i{border-left:0;border-top:1px solid var(--ice-line);padding:26px clamp(16px,2.4vw,40px) 0 0}
+  .flow-i::before{left:0;top:-5px}
+  .flow-i h3{flex-direction:column;gap:8px}
+}
+@media (max-width:560px){.svc-btn{align-self:stretch;min-height:54px}.svc-card{border-radius:18px}.acc-p p{padding-left:36px}.acc-b{gap:6px 14px}}
+.cta .kicker{position:relative;z-index:1;margin-bottom:clamp(14px,2vw,24px)}
+.cta-h{max-width:13em}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -405,7 +462,7 @@ main.out{opacity:0}
   <div class="wrap hdr-in">
     <a class="brand" href="#/">Анастасия Бахрушина</a>
     <nav id="nav" aria-label="Main">
-      <a href="#/work">Работы</a><a href="#/about">Обо мне</a><a href="#/services">Услуги</a><a href="#/process">Процесс</a><a href="#/contact">Контакты</a>
+      <a href="#/work">Работы</a><a href="#/about">Обо мне</a><a href="#/services">Услуги</a><a href="#/approach">Подход</a><a href="#/process">Этапы</a><a href="#/terms">Условия</a><a href="#/contact">Контакты</a>
       <a class="btn btn-sm" href="#/contact">Связаться</a>
     </nav>
     <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Меню</button>
@@ -960,20 +1017,46 @@ function dirBlock(cat,i){
       <div class="proj-media">${visual}</div>
     </a></article>`;
 }
-const SERVICES = [
-  ['Web Design','Лендинги, сайты и digital-страницы под ключ.'],
-  ['Digital Products','Mini Apps, AI-интерфейсы и цифровые сервисы.'],
-  ['E-commerce','Интернет-магазины и Telegram Mini App.'],
-  ['Graphic Design','Карточки товаров, упаковка, реклама и полиграфия.'],
-  ['Event & Wedding','Сайты и визуальные системы для мероприятий.']
+const SERVICE_CARDS = [
+  {t:'Создание сайтов под ключ', items:['Лендинги','Многостраничные сайты','Интернет-магазины','Сайты на Tilda','Индивидуальная разработка'],
+   d:'Разработка сайтов с продуманной структурой, индивидуальным визуальным решением и адаптацией под задачи бизнеса.'},
+  {t:'Графический дизайн', items:['Рекламные материалы','Полиграфия','Презентации','Баннеры','Дизайн для социальных сетей','Гайды и чек-листы'],
+   d:'Визуальные материалы, которые помогают бренду выглядеть целостно, узнаваемо и профессионально.'},
+  {t:'Фирменный стиль и брендинг', items:['Разработка логотипа','Фирменный стиль','Брендбук','Дизайн упаковки','Визуальная айдентика','Брендированные материалы'],
+   d:'Создание визуальной идентичности бренда — от идеи и концепции до готовой системы визуальных элементов.'},
+  {t:'Цифровые продукты', items:['Telegram Mini Apps','Интерфейсы цифровых сервисов','UI/UX-дизайн','Интернет-магазины','Чат-боты','Цифровые решения для бизнеса'],
+   d:'Разработка удобных цифровых продуктов, которые упрощают взаимодействие с клиентами и помогают автоматизировать процессы.'}
 ];
-const STEPS = [
-  ['Знакомство','Обсуждаем задачу, цели и формат проекта.'],
-  ['Концепция','Определяем визуальное направление.'],
-  ['Дизайн','Создаю дизайн и необходимые материалы.'],
-  ['Доработка','Учитываю комментарии и дорабатываю проект.'],
-  ['Передача','Передаю готовые материалы.']
+const APPROACH = [
+  ['Фокус на результате','Для меня дизайн — это не просто визуальная составляющая. Каждый проект должен решать конкретную задачу: помогать бизнесу выделяться, выстраивать коммуникацию с аудиторией и приводить пользователя к нужному действию.'],
+  ['Системность','Я рассматриваю проект комплексно: от анализа задачи и разработки структуры до финальной реализации. Все элементы должны работать как единая система.'],
+  ['Актуальность решений','Использую современные дизайнерские подходы, актуальные визуальные решения и инструменты. При этом ориентируюсь не только на тренды, но и на задачи конкретного проекта.'],
+  ['Свобода на любой платформе','Подбираю подходящий инструмент реализации в зависимости от особенностей проекта. Это может быть конструктор сайтов, индивидуальная разработка или цифровая платформа.']
 ];
+const STAGES = [
+  ['Знакомство и обсуждение','Обсуждаем вашу задачу, пожелания, особенности бизнеса и ожидаемый результат.'],
+  ['Анализ и концепция','Изучаю исходные материалы, определяю структуру проекта и формирую направление будущего дизайна.'],
+  ['Разработка','Создаю дизайн и прорабатываю все необходимые элементы с учётом согласованной концепции.'],
+  ['Согласование','Показываю результат, собираю обратную связь и вношу согласованные корректировки.'],
+  ['Реализация','При необходимости выполняю техническую реализацию, адаптацию и проверку работоспособности.'],
+  ['Передача проекта','Передаю готовые материалы и необходимые доступы в соответствии с договорённостями.']
+];
+const TERMS = [
+  ['График и коммуникация','Работа над проектом ведётся по предварительно согласованному графику. Основное общение происходит в удобном для обеих сторон мессенджере или по электронной почте.'],
+  ['Сроки реализации','Сроки определяются индивидуально после обсуждения задачи и объёма работ. До начала сотрудничества согласовываются основные этапы и ориентировочная дата завершения проекта.'],
+  ['Порядок оплаты','Условия и этапы оплаты согласовываются до начала работы. В зависимости от объёма проекта возможна поэтапная оплата.'],
+  ['Правки и дополнительные задачи','В стоимость включается объём корректировок, предварительно согласованный при обсуждении проекта. Изменение первоначальной концепции и дополнительные задачи оцениваются отдельно.'],
+  ['Авторство проекта','Авторство выполненной работы сохраняется за дизайнером. Условия использования, публикации проекта в портфолио и передачи исключительных прав согласовываются отдельно.'],
+  ['Передача проекта и поддержка','После завершения работы передаются согласованные итоговые материалы и необходимые доступы. Дополнительная техническая поддержка, сопровождение и дальнейшие изменения обсуждаются отдельно.']
+];
+function accHtml(list,id,openFirst){
+  return `<div class="acc rv">${list.map((x,i)=>{const o=openFirst&&i===0;return `<div class="acc-i${o?' open':''}"><h3><button type="button" class="acc-b" id="${id}-b${i}" aria-expanded="${o}" aria-controls="${id}-p${i}"><span class="acc-n">${pad(i+1)}</span><span class="acc-t">${x[0]}</span><span class="acc-ic" aria-hidden="true"></span></button></h3><div class="acc-p" id="${id}-p${i}" role="region" aria-labelledby="${id}-b${i}"><div><p>${x[1]}</p></div></div></div>`}).join('')}</div>`;
+}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('.acc-b'); if(!b) return;
+  const it=b.closest('.acc-i'), o=!it.classList.contains('open');
+  it.classList.toggle('open',o); b.setAttribute('aria-expanded',o);
+});
 function heroPiece(cls,folder,file,w,h,alt){
   const p=PROJECTS.find(x=>x.folder===folder);
   if(!p) return '';
@@ -1012,20 +1095,32 @@ function home(){
     </div>
   </div></div></section>
 
-  <section class="sec" id="services"><div class="wrap"><div class="split">
-    <div class="rv"><span class="kicker">Услуги</span></div>
-    <ul class="svc rv" data-stagger>${SERVICES.map((s,i)=>`<li class="svc-i"><span class="svc-n">${pad(i+1)}</span><h3>${s[0]}</h3><p>${s[1]}</p></li>`).join('')}</ul>
-  </div></div></section>
-
-  <section class="sec tint" id="process"><div class="wrap">
-    <div class="sec-head rv"><div><span class="kicker">Процесс</span><h2 class="h2">Пять <em>спокойных</em> шагов</h2></div></div>
-    <ol class="steps rv" data-stagger>${STEPS.map((s,i)=>`<li class="step"><h3><b>${pad(i+1)}</b>${s[0]}</h3><p>${s[1]}</p></li>`).join('')}</ol>
+  <section class="sec" id="services"><div class="wrap">
+    <div class="sec-head rv"><div><span class="kicker">Для сотрудничества</span><h2 class="h2">Услуги <em>и стоимость</em></h2></div></div>
+    <div class="svc-grid rv" data-stagger>${SERVICE_CARDS.map((c,i)=>`<div class="svc-cell"><article class="svc-card"><span class="svc-no">${pad(i+1)}</span><h3>${c.t}</h3><p class="svc-d">${c.d}</p><ul class="svc-list">${c.items.map(x=>`<li>${x}</li>`).join('')}</ul><a class="btn btn-ice svc-btn" href="#/contact">Обсудить проект <span class="ar" aria-hidden="true">→</span></a></article></div>`).join('')}</div>
+    <p class="cost-note rv">Стоимость рассчитывается индивидуально и зависит от объёма работ, сложности проекта и поставленных задач.</p>
   </div></section>
 
+  <section class="sec ice" id="approach"><div class="wrap"><div class="split">
+    <div class="rv"><span class="kicker">Принципы работы</span><h2 class="h2">Мой <em>подход</em></h2></div>
+    ${accHtml(APPROACH,'ap',true)}
+  </div></div></section>
+
+  <section class="sec" id="process"><div class="wrap">
+    <div class="sec-head rv"><div><span class="kicker">Этапы работы</span><h2 class="h2">От идеи <em>до результата</em></h2></div></div>
+    <ol class="flow rv" data-stagger>${STAGES.map((x,i)=>`<li class="flow-i"><h3><b>${pad(i+1)}</b>${x[0]}</h3><p>${x[1]}</p></li>`).join('')}</ol>
+  </div></section>
+
+  <section class="sec ice" id="terms"><div class="wrap"><div class="split">
+    <div class="rv"><span class="kicker">Прозрачность на каждом этапе</span><h2 class="h2">Условия <em>сотрудничества</em></h2></div>
+    ${accHtml(TERMS,'tm',true)}
+  </div></div></section>
+
   <section class="cta" id="contact"><div class="wrap"><div class="cta-box rv">
-    <h2 class="cta-h">Есть проект? Давайте <em>обсудим.</em></h2>
-    <p class="cta-p">Расскажите немного о задаче — я отвечу и предложу подходящий формат работы.</p>
-    <div class="cta-row"><a class="btn btn-solid btn-lg" data-tg target="_blank" rel="noopener">Написать <span class="ar" aria-hidden="true">→</span></a></div>
+    <span class="kicker">Есть идея?</span>
+    <h2 class="cta-h">Давайте создадим что-то <em>действительно хорошее</em></h2>
+    <p class="cta-p">Расскажите о своей задаче, и мы вместе найдём оптимальное решение для вашего проекта.</p>
+    <div class="cta-row"><a class="btn btn-solid btn-lg" data-tg target="_blank" rel="noopener">Обсудить проект <span class="ar" aria-hidden="true">→</span></a></div>
     <div class="contacts" data-stagger>
       <a data-tg target="_blank" rel="noopener"><small>Telegram</small><span data-tgname></span><i class="ca" aria-hidden="true">↗</i></a>
       <a data-mail><small>Почта</small><span data-mailname></span><i class="ca" aria-hidden="true">↗</i></a>
@@ -1216,7 +1311,7 @@ function dominantHue(img){
 function caseTheme(p){ setTheme(HUES[p.folder]??150,1); }
 
 /* ---------- маршрутизатор (hash) ---------- */
-const SECTIONS=['work','about','services','process','contact'];
+const SECTIONS=['work','about','services','approach','process','terms','contact'];
 const behavior=()=>reduce?'auto':'smooth';
 const target=a=>SECTIONS.includes(a)?document.getElementById(a):null;
 let current=null;
